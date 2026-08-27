@@ -659,27 +659,10 @@ Prioridad:
 | --- | --- | --- | --- |
 | M | Alto | Medio | Proyecto mayor |
 
-### HU-28: Consultar ingresos por período
-
-Como administrador, quiero consultar los ingresos por período, para analizar los ingresos generados por el gimnasio.
-
-Criterios de aceptación:
-
-El sistema debe permitir seleccionar un período.
-
-Debe mostrar los ingresos correspondientes.
-
-El total debe corresponder a los pagos registrados durante el período.
-
-Prioridad:
-
-| MoSCoW | Valor | Esfuerzo | Cuadrante V/E |
-| --- | --- | --- | --- |
-| S | Medio | Medio | Relleno |
 
 ## Épica 4.7 Autenticación y permisos
 
-### HU-29: Iniciar sesión
+### HU-28: Iniciar sesión
 
 Como usuario del sistema, quiero iniciar sesión con mis credenciales, para acceder a las funcionalidades correspondientes a mi rol.
 
@@ -701,7 +684,7 @@ Prioridad:
 | --- | --- | --- | --- |
 | M | Alto | Medio | Proyecto mayor |
 
-### HU-30: Cerrar sesión
+### HU-29: Cerrar sesión
 
 Como usuario del sistema, quiero cerrar sesión, para proteger mi cuenta cuando termine de utilizar el sistema.
 
@@ -717,7 +700,7 @@ Prioridad:
 | --- | --- | --- | --- |
 | M | Alto | Bajo | Quick win |
 
-### HU-31: Recuperar contraseña
+### HU-30: Recuperar contraseña
 
 Como usuario del sistema, quiero recuperar mi contraseña, para poder volver a acceder a mi cuenta cuando la haya olvidado.
 
@@ -735,7 +718,7 @@ Prioridad:
 | --- | --- | --- | --- |
 | C | Medio | Medio | Relleno |
 
-### HU-32: Administrar roles y permisos
+### HU-31: Administrar roles y permisos
 
 Como administrador, quiero administrar los roles y permisos de los usuarios, para controlar el acceso a las funcionalidades del sistema.
 
