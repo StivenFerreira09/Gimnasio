@@ -6,22 +6,22 @@
 
 | ID     | Descripción                                                                 | Roles autorizados                                              |
 |--------|-----------------------------------------------------------------------------|----------------------------------------------------------------|
-| RF-01  | Registrar un nuevo cliente con sus datos básicos (nombre, documento, contacto), validando campos obligatorios y confirmando el guardado. | Administrador, Recepcionista |
-| RF-02  | Consultar el listado de clientes registrados y el detalle de un cliente seleccionado. | Administrador, Recepcionista |
-| RF-03  | Buscar un cliente por nombre o documento, informando si no hay coincidencias. | Administrador, Recepcionista |
-| RF-04  | Editar los datos de un cliente existente y guardar los cambios con confirmación. | Administrador, Recepcionista (según permisos) |
+| RF-01  | Registrar un nuevo cliente con sus datos básicos (nombre, documento, contacto), validando campos obligatorios y confirmando el guardado. | Administrador, Personal del gimnasio |
+| RF-02  | Consultar el listado de clientes registrados y el detalle de un cliente seleccionado. | Administrador, Personal del gimnasio |
+| RF-03  | Buscar un cliente por nombre o documento, informando si no hay coincidencias. | Administrador, Personal del gimnasio |
+| RF-04  | Editar los datos de un cliente existente y guardar los cambios con confirmación. | Administrador, Personal del gimnasio (según permisos) |
 | RF-05  | Cambiar el estado de un cliente (activo/inactivo), con confirmación previa. | Administrador |
-| RF-06  | Consultar la membresía propia (tipo, estado y fecha de vencimiento). | Cliente (la propia) · Administrador/Recepcionista (cualquier cliente) |
+| RF-06  | Consultar la membresía propia (tipo, estado y fecha de vencimiento). | Cliente (la propia) · Administrador/Personal del gimnasio (cualquier cliente) |
 
 ### 8.2. Gestión de membresías
 
 | ID     | Descripción                                                                 | Roles autorizados                    |
 |--------|-----------------------------------------------------------------------------|--------------------------------------|
 | RF-07  | Crear tipos de membresía definiendo nombre, precio y duración.              | Administrador                        |
-| RF-08  | Consultar el catálogo de membresías registradas.                            | Administrador, Recepcionista         |
-| RF-09  | Asignar una membresía a un cliente, calculando automáticamente la fecha de vencimiento según la duración. | Administrador, Recepcionista |
-| RF-10  | Consultar membresías activas, vencidas y próximas a vencer, con sus fechas. | Administrador, Recepcionista         |
-| RF-11  | Renovar la membresía de un cliente, extendiendo el vencimiento desde la fecha actual, con confirmación. | Administrador, Recepcionista |
+| RF-08  | Consultar el catálogo de membresías registradas.                            | Administrador, Personal del gimnasio |
+| RF-09  | Asignar una membresía a un cliente, calculando automáticamente la fecha de vencimiento según la duración. | Administrador, Personal del gimnasio |
+| RF-10  | Consultar membresías activas, vencidas y próximas a vencer, con sus fechas. | Administrador, Personal del gimnasio |
+| RF-11  | Renovar la membresía de un cliente, extendiendo el vencimiento desde la fecha actual, con confirmación. | Administrador, Personal del gimnasio |
 
 ### 8.3. Gestión de clases
 
@@ -29,10 +29,10 @@
 |--------|-----------------------------------------------------------------------------|--------------------------------------------|
 | RF-12  | Crear una clase con nombre, horario y capacidad máxima.                      | Administrador                              |
 | RF-13  | Asignar un entrenador a una clase.                                          | Administrador                              |
-| RF-14  | Consultar las clases disponibles, con horario, cupo restante y entrenador asignado. | Cliente, Recepcionista, Administrador |
+| RF-14  | Consultar las clases disponibles, con horario, cupo restante y entrenador asignado. | Cliente, Personal del gimnasio, Administrador |
 | RF-15  | Inscribirse en una clase disponible, validando que exista cupo.             | Cliente                                    |
 | RF-16  | Cancelar la propia inscripción, liberando el cupo.                          | Cliente                                    |
-| RF-17  | Consultar los clientes inscritos en una clase y su cantidad total.          | Administrador, Recepcionista               |
+| RF-17  | Consultar los clientes inscritos en una clase y su cantidad total.          | Administrador, Personal del gimnasio       |
 | RF-18  | Consultar las clases y horarios propios asignados.                          | Entrenador                                 |
 | RF-19  | Consultar las clases en las que el cliente está inscrito.                   | Cliente                                    |
 
@@ -42,8 +42,8 @@
 |--------|--------------------------------------------------|--------------------------------------|
 | RF-20  | Registrar un entrenador con su información básica. | Administrador                      |
 | RF-21  | Editar la información de un entrenador.          | Administrador                        |
-| RF-22  | Consultar a los entrenadores registrados y su detalle. | Administrador, Recepcionista   |
-| RF-23  | Consultar qué entrenador está asignado a cada clase. | Administrador, Recepcionista, Cliente |
+| RF-22  | Consultar a los entrenadores registrados y su detalle. | Administrador, Personal del gimnasio |
+| RF-23  | Consultar qué entrenador está asignado a cada clase. | Administrador, Personal del gimnasio, Cliente |
 
 ### 8.5. Panel de control
 
@@ -58,7 +58,7 @@
 | RF-25  | Iniciar sesión validando usuario y contraseña; mostrar solo las funciones permitidas según el rol. | Todos |
 | RF-26  | Cerrar sesión, bloqueando el acceso a funciones protegidas sin re-autenticación. | Todos |
 | RF-27  | Recuperar contraseña mediante un proceso de verificación de identidad.     | Todos             |
-| RF-28  | Restringir el acceso a las funcionalidades según 4 roles fijos: administrador, recepcionista, entrenador, cliente. | Sistema (regla transversal) |
+| RF-28  | Restringir el acceso a las funcionalidades según 4 roles fijos: Administrador, Personal del gimnasio, Entrenador y Cliente. | Sistema (regla transversal) |
 
 ---
 
@@ -75,7 +75,7 @@
 
 | ID      | Requisito                                                                 |
 |---------|---------------------------------------------------------------------------|
-| RNF-03  | La interfaz deberá ser sencilla e intuitiva para usuarios no técnicos, especialmente para el personal de recepción. |
+| RNF-03  | La interfaz deberá ser sencilla e intuitiva para usuarios no técnicos, especialmente para el personal del gimnasio. |
 | RNF-04  | El sistema deberá mostrar mensajes claros de error, advertencia y confirmación después de las operaciones realizadas. |
 
 ### 9.3. Disponibilidad
@@ -186,13 +186,13 @@
 
 | Código  | Restricción                                                                 |
 |---------|-----------------------------------------------------------------------------|
-| RES-01  | La solución tecnológica operará exclusivamente bajo cuatro perfiles de usuario: Administrador, Recepcionista (Personal del gimnasio), Entrenador y Cliente. |
+| RES-01  | La solución tecnológica operará exclusivamente bajo cuatro perfiles de usuario: Administrador, Personal del gimnasio, Entrenador y Cliente. |
 | RES-02  | La disponibilidad de módulos y operaciones dentro de la plataforma estará restringida según el rol de la cuenta autenticada. |
-| RES-03  | El sistema utilizará un motor de base de datos relacional para el almacenamiento persistente de clientes, planes, clases, instructores e inscripciones. |
+| RES-03  | El sistema utilizará un motor de base de datos relacional para el almacenamiento persistente de clientes, membresías, clases, entrenadores e inscripciones. |
 | RES-04  | La información personal y credenciales deben estar resguardadas mediante controles de seguridad y encriptación de acceso. |
 | RES-05  | La etapa de desarrollo abarcará la construcción completa de las 27 historias de usuario aprobadas en la Fase 1 del proyecto. |
 | RES-06  | El nivel de prioridad asignado en el backlog servirá solo para ordenar el flujo de trabajo, sin eliminar ninguna función del alcance total. |
-| RES-07  | Para vincular un plan de entrenamiento es condición necesaria la existencia previa en base de datos del cliente y de la membresía. |
+| RES-07  | Para asignar una membresía es condición necesaria la existencia previa en base de datos del cliente y del tipo de membresía. |
 | RES-08  | Inscribirse a una sesión de entrenamiento exige contar con una clase configurada, un cliente registrado, una membresía activa y cupo libre. |
 | RES-09  | El rol Cliente solo operará sobre su propia información y reservas; el Entrenador solo consultará sus clases y agenda asignada. |
 | RES-10  | Cualquier funcionalidad fuera de las 27 historias originales será tratada como un requerimiento adicional y requerirá solicitud de cambio. |
@@ -203,33 +203,33 @@
 
 | Código | RF Relacionado | Criterio de Aceptación (Given / When / Then) |
 |--------|----------------|----------------------------------------------|
-| CA-01  | RF-01          | **GIVEN** que el Administrador o Recepcionista está en el formulario de registro, **WHEN** ingresa los datos obligatorios válidos (nombre, documento, contacto) y los envía, **THEN** el sistema guarda el cliente y confirma el registro exitoso. |
-| CA-02  | RF-02          | **GIVEN** que un Administrador o Recepcionista accede a la sección de clientes, **WHEN** solicita el listado general o selecciona un afiliado específico, **THEN** la plataforma despliega la lista o el expediente detallado del usuario. |
+| CA-01  | RF-01          | **GIVEN** que el Administrador o Personal del gimnasio está en el formulario de registro, **WHEN** ingresa los datos obligatorios válidos (nombre, documento, contacto) y los envía, **THEN** el sistema guarda el cliente y confirma el registro exitoso. |
+| CA-02  | RF-02          | **GIVEN** que un Administrador o Personal del gimnasio accede a la sección de clientes, **WHEN** solicita el listado general o selecciona un cliente específico, **THEN** la plataforma despliega la lista o el expediente detallado del cliente. |
 | CA-03  | RF-03          | **GIVEN** que un usuario autorizado ingresa un nombre o documento en el buscador, **WHEN** ejecuta la consulta, **THEN** el sistema proyecta los resultados coincidentes o informa que no hay registros asociados. |
 | CA-04  | RF-04          | **GIVEN** que el personal autorizado modifica la información de un cliente, **WHEN** guarda los cambios con datos válidos, **THEN** la base de datos actualiza el expediente y confirma la operación. |
 | CA-05  | RF-05          | **GIVEN** que el Administrador selecciona cambiar el estado de un cliente, **WHEN** confirma la acción en la alerta de seguridad, **THEN** el sistema modifica el estado a Activo o Inactivo. |
-| CA-06  | RF-06          | **GIVEN** que un Cliente (o Administrador/Recepcionista consultando un usuario) entra al perfil, **WHEN** consulta el plan contratado, **THEN** el sistema muestra el tipo de membresía, su estado y fecha de vencimiento. |
-| CA-07  | RF-07          | **GIVEN** que el Administrador parametriza un nuevo plan, **WHEN** asigna nombre, tarifa y duración válidas sin repetir denominación, **THEN** el sistema crea la membresía y la añade al catálogo. |
-| CA-08  | RF-08          | **GIVEN** que el Administrador o Recepcionista entra al módulo de membresías, **WHEN** carga la vista principal, **THEN** el sistema muestra el catálogo completo con precios y vigencias. |
-| CA-09  | RF-09          | **GIVEN** que se vincula una membresía a un cliente registrado, **WHEN** se procesa la asignación, **THEN** el sistema calcula la fecha de vencimiento sumando la duración del plan a la fecha actual y lo activa. |
-| CA-10  | RF-10          | **GIVEN** que el personal autorizado ingresa a la consulta de membresías, **WHEN** solicita el reporte, **THEN** el sistema lista las suscripciones clasificadas en Activas, Vencidas o Próximas a vencer. |
-| CA-11  | RF-11          | **GIVEN** que un cliente solicita extender su suscripción, **WHEN** el personal autorizado procesa la renovación, **THEN** el sistema extiende la vigencia desde la fecha actual y guarda el historial. |
+| CA-06  | RF-06          | **GIVEN** que un Cliente (o Administrador/Personal del gimnasio consultando un usuario) entra al perfil, **WHEN** consulta la membresía, **THEN** el sistema muestra el tipo de membresía, su estado y fecha de vencimiento. |
+| CA-07  | RF-07          | **GIVEN** que el Administrador parametriza un nuevo tipo de membresía, **WHEN** asigna nombre, tarifa y duración válidas sin repetir denominación, **THEN** el sistema crea el tipo de membresía y la añade al catálogo. |
+| CA-08  | RF-08          | **GIVEN** que el Administrador o Personal del gimnasio entra al módulo de membresías, **WHEN** carga la vista principal, **THEN** el sistema muestra el catálogo completo con precios y vigencias. |
+| CA-09  | RF-09          | **GIVEN** que se vincula una membresía a un cliente registrado, **WHEN** se procesa la asignación, **THEN** el sistema calcula la fecha de vencimiento sumando la duración del tipo de membresía a la fecha actual y la activa. |
+| CA-10  | RF-10          | **GIVEN** que el personal autorizado ingresa a la consulta de membresías, **WHEN** solicita el reporte, **THEN** el sistema lista las membresías clasificadas en Activas, Vencidas o Próximas a vencer. |
+| CA-11  | RF-11          | **GIVEN** que un cliente solicita extender su membresía, **WHEN** el personal autorizado procesa la renovación, **THEN** el sistema extiende la vigencia desde la fecha actual y guarda el historial. |
 | CA-12  | RF-12          | **GIVEN** que el Administrador programa una nueva clase con nombre, horario y cupo, **WHEN** guarda la información sin que exista cruce de espacio o tiempo, **THEN** la clase queda publicada en el calendario. |
-| CA-13  | RF-13          | **GIVEN** que el Administrador asigna un entrenador a una clase, **WHEN** el instructor no presenta choques de agenda en ese horario, **THEN** el sistema vincula al entrenador a la sesión. |
-| CA-14  | RF-14          | **GIVEN** que un usuario ingresa al menú de clases, **WHEN** consulta la oferta disponible, **THEN** la plataforma despliega el listado con horarios, cupos libres e instructor asignado. |
-| CA-15  | RF-15          | **GIVEN** que un cliente con membresía activa selecciona una clase con aforo disponible, **WHEN** solicita su reserva, **THEN** el sistema confirma la inscripción y descuenta un cupo libre. |
-| CA-16  | RF-16          | **GIVEN** que un cliente requiere cancelar una reserva previamente realizada, **WHEN** ejecuta la anulación dentro del tiempo permitido, **THEN** la plataforma retira la inscripción e incrementa un cupo en la clase. |
-| CA-17  | RF-17          | **GIVEN** que el Administrador o Recepcionista abre el detalle de una clase, **WHEN** consulta la lista de participantes, **THEN** el sistema lista los nombres de los clientes inscritos y el total de cupos ocupados. |
+| CA-13  | RF-13          | **GIVEN** que el Administrador asigna un entrenador a una clase, **WHEN** el entrenador no presenta choques de agenda en ese horario, **THEN** el sistema vincula al entrenador a la clase. |
+| CA-14  | RF-14          | **GIVEN** que un usuario ingresa al menú de clases, **WHEN** consulta la oferta disponible, **THEN** la plataforma despliega el listado con horarios, cupos libres y entrenador asignado. |
+| CA-15  | RF-15          | **GIVEN** que un cliente con membresía activa selecciona una clase con aforo disponible, **WHEN** solicita su inscripción, **THEN** el sistema confirma la inscripción y descuenta un cupo libre. |
+| CA-16  | RF-16          | **GIVEN** que un cliente tiene una inscripción activa en una clase, **WHEN** solicita cancelar la inscripción, **THEN** la plataforma retira la inscripción e incrementa un cupo en la clase. |
+| CA-17  | RF-17          | **GIVEN** que el Administrador o Personal del gimnasio abre el detalle de una clase, **WHEN** consulta la lista de participantes, **THEN** el sistema lista los nombres de los clientes inscritos y el total de cupos ocupados. |
 | CA-18  | RF-18          | **GIVEN** que un Entrenador autenticado ingresa a su panel, **WHEN** consulta su agenda de trabajo, **THEN** el sistema le presenta únicamente sus clases y horarios asignados. |
-| CA-19  | RF-19          | **GIVEN** que un Cliente autenticado ingresa a su perfil, **WHEN** abre la opción de reservas, **THEN** el sistema despliega el historial de clases en las que se encuentra inscrito. |
-| CA-20  | RF-20          | **GIVEN** que el Administrador ingresa los datos de un nuevo instructor, **WHEN** guarda el registro con la información requerida, **THEN** el sistema crea la ficha del entrenador en la plataforma. |
-| CA-21  | RF-21          | **GIVEN** que el Administrador modifica la información de un instructor, **WHEN** valida y guarda los cambios, **THEN** el sistema actualiza el expediente del entrenador. |
-| CA-22  | RF-22          | **GIVEN** que el Administrador o Recepcionista accede al módulo de entrenadores, **WHEN** solicita el directorio, **THEN** la plataforma despliega la lista de instructores y permite ver el detalle de cada uno. |
-| CA-23  | RF-23          | **GIVEN** que un usuario consulta el detalle de una clase, **WHEN** revisa la ficha informativa, **THEN** el sistema muestra con claridad el entrenador asignado a dicha sesión. |
+| CA-19  | RF-19          | **GIVEN** que un Cliente autenticado ingresa a su perfil, **WHEN** abre la opción de inscripciones, **THEN** el sistema despliega las clases en las que se encuentra inscrito. |
+| CA-20  | RF-20          | **GIVEN** que el Administrador ingresa los datos de un nuevo entrenador, **WHEN** guarda el registro con la información requerida, **THEN** el sistema crea la ficha del entrenador en la plataforma. |
+| CA-21  | RF-21          | **GIVEN** que el Administrador modifica la información de un entrenador, **WHEN** valida y guarda los cambios, **THEN** el sistema actualiza el expediente del entrenador. |
+| CA-22  | RF-22          | **GIVEN** que el Administrador o Personal del gimnasio accede al módulo de entrenadores, **WHEN** solicita el directorio, **THEN** la plataforma despliega la lista de entrenadores y permite ver el detalle de cada uno. |
+| CA-23  | RF-23          | **GIVEN** que un usuario consulta el detalle de una clase, **WHEN** revisa la ficha informativa, **THEN** el sistema muestra con claridad el entrenador asignado a dicha clase. |
 | CA-24  | RF-24          | **GIVEN** que el Administrador ingresa al cuadro de mando (Dashboard), **WHEN** finaliza la carga de datos, **THEN** la plataforma presenta las métricas en tiempo real de clientes activos, membresías y clases. |
-| CA-25  | RF-25          | **GIVEN** que un usuario ingresa sus credenciales en el login, **WHEN** el sistema valida el usuario y contraseña, **THEN** autoriza el ingreso y muestra únicamente las funciones permitidas para su rol. |
-| CA-26  | RF-26          | **GIVEN** que un usuario autenticado selecciona la opción de salir, **WHEN** confirma el cierre de sesión, **THEN** el sistema destruye la sesión y bloquea las vistas privadas hasta un nuevo inicio de sesión. |
-| CA-27  | RF-27          | **GIVEN** que un usuario inicia el proceso de recuperación de contraseña, **WHEN** supera con éxito la verificación de identidad, **THEN** el sistema permite restablecer y guardar la nueva clave. |
+| CA-25  | RF-25          | **GIVEN** que un usuario ingresa sus credenciales en el formulario de inicio de sesión, **WHEN** el sistema valida el usuario y contraseña, **THEN** autoriza el ingreso y muestra únicamente las funciones permitidas para su rol. |
+| CA-26  | RF-26          | **GIVEN** que un usuario autenticado selecciona la opción de cerrar sesión, **WHEN** confirma el cierre de sesión, **THEN** el sistema destruye la sesión y bloquea las vistas privadas hasta un nuevo inicio de sesión. |
+| CA-27  | RF-27          | **GIVEN** que un usuario inicia el proceso de recuperación de contraseña, **WHEN** supera con éxito la verificación de identidad, **THEN** el sistema permite restablecer y guardar la nueva contraseña. |
 | CA-28  | RF-28          | **GIVEN** que un usuario intenta realizar una operación o acceder a una ruta, **WHEN** el sistema valida su perfil contra los 4 roles fijos, **THEN** restringe o concede el acceso basándose en sus permisos configurados. |
 
 ---
@@ -251,7 +251,7 @@
 | HU-11    | Renovar membresía                        | RF-11 Renovar la membresía de un cliente                             | CA-11                   |
 | HU-12    | Crear clase                              | RF-12 Crear una clase                                                | CA-12                   |
 | HU-13    | Asignar entrenador a clase               | RF-13 Asignar un entrenador a una clase                              | CA-13                   |
-| HU-14    | Consultar clases disponibles             | RF-14 Consultar las clases disponibles                               | CA-14                   |
+| HU-14    | Consultar clases disponibles             | RF-14 Consultar las clases disponibles; RF-23 Consultar qué entrenador está asignado a cada clase | CA-14, CA-23 |
 | HU-15    | Inscribirse en una clase                 | RF-15 Inscribirse en una clase disponible                            | CA-15                   |
 | HU-16    | Cancelar inscripción                     | RF-16 Cancelar la propia inscripción                                 | CA-16                   |
 | HU-17    | Consultar alumnos inscritos              | RF-17 Consultar los clientes inscritos en una clase                  | CA-17                   |
@@ -264,4 +264,4 @@
 | HU-24    | Iniciar sesión                           | RF-25 Iniciar sesión                                                 | CA-25                   |
 | HU-25    | Cerrar sesión                            | RF-26 Cerrar sesión                                                  | CA-26                   |
 | HU-26    | Recuperar contraseña                     | RF-27 Recuperar contraseña                                           | CA-27                   |
-| HU-27    | Administrar roles y permisos             | RF-28 Restringir el acceso según roles                               | CA-28                   |
+| HU-27    | Controlar acceso según roles              | RF-28 Restringir el acceso según roles                               | CA-28                   |
