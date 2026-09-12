@@ -33,7 +33,7 @@ El sistema tendrá principalmente cuatro tipos de usuarios:
 | **Usuario** | **Función** |
 | --- | --- |
 | **Administrador** | Es el usuario encargado de administrar y supervisar la información general del gimnasio.<br><br>Podrá:<br>• Administrar clientes.<br>• Administrar membresías.<br>• Gestionar clases.<br>• Gestionar entrenadores.<br>• Consultar el dashboard.<br>• Administrar roles y permisos. |
-| **Recepcionista** | Es el usuario encargado de realizar las actividades operativas del gimnasio mediante el sistema.<br><br>Podrá:<br>• Registrar y consultar clientes.<br>• Gestionar información de membresías según sus permisos.<br>• Consultar y gestionar clases según sus permisos.<br>• Consultar información de entrenadores. |
+| **Personal del gimnasio** | Es el usuario encargado de realizar las actividades operativas del gimnasio mediante el sistema.<br><br>Podrá:<br>• Registrar y consultar clientes.<br>• Gestionar información de membresías según sus permisos.<br>• Consultar y gestionar clases según sus permisos.<br>• Consultar información de entrenadores. |
 | **Entrenador** | Es el usuario encargado de dirigir las clases que le sean asignadas.<br><br>Podrá:<br>• Iniciar sesión.<br>• Consultar las clases que tiene asignadas.<br>• Consultar sus horarios.<br>• Consultar la información de las clases correspondientes. |
 | **Cliente** | Es el usuario que utiliza los servicios del gimnasio y que tendrá acceso al sistema mediante una cuenta personal.<br><br>Podrá:<br>• Iniciar sesión.<br>• Consultar su información personal.<br>• Consultar su membresía.<br>• Consultar el estado y vencimiento de su membresía.<br>• Consultar las clases disponibles.<br>• Inscribirse en clases.<br>• Cancelar sus inscripciones.<br>• Consultar sus clases inscritas. |
 
@@ -126,6 +126,7 @@ Los roles contemplados serán:
 - Cliente.
 
 ## 4.7. User Story Map
+
 ![User Story Map](user-story-map.png)
 
 # 5. Metodología de Priorización, Estimación y Criterios de Aceptación
@@ -193,7 +194,7 @@ Como administrador o personal del gimnasio, quiero registrar un nuevo cliente, p
 
 | **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
 | --- | --- | --- | --- |
-| **Principal (éxito)** | un administrador o recepcionista autenticado se encuentra en el módulo de clientes | ingresa todos los datos obligatorios del cliente y confirma el registro | el sistema guarda la información correctamente y muestra un mensaje de confirmación |
+| **Principal (éxito)** | un administrador o personal del gimnasio autenticado se encuentra en el módulo de clientes | ingresa todos los datos obligatorios del cliente y confirma el registro | el sistema guarda la información correctamente y muestra un mensaje de confirmación |
 | **Alternativo (más relevante)** | ya existe un cliente registrado con el mismo número de documento | el usuario intenta registrar un nuevo cliente con ese mismo documento | el sistema rechaza el registro y muestra un mensaje indicando que el cliente ya existe |
 
 **Prioridad:**
@@ -280,9 +281,9 @@ Como administrador, quiero desactivar un cliente, para evitar que continúe apar
 
 ### 6.1.6. HU-06 Consultar membresía del cliente
 
-Como cliente, quiero consultar la información de mi membresía, para conocer el plan que tengo contratado y su estado.
+Como cliente, quiero consultar la información de mi membresía, para conocer el tipo de membresía que tengo y su estado.
 
-**Dependencias:** HU-09 (Requiere que exista una membresía asignada al cliente).
+**Dependencias:** Ninguna dependencia funcional directa. El cliente debe estar autenticado para consultar su información.
 
 **Criterios de aceptación:**
 
@@ -335,7 +336,7 @@ Como administrador o personal autorizado, quiero consultar las membresías dispo
 
 | **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
 | --- | --- | --- | --- | --- |
-| M | Alto | Medio | Proyecto mayor | 3 |
+| M | Alto | Bajo | Quick win | 3 |
 
 ### 6.2.3. HU-09 Asignar membresía a cliente
 
@@ -400,7 +401,7 @@ Como administrador o personal autorizado del gimnasio, quiero renovar la membres
 
 Como administrador, quiero crear una clase, para organizar las actividades ofrecidas por el gimnasio.
 
-**Dependencias:** Ninguna (Sin dependencias funcionales directas).
+**Dependencias:** Ninguna (sin dependencias funcionales directas).
 
 **Criterios de aceptación:**
 
@@ -483,7 +484,7 @@ Como cliente, quiero cancelar mi inscripción en una clase, para liberar el cupo
 | **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
 | --- | --- | --- | --- |
 | **Principal (éxito)** | el cliente tiene una inscripción activa | confirma la cancelación | el sistema cancela la inscripción y libera el cupo correspondiente |
-| **Alternativo (más relevante)** | existe una política de tiempo mínimo para cancelar una inscripción | el cliente intenta cancelar fuera de ese plazo | el sistema informa que la cancelación no está permitida en ese momento |
+| **Alternativo (más relevante)** | el cliente no tiene una inscripción activa en la clase | intenta cancelar la inscripción | el sistema informa que no existe una inscripción activa para cancelar |
 
 **Prioridad:**
 
@@ -672,7 +673,7 @@ Como usuario del sistema, quiero cerrar sesión, para proteger mi cuenta cuando 
 
 Como usuario del sistema, quiero recuperar mi contraseña, para poder volver a acceder a mi cuenta cuando la haya olvidado.
 
-**Dependencias:** HU-24 (Depende conceptualmente del módulo de autenticación).
+**Dependencias:** Ninguna dependencia funcional directa. El usuario debe tener una cuenta registrada para iniciar el proceso de recuperación.
 
 **Criterios de aceptación:**
 
