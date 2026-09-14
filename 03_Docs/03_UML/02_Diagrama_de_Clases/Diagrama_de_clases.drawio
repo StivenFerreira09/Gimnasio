@@ -1,0 +1,206 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Diagrama_de_clases" id="ks82hmX7owDsQisOWMGL">
+    <mxGraphModel dx="3904" dy="1343" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="light-dark(#ffffff, #121212)" math="0" shadow="0" adaptiveColors="simple">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="B15EFvedl_tNJ30_XGio-1" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=none;fillColor=#B2C9AB;strokeColor=#788AA3;fontColor=#46495D;" value="Usuario" vertex="1">
+          <mxGeometry height="180" width="160" x="334" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-2" parent="B15EFvedl_tNJ30_XGio-1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="&lt;div&gt;- idUsuario: int&amp;nbsp;&lt;/div&gt;&lt;div&gt;- nombreUsuario:&amp;nbsp;String&lt;/div&gt;&lt;div&gt;- contraseña&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;: String&lt;/span&gt;&lt;/div&gt;&lt;div&gt;- rol&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;: String&lt;/span&gt;&lt;/div&gt;&lt;div&gt;- estado&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;: String&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="84" width="160" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-3" parent="B15EFvedl_tNJ30_XGio-1" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#788AA3;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="" vertex="1">
+          <mxGeometry height="8" width="160" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-4" parent="B15EFvedl_tNJ30_XGio-1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="&lt;div&gt;+ iniciarSesion()&lt;/div&gt;&lt;div&gt;+ cerrarSesion()&lt;/div&gt;&lt;div&gt;+ recuperarContraseña()&lt;/div&gt;" vertex="1">
+          <mxGeometry height="62" width="160" y="118" as="geometry" />
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-5" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=none;fillColor=#B2C9AB;strokeColor=#788AA3;fontColor=#46495D;" value="Cliente" vertex="1">
+          <mxGeometry height="220" width="160" x="-1" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-6" parent="B15EFvedl_tNJ30_XGio-5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="&lt;div&gt;- idCliente : int&lt;/div&gt;&lt;div&gt;- nombre : String&lt;/div&gt;&lt;div&gt;- documento : String&lt;/div&gt;&lt;div&gt;- telefono : String&lt;/div&gt;&lt;div&gt;- correo : String&lt;/div&gt;&lt;div&gt;- estado : String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="94" width="160" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-7" parent="B15EFvedl_tNJ30_XGio-5" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#788AA3;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="" vertex="1">
+          <mxGeometry height="8" width="160" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-8" parent="B15EFvedl_tNJ30_XGio-5" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="&lt;div&gt;+ consultarInformacion()&lt;/div&gt;&lt;div&gt;+ consultarMembresia()&lt;/div&gt;&lt;div&gt;+ inscribirseEnClase()&lt;/div&gt;&lt;div&gt;+ cancelarInscripcion()&lt;/div&gt;&lt;div&gt;+ consultarClasesInscritas()&lt;/div&gt;" vertex="1">
+          <mxGeometry height="92" width="160" y="128" as="geometry" />
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-9" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=none;fillColor=#B2C9AB;strokeColor=#788AA3;fontColor=#46495D;" value="Entrenador" vertex="1">
+          <mxGeometry height="180" width="170" x="670" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-10" parent="B15EFvedl_tNJ30_XGio-9" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="&lt;div&gt;- idEntrenador : int&lt;/div&gt;&lt;div&gt;- nombre : String&lt;/div&gt;&lt;div&gt;- documento : String&lt;/div&gt;&lt;div&gt;- telefono : String&lt;/div&gt;&lt;div&gt;- correo : String&lt;/div&gt;&lt;div&gt;- estado : String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="94" width="170" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-11" parent="B15EFvedl_tNJ30_XGio-9" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#788AA3;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="" vertex="1">
+          <mxGeometry height="8" width="170" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-12" parent="B15EFvedl_tNJ30_XGio-9" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="&lt;div&gt;+ consultarClasesAsignadas()&lt;/div&gt;&lt;div&gt;+ consultarHorarios()&lt;/div&gt;" vertex="1">
+          <mxGeometry height="52" width="170" y="128" as="geometry" />
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-13" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=none;fillColor=#B2C9AB;strokeColor=#788AA3;fontColor=#46495D;" value="TipoMembresia" vertex="1">
+          <mxGeometry height="160" width="160" x="-3" y="890" as="geometry" />
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-14" parent="B15EFvedl_tNJ30_XGio-13" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="&lt;div&gt;- idTipoMembresia : int&lt;/div&gt;&lt;div&gt;- nombre : String&lt;/div&gt;&lt;div&gt;- precio : decimal&lt;/div&gt;&lt;div&gt;- duracion : int&lt;/div&gt;" vertex="1">
+          <mxGeometry height="74" width="160" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-15" parent="B15EFvedl_tNJ30_XGio-13" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#788AA3;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="" vertex="1">
+          <mxGeometry height="8" width="160" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-16" parent="B15EFvedl_tNJ30_XGio-13" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="&lt;div&gt;+ crearTipo()&lt;/div&gt;&lt;div&gt;+ consultarTipos()&lt;/div&gt;" vertex="1">
+          <mxGeometry height="52" width="160" y="108" as="geometry" />
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-17" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=none;fillColor=#B2C9AB;strokeColor=#788AA3;fontColor=#46495D;" value="Membresia" vertex="1">
+          <mxGeometry height="180" width="170" x="-8" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-18" parent="B15EFvedl_tNJ30_XGio-17" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="&lt;div&gt;- idMembresia : int&lt;/div&gt;&lt;div&gt;- fechaInicio : Date&lt;/div&gt;&lt;div&gt;- fechaVencimiento : Date&lt;/div&gt;&lt;div&gt;- estado : String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="74" width="170" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-19" parent="B15EFvedl_tNJ30_XGio-17" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#788AA3;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="" vertex="1">
+          <mxGeometry height="8" width="170" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-20" parent="B15EFvedl_tNJ30_XGio-17" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="&lt;div&gt;+ asignar()&lt;/div&gt;&lt;div&gt;+ renovar()&lt;/div&gt;&lt;div&gt;+ consultarEstado()&lt;/div&gt;&lt;div&gt;+ calcularFechaVencimiento()&lt;/div&gt;" vertex="1">
+          <mxGeometry height="72" width="170" y="108" as="geometry" />
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-21" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=none;fillColor=#B2C9AB;strokeColor=#788AA3;fontColor=#46495D;" value="Clase" vertex="1">
+          <mxGeometry height="180" width="170" x="672" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-22" parent="B15EFvedl_tNJ30_XGio-21" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="&lt;div&gt;- idClase : int&lt;/div&gt;&lt;div&gt;- nombre : String&lt;/div&gt;&lt;div&gt;- horario : String&lt;/div&gt;&lt;div&gt;- capacidadMaxima : int&lt;/div&gt;" vertex="1">
+          <mxGeometry height="74" width="170" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-23" parent="B15EFvedl_tNJ30_XGio-21" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#788AA3;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="" vertex="1">
+          <mxGeometry height="8" width="170" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-24" parent="B15EFvedl_tNJ30_XGio-21" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="&lt;div&gt;+ crearClase()&lt;/div&gt;&lt;div&gt;+ consultarDisponibilidad()&lt;/div&gt;&lt;div&gt;+ asignarEntrenador()&lt;/div&gt;&lt;div&gt;+ tieneCupo()&lt;/div&gt;" vertex="1">
+          <mxGeometry height="72" width="170" y="108" as="geometry" />
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-25" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=none;fillColor=#B2C9AB;strokeColor=#788AA3;fontColor=#46495D;" value="Inscripcion" vertex="1">
+          <mxGeometry height="130" width="170" x="317" y="580" as="geometry" />
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-26" parent="B15EFvedl_tNJ30_XGio-25" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="&lt;div&gt;- idInscripcion : int&lt;/div&gt;&lt;div&gt;- fechaInscripcion : Date&lt;/div&gt;&lt;div&gt;- estado : String&lt;/div&gt;" vertex="1">
+          <mxGeometry height="54" width="170" y="26" as="geometry" />
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-27" parent="B15EFvedl_tNJ30_XGio-25" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=#788AA3;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="" vertex="1">
+          <mxGeometry height="8" width="170" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-28" parent="B15EFvedl_tNJ30_XGio-25" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="&lt;div&gt;+ registrar()&lt;/div&gt;&lt;div&gt;+ cancelar()&lt;/div&gt;" vertex="1">
+          <mxGeometry height="42" width="170" y="88" as="geometry" />
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-32" edge="1" parent="1" style="endArrow=none;html=1;startArrow=none;startFill=0;rounded=0;endFill=0;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=none;strokeColor=#788AA3;fontColor=default;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="320" y="120" as="sourcePoint" />
+            <mxPoint x="80" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-33" connectable="0" parent="B15EFvedl_tNJ30_XGio-32" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-1" as="geometry">
+            <mxPoint y="-15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-34" connectable="0" parent="B15EFvedl_tNJ30_XGio-32" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=top;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="0..1" vertex="1">
+          <mxGeometry relative="1" x="1" as="geometry">
+            <mxPoint x="8" y="-3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-35" edge="1" parent="1" style="endArrow=none;html=1;startArrow=none;startFill=0;rounded=0;endFill=0;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=none;strokeColor=#788AA3;fontColor=default;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="120" as="sourcePoint" />
+            <mxPoint x="760" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-36" connectable="0" parent="B15EFvedl_tNJ30_XGio-35" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-1" as="geometry">
+            <mxPoint y="-15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-37" connectable="0" parent="B15EFvedl_tNJ30_XGio-35" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=top;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="0..1" vertex="1">
+          <mxGeometry relative="1" x="1" as="geometry">
+            <mxPoint x="9" y="-3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-40" edge="1" parent="1" style="endArrow=none;html=1;endSize=12;startArrow=none;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;rounded=0;endFill=0;labelBackgroundColor=none;strokeColor=#788AA3;fontColor=default;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="76.52000000000001" y="472" as="sourcePoint" />
+            <mxPoint x="76.52000000000001" y="552" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-41" connectable="0" parent="B15EFvedl_tNJ30_XGio-40" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-1" as="geometry">
+            <mxPoint x="-6" y="-30" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-42" connectable="0" parent="B15EFvedl_tNJ30_XGio-40" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=top;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="1" as="geometry">
+            <mxPoint x="9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-43" edge="1" parent="1" style="endArrow=none;html=1;endSize=12;startArrow=none;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;rounded=0;endFill=0;labelBackgroundColor=none;strokeColor=#788AA3;fontColor=default;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="758.52" y="436" as="sourcePoint" />
+            <mxPoint x="758.52" y="516" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-44" connectable="0" parent="B15EFvedl_tNJ30_XGio-43" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-1" as="geometry">
+            <mxPoint x="-6" y="-30" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-45" connectable="0" parent="B15EFvedl_tNJ30_XGio-43" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=top;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="1" as="geometry">
+            <mxPoint x="9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-46" edge="1" parent="1" style="endArrow=none;html=1;endSize=12;startArrow=none;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;rounded=0;endFill=0;labelBackgroundColor=none;strokeColor=#788AA3;fontColor=default;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="78.52" y="780" as="sourcePoint" />
+            <mxPoint x="78.52" y="860" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-47" connectable="0" parent="B15EFvedl_tNJ30_XGio-46" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="&lt;span style=&quot;text-align: right;&quot;&gt;0..*&lt;/span&gt;" vertex="1">
+          <mxGeometry relative="1" x="-1" as="geometry">
+            <mxPoint x="-11" y="-23" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="B15EFvedl_tNJ30_XGio-48" connectable="0" parent="B15EFvedl_tNJ30_XGio-46" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=top;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="1" vertex="1">
+          <mxGeometry relative="1" x="1" as="geometry">
+            <mxPoint x="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vihkGql-D_-roiuOAQrv-1" edge="1" parent="1" style="endArrow=none;html=1;startArrow=none;startFill=0;rounded=0;endFill=0;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=none;strokeColor=#788AA3;fontColor=default;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="180" y="320" as="sourcePoint" />
+            <mxPoint x="400" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vihkGql-D_-roiuOAQrv-2" connectable="0" parent="vihkGql-D_-roiuOAQrv-1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="1" vertex="1">
+          <mxGeometry relative="1" x="-1" as="geometry">
+            <mxPoint x="-14" y="-15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vihkGql-D_-roiuOAQrv-3" connectable="0" parent="vihkGql-D_-roiuOAQrv-1" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=top;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="1" as="geometry">
+            <mxPoint x="9" y="-3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vihkGql-D_-roiuOAQrv-4" edge="1" parent="1" style="endArrow=none;html=1;endSize=12;startArrow=none;startSize=14;startFill=0;edgeStyle=orthogonalEdgeStyle;rounded=0;endFill=0;labelBackgroundColor=none;strokeColor=#788AA3;fontColor=default;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="515" y="644" as="sourcePoint" />
+            <mxPoint x="645" y="644" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vihkGql-D_-roiuOAQrv-5" connectable="0" parent="vihkGql-D_-roiuOAQrv-4" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="0..*" vertex="1">
+          <mxGeometry relative="1" x="-1" as="geometry">
+            <mxPoint x="-23" y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vihkGql-D_-roiuOAQrv-6" connectable="0" parent="vihkGql-D_-roiuOAQrv-4" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=top;rounded=0;labelBackgroundColor=none;fontColor=#46495D;" value="1" vertex="1">
+          <mxGeometry relative="1" x="1" as="geometry">
+            <mxPoint x="15" y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
