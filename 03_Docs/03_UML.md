@@ -60,7 +60,7 @@
 
 # 15. Diagrama de clases:
 
-![Diagrama de clases](media/image7.png)
+![Diagrama de clases](media/diagrama_de_clases.drawio.png)
 
 # 16. Diagrama de secuencia:
 
