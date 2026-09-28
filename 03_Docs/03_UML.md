@@ -93,3 +93,76 @@
 ![Diagrama de actividades](media/14_image.png)
 
 [Ver diagrama de actividades en Google Drive](https://drive.google.com/file/d/1INYt-NLiz86tPXzoBqL4U4n0PhBwj6iL/view?usp=drive_link)
+
+## Registrar cliente
+
+![Diagrama de actividad - Registrar cliente](media/15_image.png)
+
+| **RF** | **Módulo** | **Descripción** |
+| --- | --- | --- |
+| RF-01 | Módulo 1: Gestión de Clientes | Registrar un nuevo cliente con sus datos básicos (nombre, documento, contacto), validando campos obligatorios y confirmando el guardado. |
+
+## Asignar membresía
+
+![Diagrama de actividad - Asignar membresía](media/16_image.png)
+
+| **RF** | **Módulo** | **Descripción** |
+| --- | --- | --- |
+| RF-09 | Módulo 2: Gestión de Membresías | Asignar una membresía a un cliente, calculando automáticamente la fecha de vencimiento según la duración. |
+
+## Renovar membresía
+
+![Diagrama de actividad - Renovar membresía](media/17_image.png)
+
+| **RF** | **Módulo** | **Descripción** |
+| --- | --- | --- |
+| RF-11 | Módulo 2: Gestión de Membresías | Renovar la membresía de un cliente, extendiendo el vencimiento desde la fecha actual, con confirmación. |
+
+## Crear clase y asignar entrenador
+
+![Diagrama de actividad - Crear clase y asignar entrenador](media/18_image.png)
+
+| **RF** | **Módulo** | **Descripción** |
+| --- | --- | --- |
+| RF-12 | Módulo 3: Gestión de Clases | Crear una clase con nombre, horario y capacidad máxima. |
+| RF-13 |  | Asignar un entrenador a una clase. |
+
+## Inscribirse en clases
+
+![Diagrama de actividad - Inscribirse en clases](media/19_image.png)
+
+| **RF** | **Módulo** | **Descripción** |
+| --- | --- | --- |
+| RF-15 | Módulo 3: Gestión de Clases | Inscribirse en una clase disponible, validando que exista cupo. |
+
+## Cancelar inscripción
+
+![Diagrama de actividad - Cancelar inscripción](media/20_image.png)
+
+| **RF** | **Módulo** | **Descripción** |
+| --- | --- | --- |
+| RF-16 | Módulo 3: Gestión de Clases | Cancelar la propia inscripción, liberando el cupo. |
+
+## Registrar entrenador
+
+![Diagrama de actividad - Registrar entrenador](media/21_image.png)
+
+| **RF** | **Módulo** | **Descripción** |
+| --- | --- | --- |
+| RF-20 | Módulo 4: Gestión de Entrenadores | Registrar un entrenador con su información básica. |
+
+## Iniciar sesión
+
+![Diagrama de actividad - Iniciar sesión](media/22_image.png)
+
+| **RF** | **Módulo** | **Descripción** |
+| --- | --- | --- |
+| RF-25 | Módulo 6: Autenticación y Permisos | Iniciar sesión validando usuario y contraseña; mostrar solo las funciones permitidas según el rol. |
+
+## Recuperar contraseña
+
+![Diagrama de actividad - Recuperar contraseña](media/23_image.png)
+
+| **RF** | **Módulo** | **Descripción** |
+| --- | --- | --- |
+| RF-27 | Módulo 6: Autenticación y Permisos | Recuperar contraseña mediante un proceso de verificación de identidad. |
