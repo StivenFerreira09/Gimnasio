@@ -1,6 +1,6 @@
 # 14. Diagrama de casos de uso:
 
-![Diagrama de casos de uso - Gestión de Clientes](media/01_image.png)
+![Diagrama de casos de uso - Gestión de Clientes](media/images/01_image.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -11,7 +11,7 @@
 | RF-05 |  | Cambiar el estado de un cliente (activo/inactivo), con confirmación previa. |
 | RF-06 |  | Consultar la membresía propia (tipo, estado y fecha de vencimiento). |
 
-![Diagrama de casos de uso - Gestión de Membresías](media/02_image.png)
+![Diagrama de casos de uso - Gestión de Clientes](media/images/02_image.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -21,7 +21,7 @@
 | RF-10 |  | Consultar membresías activas, vencidas y próximas a vencer, con sus fechas. |
 | RF-11 |  | Renovar la membresía de un cliente, extendiendo el vencimiento desde la fecha actual, con confirmación. |
 
-![Diagrama de casos de uso - Gestión de Clases](media/03_image.png)
+![Diagrama de casos de uso - Gestión de Clientes](media/images/03_image.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -34,7 +34,7 @@
 | RF-18 |  | Consultar las clases y horarios propios asignados. |
 | RF-19 |  | Consultar las clases en las que el cliente está inscrito. |
 
-![Diagrama de casos de uso - Gestión de Entrenadores](media/04_image.png)
+![Diagrama de casos de uso - Gestión de Clientes](media/images/04_image.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -43,13 +43,13 @@
 | RF-22 |  | Consultar a los entrenadores registrados y su detalle. |
 | RF-23 |  | Consultar qué entrenador está asignado a cada clase. |
 
-![Diagrama de casos de uso - Panel de Control](media/05_image.jpg)
+![Diagrama de casos de uso - Gestión de Clientes](media/images/05_image.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
 | RF-24 | Módulo 5: Panel de Control | Mostrar un panel con: clientes activos, membresías activas/vencidas, membresías próximas a vencer y clases programadas. |
 
-![Diagrama de casos de uso - Autenticación y Permisos](media/06_image.png)
+![Diagrama de casos de uso - Gestión de Clientes](media/images/06_image.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
