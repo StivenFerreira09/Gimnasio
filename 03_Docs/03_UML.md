@@ -1,6 +1,6 @@
 # 14. Diagrama de casos de uso:
 
-![Diagrama de casos de uso - Gestión de Clientes](media/01_image.png)
+![Diagrama de casos de uso - Gestión de Clientes](media/images/01_image.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -11,7 +11,7 @@
 | RF-05 |  | Cambiar el estado de un cliente (activo/inactivo), con confirmación previa. |
 | RF-06 |  | Consultar la membresía propia (tipo, estado y fecha de vencimiento). |
 
-![Diagrama de casos de uso - Gestión de Membresías](media/02_image.png)
+![Diagrama de casos de uso - Gestión de Clientes](media/images/02_image.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -21,7 +21,7 @@
 | RF-10 |  | Consultar membresías activas, vencidas y próximas a vencer, con sus fechas. |
 | RF-11 |  | Renovar la membresía de un cliente, extendiendo el vencimiento desde la fecha actual, con confirmación. |
 
-![Diagrama de casos de uso - Gestión de Clases](media/03_image.png)
+![Diagrama de casos de uso - Gestión de Clientes](media/images/03_image.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -34,7 +34,7 @@
 | RF-18 |  | Consultar las clases y horarios propios asignados. |
 | RF-19 |  | Consultar las clases en las que el cliente está inscrito. |
 
-![Diagrama de casos de uso - Gestión de Entrenadores](media/04_image.png)
+![Diagrama de casos de uso - Gestión de Clientes](media/images/04_image.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -43,13 +43,13 @@
 | RF-22 |  | Consultar a los entrenadores registrados y su detalle. |
 | RF-23 |  | Consultar qué entrenador está asignado a cada clase. |
 
-![Diagrama de casos de uso - Panel de Control](media/05_image.jpg)
+![Diagrama de casos de uso - Gestión de Clientes](media/images/05_image.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
 | RF-24 | Módulo 5: Panel de Control | Mostrar un panel con: clientes activos, membresías activas/vencidas, membresías próximas a vencer y clases programadas. |
 
-![Diagrama de casos de uso - Autenticación y Permisos](media/06_image.png)
+![Diagrama de casos de uso - Gestión de Clientes](media/images/06_image.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -60,43 +60,41 @@
 
 # 15. Diagrama de clases:
 
-![Diagrama de clases](media/07_image.png)
+![Diagrama de clases](media/images/07_image.png)
 
 # 16. Diagrama de secuencia:
 
 ## GESTIÓN DE CLIENTES:
 
-![Diagrama de secuencia - Gestión de Clientes](media/08_image.png)
+![Diagrama de secuencia - Gestión de Clientes](media/images/08_image.png)
 
 ## GESTIÓN DE MEMBRESÍAS:
 
-![Diagrama de secuencia - Gestión de Clientes (detalle)](media/09_image.png)
+![Diagrama de secuencia - Gestión de membresias](media/images/09_image.png)
 
 ## GESTIÓN DE CLASES:
 
-![Diagrama de secuencia - Gestión de Clases](media/10_image.png)
+![Diagrama de secuencia - Gestión de Clases](media/images/10_image.png)
 
 ## GESTIÓN DE ENTRENADORES:
 
-![Diagrama de secuencia - Gestión de Entrenadores](media/11_image.png)
+![Diagrama de secuencia - Gestión de Entrenadores](media/images/11_image.png)
 
 ## DASHBOARD Y REPORTES:
 
-![Diagrama de secuencia - Dashboard y Reportes](media/12_image.png)
+![Diagrama de secuencia - Dashboard y Reportes](media/images/12_image.png)
 
 ## AUTENTICACIÓN Y PERMISOS:
 
-![Diagrama de secuencia - Autenticación y Permisos](media/13_image.png)
+![Diagrama de secuencia - Autenticación y Permisos](media/images/13_image.png)
 
 # 17. Diagrama de actividades:
 
-![Diagrama de actividades](media/14_image.png)
-
-[Ver diagrama de actividades en Google Drive](https://drive.google.com/file/d/1INYt-NLiz86tPXzoBqL4U4n0PhBwj6iL/view?usp=drive_link)
+![Diagrama de actividades](media/images/14_image.png)
 
 ## Registrar cliente
 
-![Diagrama de actividad - Registrar cliente](media/15_image.png)
+![Diagrama de actividad - Registrar cliente](media/images/15_image.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -104,7 +102,7 @@
 
 ## Asignar membresía
 
-![Diagrama de actividad - Asignar membresía](media/16_image.png)
+![Diagrama de actividad - Asignar membresía](media/images/16_image.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -112,7 +110,7 @@
 
 ## Renovar membresía
 
-![Diagrama de actividad - Renovar membresía](media/17_image.png)
+![Diagrama de actividad - Renovar membresía](media/images/17_image.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -120,7 +118,7 @@
 
 ## Crear clase y asignar entrenador
 
-![Diagrama de actividad - Crear clase y asignar entrenador](media/18_image.png)
+![Diagrama de actividad - Crear clase y asignar entrenador](media/images/18_image.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -129,7 +127,7 @@
 
 ## Inscribirse en clases
 
-![Diagrama de actividad - Inscribirse en clases](media/19_image.png)
+![Diagrama de actividad - Inscribirse en clases](media/images/19_image.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -137,7 +135,7 @@
 
 ## Cancelar inscripción
 
-![Diagrama de actividad - Cancelar inscripción](media/20_image.png)
+![Diagrama de actividad - Cancelar inscripción](media/images/20_image.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -145,7 +143,7 @@
 
 ## Registrar entrenador
 
-![Diagrama de actividad - Registrar entrenador](media/21_image.png)
+![Diagrama de actividad - Registrar entrenador](media/images/21_image.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -153,7 +151,7 @@
 
 ## Iniciar sesión
 
-![Diagrama de actividad - Iniciar sesión](media/22_image.png)
+![Diagrama de actividad - Iniciar sesión](media/images/22_image.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -161,7 +159,7 @@
 
 ## Recuperar contraseña
 
-![Diagrama de actividad - Recuperar contraseña](media/23_image.png)
+![Diagrama de actividad - Recuperar contraseña](media/images/23_image.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
