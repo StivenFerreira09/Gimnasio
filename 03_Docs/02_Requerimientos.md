@@ -141,7 +141,7 @@
 |-------|----------------------------------------------------------------------------------|
 | RN-13 | Toda clase debe tener un nombre, horario y capacidad máxima definidos.           |
 | RN-14 | El sistema debe evitar la creación de clases que generen conflictos de horario y espacio. |
-| RN-15 | Una clase puede tener un entrenador asignado previamente registrado en el sistema. |
+| RN-15 | Toda clase debe tener un entrenador asignado previamente registrado en el sistema. |
 | RN-16 | Un entrenador no debe ser asignado a dos clases que se desarrollen en el mismo horario. |
 | RN-17 | Un cliente solamente puede inscribirse en una clase cuando existen cupos disponibles. |
 | RN-18 | El número de clientes inscritos en una clase no puede superar su capacidad máxima. |
