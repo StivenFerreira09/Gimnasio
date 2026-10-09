@@ -71,7 +71,7 @@
 
 # 15. Diagrama de clases:
 
-![Diagrama de clases](media/imaes/07_diagrama_de_clases_mvc.drawio.png)
+![Diagrama de clases](media/images/07_diagrama_de_clases_mvc.drawio.png)
 
 # 16. Diagrama de secuencia:
 
