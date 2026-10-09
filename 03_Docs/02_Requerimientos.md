@@ -79,7 +79,7 @@
 
 | ID      | Requisito                                                                 |
 |---------|---------------------------------------------------------------------------|
-| RNF-01  | | RNF-01  | Las contraseñas de los usuarios deberán almacenarse mediante un hash seguro de contraseña; nunca en texto plano ni con cifrado reversible. | |
+| RNF-01  | Las contraseñas de los usuarios deberán almacenarse mediante un hash seguro de contraseña; nunca en texto plano ni con cifrado reversible. |
 | RNF-02  | El sistema deberá implementar control de acceso basado en roles (RBAC), de acuerdo con los permisos configurados para cada rol. |
 | RNF-11  | Los códigos de recuperación de contraseña no deberán almacenarse en texto plano ni registrarse en los registros (logs) del sistema. |
 
