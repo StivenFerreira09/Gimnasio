@@ -227,3 +227,141 @@ Esta regla no se puede expresar solo con la notación de la especialización. Se
 Archivo editable: [08_Modelo_Entidad_Relacion.drawio](media/diagrams/08_Diagrama_modelo_ER.drawio)
 
 **Notación:** Chen. Rectángulo = entidad; rectángulo con rombo = entidad asociativa; rombo = relación (con su tipo 1:N o N:M); óvalo = atributo; óvalo con texto subrayado = clave primaria; óvalo punteado = atributo derivado; círculo con "d" = especialización disjunta; la línea simple desde USUARIO indica que es parcial. Los valores (mínimo, máximo) junto a cada entidad indican su participación.
+
+# Base de datos: modelo lógico relacional
+
+El modelo lógico se construyó a partir del modelo conceptual de la Fase 4 (secciones 18 a 22), los requisitos, reglas de negocio y restricciones (02) y el modelo UML (03). El motor de base de datos definido para el proyecto es MySQL (RES-03). Este documento continúa la numeración de la Fase 4 y es el insumo directo del DDL de la Persona 3.
+
+## 23. Convenciones y mapeo de tipos de datos
+
+**Nomenclatura física.** Del modelo conceptual (camelCase) al lógico se pasa a **snake\_case en minúsculas, sin tildes ni eñes**, con prefijo `id_` en las claves (`idUsuario` → `id_usuario`, `nombreUsuario` → `nombre_usuario`). La conversión es mecánica y 1 a 1, así que se conserva la trazabilidad con la Fase 4. Además:
+
+- Las claves foráneas se nombran por el **rol que cumplen**, no por la tabla de origen: `membresia.id_cliente`, `inscripcion.id_cliente`, `programacion.id_entrenador`, `horario_entrenador.id_entrenador`. Así se entiende qué representa cada FK aunque apunte a `cliente.id_usuario` o `entrenador.id_usuario`.
+- Las restricciones llevan nombre explícito: `uq_<tabla>_<columna>`, `chk_<tabla>_<regla>`, `fk_<tabla>_<padre>` e `idx_<tabla>_<columnas>`.
+
+**Motor y configuración.** MySQL **8.0.16 o superior** (RES-03; antes de esa versión los CHECK se aceptan pero no se aplican). Todas las tablas usan `ENGINE=InnoDB` (obligatorio para claves foráneas) y `CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci`: admite tildes y «ñ» y compara sin distinguir mayúsculas ni tildes, por lo que `nombre_usuario` es único sin importar cómo se escriba (RN-51). Se recomienda fijar la zona horaria de la sesión en `America/Bogota`, porque las comparaciones de vencimiento usan `CURDATE()`.
+
+| Tipo conceptual (Fase 4) | Tipo MySQL | Uso y justificación |
+| --- | --- | --- |
+| Entero identificador | `BIGINT AUTO_INCREMENT` | Todas las PK artificiales (sección 20 de la Fase 4). Mapea 1 a 1 con `Long` en JPA/Hibernate; las FK usan exactamente el mismo tipo, requisito de InnoDB. |
+| Entero (cantidad o conteo) | `INT` | `capacidad_maxima`, `capacidad`, `duracion`, `limite`, `dias_aviso_vencimiento`; los CHECK impiden valores no positivos. |
+| Decimal | `DECIMAL(10,2)` | `precio`: valor monetario exacto, sin error de punto flotante. |
+| Texto corto | `VARCHAR(n)` | `nombre`, `documento`, `telefono`, `correo`, `nombre_usuario`, con la longitud ajustada a cada atributo. |
+| Contraseña | `VARCHAR(255)` | Guarda el hash (bcrypt o Argon2), nunca el texto plano (RNF-01). |
+| Texto descriptivo | `VARCHAR(255)` | `descripcion` de rol, permiso, beneficio y actividad. |
+| Fecha / Hora | `DATE` / `TIME` | Fechas de membresía e inscripción sin hora; `hora_inicio` y `hora_fin` sin fecha. |
+| Lista de valores | `ENUM(...)` | Dominio cerrado del modelo conceptual. Los valores van **sin tildes** (`'Miercoles'`, `'Sabado'`, `'Dias'`) para evitar problemas de codificación en scripts y en el mapeo a enumeraciones del backend; la interfaz muestra la etiqueta con tilde. |
+| Bandera auxiliar | `TINYINT` (columna generada) | Solo `membresia.es_actual` e `inscripcion.es_activa`; existen únicamente para sostener un UNIQUE parcial (sección 29.3). |
+
+**Atributos derivados que no se almacenan.** El cupo disponible de una programación, la clasificación de una membresía como Activa, Vencida o Próxima a vencer y el conteo de inscripciones por período se calculan en consulta o en una vista (sección 30.2). Guardarlos obligaría a sincronizarlos y crearía inconsistencias.
+
+## 24. Normalización: 1FN, 2FN y 3FN
+
+Se verificó cada una de las 17 tablas contra las tres primeras formas normales, en ese orden, partiendo de las 14 entidades de la Fase 4 (sección 18.1) y de sus atributos (sección 19). **Resultado: todas cumplen 3FN.** No fue necesario descomponer ninguna entidad adicional, porque la Fase 4 ya había separado los grupos repetitivos; el trabajo de esta fase fue confirmarlo, resolver las relaciones N:M (sección 26) y fijar qué datos derivables se guardan y cuáles no.
+
+### 24.1. Primera forma normal (1FN)
+
+Se cumple en las 17 tablas: cada atributo es atómico (un solo dato por celda), cada tabla tiene una PK que identifica sus filas y no hay grupos repetitivos. Los casos de «varios valores por entidad» ya están en tablas propias: varios horarios de un entrenador en `horario_entrenador`, el historial de membresías de un cliente en `membresia`, sus inscripciones en `inscripcion`, y las actividades y beneficios de cada plan en tablas intermedias (sección 26). El horario se guarda como **un bloque por fila** (día, `hora_inicio`, `hora_fin`) y no como columnas lunes a domingo.
+
+### 24.2. Segunda forma normal (2FN)
+
+Se cumple porque ningún atributo no clave depende solo de una parte de la clave primaria. En las 14 tablas con PK de una sola columna la 2FN es trivial: no existe una «subparte» de la clave. En las 3 tablas con PK compuesta se revisó cada atributo contra las dos mitades de la clave:
+
+- `tipo_membresia_actividad.limite` y `.periodo_limite` dependen del par completo (plan, actividad): el límite es de *ese* plan aplicado a *esa* actividad, no del plan ni de la actividad por separado.
+- `tipo_membresia_beneficio.cantidad` depende igualmente del par (plan, beneficio).
+- `rol_permiso` no tiene atributos propios, por lo que no hay dependencia parcial posible.
+
+### 24.3. Tercera forma normal (3FN)
+
+Ningún atributo no clave depende de otro atributo no clave. Los puntos donde la 3FN suele fallar, y la decisión tomada en cada uno:
+
+| Atributo | ¿Se puede derivar? | Decisión | Motivo |
+| --- | --- | --- | --- |
+| `membresia.fecha_vencimiento` | De `fecha_inicio` y la duración del plan (RN-09), pero solo en el momento del registro | **Se almacena** | Es una fotografía histórica: si el plan cambia, las membresías ya emitidas conservan su vencimiento. |
+| Estado Activa o Vencida | Sí, de `fecha_vencimiento` frente a la fecha actual (RN-10) | **No se almacena** | Guardarlo exigiría un proceso diario de sincronización y crearía una dependencia transitiva real. |
+| Estado Reemplazada | No: depende de que se haya registrado otra membresía (RN-38) | **Se almacena** en `membresia.estado` | Es el único dato de estado que no sale de las fechas. Valores: `Registrada` y `Reemplazada`. |
+| Próxima a vencer | Sí, de `fecha_vencimiento` y `configuracion.dias_aviso_vencimiento` (RN-28, RN-49) | **No se almacena** | Cambia al modificar la configuración y con el paso de los días. |
+| Cupo disponible | Sí: `capacidad_maxima` menos las inscripciones Activa (RN-45) | **No se almacena** | Cambiaría con cada alta o cancelación; el sobrecupo se evita con bloqueo (sección 30.1). |
+| `es_actual` y `es_activa` | Sí, a partir de `estado` | **Columna generada** por el motor | Solo sostienen un UNIQUE parcial. La dependencia `estado` → bandera es técnicamente transitiva, pero la mantiene MySQL: la aplicación no las escribe y no pueden quedar inconsistentes. |
+
+El nombre `Registrada` es deliberado: es un estado **almacenado** que no dice si la membresía ya venció. La palabra «Activa» se reserva para el estado calculado (RN-10).
+
+### 24.4. Verificación tabla por tabla
+
+Resumen de la verificación de las 17 tablas. «Otras claves únicas» son las claves candidatas además de la PK (sección 20 de la Fase 4); la columna siguiente lista los atributos que dependen de la clave. En todas las tablas el único determinante de esos atributos es la PK o una de esas claves únicas.
+
+| Tabla | Clave primaria | Otras claves únicas | Atributos que dependen de la clave | 1FN | 2FN | 3FN |
+| --- | --- | --- | --- | --- | --- | --- |
+| `rol` | `id_rol` | `nombre` | `descripcion` | ✓ | ✓ | ✓ |
+| `permiso` | `id_permiso` | `nombre` | `descripcion` | ✓ | ✓ | ✓ |
+| `rol_permiso` | (`id_rol`, `id_permiso`) | — | ninguno | ✓ | ✓ | ✓ |
+| `usuario` | `id_usuario` | `documento`, `nombre_usuario` | `id_rol`, `contrasena`, `nombre`, `telefono`, `correo`, `estado` | ✓ | ✓ | ✓ |
+| `cliente` | `id_usuario` | — | ninguno | ✓ | ✓ | ✓ |
+| `entrenador` | `id_usuario` | — | ninguno | ✓ | ✓ | ✓ |
+| `horario_entrenador` | `id_horario_entrenador` | — | `id_entrenador`, `dia_semana`, `hora_inicio`, `hora_fin` | ✓ | ✓ | ✓ |
+| `tipo_membresia` | `id_tipo_membresia` | `nombre` | `precio`, `duracion`, `unidad_duracion` | ✓ | ✓ | ✓ |
+| `beneficio` | `id_beneficio` | `nombre` | `descripcion`, `estado` | ✓ | ✓ | ✓ |
+| `actividad` | `id_actividad` | — | `nombre_actividad`, `descripcion`, `capacidad_maxima`, `estado` | ✓ | ✓ | ✓ |
+| `espacio` | `id_espacio` | — | `nombre`, `capacidad` | ✓ | ✓ | ✓ |
+| `configuracion` | `id_configuracion` | — | `dias_aviso_vencimiento` | ✓ | ✓ | ✓ |
+| `tipo_membresia_actividad` | (`id_tipo_membresia`, `id_actividad`) | — | `limite`, `periodo_limite` | ✓ | ✓ | ✓ |
+| `tipo_membresia_beneficio` | (`id_tipo_membresia`, `id_beneficio`) | — | `cantidad` | ✓ | ✓ | ✓ |
+| `membresia` | `id_membresia` | — | `id_cliente`, `id_tipo_membresia`, `fecha_inicio`, `fecha_vencimiento`, `estado` | ✓ | ✓ | ✓ |
+| `programacion` | `id_programacion` | — | `id_actividad`, `id_espacio`, `id_entrenador`, `dia_semana`, `hora_inicio`, `hora_fin`, `estado` | ✓ | ✓ | ✓ |
+| `inscripcion` | `id_inscripcion` | — | `id_cliente`, `id_programacion`, `fecha_inscripcion`, `estado` | ✓ | ✓ | ✓ |
+
+Como todo determinante es una clave, el modelo tampoco viola la forma normal de Boyce-Codd, así que no hace falta ir más allá de la 3FN. Las columnas generadas `es_actual` y `es_activa` no figuran en la tabla: las calcula MySQL a partir de `estado` (sección 24.3).
+
+## 25. Mapeo de la especialización USUARIO → CLIENTE / ENTRENADOR
+
+**Estrategia elegida: una tabla por subtipo, cuya PK es a la vez FK al supertipo** («class table inheritance»). Es la que ya insinúa la Fase 4 (sección 19.4), donde CLIENTE y ENTRENADOR solo declaran `idUsuario` como clave primaria y referencia a USUARIO.
+
+```
+usuario     (id_usuario PK, id_rol FK, nombre_usuario, contrasena, nombre, documento, telefono, correo, estado)
+cliente     (id_usuario PK, FK → usuario.id_usuario)
+entrenador  (id_usuario PK, FK → usuario.id_usuario)
+```
+
+| Alternativa | Por qué se descarta o se elige |
+| --- | --- |
+| Una sola tabla `usuario` con todos los atributos | No aplica: ni CLIENTE ni ENTRENADOR tienen atributos propios, así que no hay columnas que fusionar. Además se perdería la tabla precisa a la que apuntan las FK de `membresia` e `inscripcion` (cliente) y de `programacion` y `horario_entrenador` (entrenador), que es lo que impide asignar una membresía a un administrador o poner a un cliente a dirigir una clase. |
+| Una tabla por subtipo **sin** tabla `usuario` | Rompería la unicidad de `documento` y `nombre_usuario` entre todos los usuarios (RN-02, RN-51) y Administrador y Recepcionista quedarían sin tabla donde existir. |
+| **Subtipo con PK = FK (la elegida)** | `usuario` sigue siendo el único punto de unicidad e inicio de sesión, sin columnas nulas por subtipo, y las FK de las demás tablas apuntan con precisión a `cliente` o a `entrenador`. |
+
+**Disyunción y parcialidad** (la restricción de la Fase 4 «disjunta y parcial»):
+
+- *Disjunta:* un `id_usuario` puede estar en `cliente` **o** en `entrenador`, nunca en ambas.
+- *Parcial:* puede no estar en ninguna; es el caso de Administrador y Recepcionista.
+
+**Correspondencia rol ↔ subtipo (RN-31).** PK y FK por sí solas no impiden insertar en `cliente` a un usuario con rol Entrenador, ni que un usuario con rol Cliente se quede sin su fila en `cliente`. La Fase 4 dejó esa garantía «en el modelo lógico o en la capa de servicio» (sección 21); aquí se resuelve en el motor con cuatro triggers, probados en MySQL 8:
+
+| Trigger | Evento | Qué hace |
+| --- | --- | --- |
+| `trg_cliente_bi` | BEFORE INSERT en `cliente` | Rechaza la fila (SQLSTATE 45000) si el usuario no tiene rol Cliente. |
+| `trg_entrenador_bi` | BEFORE INSERT en `entrenador` | Rechaza la fila si el usuario no tiene rol Entrenador. |
+| `trg_usuario_ai` | AFTER INSERT en `usuario` | Crea la fila del subtipo según el rol: Cliente → `cliente`, Entrenador → `entrenador`; Administrador y Recepcionista no tienen subtipo. |
+| `trg_usuario_au` | AFTER UPDATE en `usuario` | Si cambia `id_rol`, elimina la fila del subtipo anterior y crea la del nuevo. Si el subtipo anterior ya tiene membresías, inscripciones o programaciones, el DELETE falla por las FK RESTRICT y **todo el cambio de rol se revierte**; los bloques de `horario_entrenador` no lo impiden, porque se eliminan en cascada junto con el subtipo. |
+
+Así el servicio solo inserta en `usuario` y el subtipo aparece solo; el cambio de rol de un usuario con historial queda bloqueado por la propia base de datos. El código completo de los cuatro triggers está en `triggers.sql` (referencia validada, sección 33.4).
+
+## 26. Descomposición de las relaciones N:M en tablas intermedias
+
+Las relaciones N:M del modelo conceptual se convierten en tablas intermedias. En las tres relaciones puras, la clave primaria es **compuesta** por las dos claves foráneas que hereda de las entidades que relaciona; es el estándar para resolver N:M y garantiza que el mismo par no se repita. La cuarta, INSCRIPCION, sigue otro patrón por una razón que se explica más abajo.
+
+| Relación conceptual | Tabla resultante | Atributos propios | Clave primaria | Claves foráneas |
+| --- | --- | --- | --- | --- |
+| ROL **concede** PERMISO | `rol_permiso` | — (relación pura) | (`id_rol`, `id_permiso`) | `id_rol` → `rol` · `id_permiso` → `permiso` |
+| TIPO\_MEMBRESIA **permite** ACTIVIDAD | `tipo_membresia_actividad` | `limite`, `periodo_limite` | (`id_tipo_membresia`, `id_actividad`) | `id_tipo_membresia` → `tipo_membresia` · `id_actividad` → `actividad` |
+| TIPO\_MEMBRESIA **incluye** BENEFICIO | `tipo_membresia_beneficio` | `cantidad` | (`id_tipo_membresia`, `id_beneficio`) | `id_tipo_membresia` → `tipo_membresia` · `id_beneficio` → `beneficio` |
+| CLIENTE — PROGRAMACION, mediante INSCRIPCION | `inscripcion` | `fecha_inscripcion`, `estado` | `id_inscripcion` (simple, artificial) | `id_cliente` → `cliente` · `id_programacion` → `programacion` |
+
+**Por qué INSCRIPCION no usa clave compuesta.** En las otras tres el par (A, B) es irrepetible. INSCRIPCION ya nació en la Fase 4 como **entidad asociativa con identidad propia** (sección 18.1) porque un mismo cliente puede volver a inscribirse en la misma programación después de cancelar (RN-42): el par (`id_cliente`, `id_programacion`) **sí puede repetirse**, en filas con estados distintos. Por eso lleva PK simple `id_inscripcion`.
+
+Lo que sí se prohíbe es tener dos inscripciones **activas** del mismo cliente en la misma programación. Se logra con `UNIQUE (id_cliente, id_programacion, es_activa)`, donde `es_activa` es una columna generada que vale 1 si el estado es Activa y NULL en cualquier otro caso. MySQL permite varios NULL en un índice único, así que conviven muchas canceladas pero solo una activa (sección 29.3).
+
+**Atributos propios de las relaciones** (confirmados contra la sección 19.14 de la Fase 4):
+
+- `limite` es **NULL cuando el plan no limita** esa actividad (RN-39). Si tiene valor, `periodo_limite` (`Semana`, `Mes` o `Vigencia`) es obligatorio, y viceversa; lo refuerzan dos CHECK.
+- `cantidad` es solo informativa (RN-46): el sistema no controla su consumo, así que es texto libre y no un contador que se descuente.
+
+**Borrado.** Las tres tablas intermedias usan `ON DELETE CASCADE`: sus filas no tienen sentido sin alguno de sus dos padres. En la práctica los catálogos con `estado` se desactivan en lugar de eliminarse (RN-55), y un plan con membresías emitidas no se puede borrar porque `membresia` lo referencia con RESTRICT.
