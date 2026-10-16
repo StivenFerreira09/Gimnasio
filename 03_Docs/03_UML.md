@@ -77,35 +77,35 @@
 
 ## GESTIÓN DE CLIENTES:
 
-![Diagrama de secuencia - Gestión de Clientes](media/images/08_image.png)
+![Diagrama de secuencia - Gestión de Clientes](media/images/08_Diagrama_Secuencia_Gestion_de_Clientes.png)
 
 ## GESTIÓN DE MEMBRESÍAS:
 
-![Diagrama de secuencia - Gestión de Membresías](media/images/09_image.png)
+![Diagrama de secuencia - Gestión de Membresías](media/images/09_Diagrama_Secuencia_Gestion_de_Membresias.png)
 
 ## GESTIÓN DE ACTIVIDADES:
 
-![Diagrama de secuencia - Gestión de Actividades](media/images/10_image.png)
+![Diagrama de secuencia - Gestión de Actividades](media/images/10_Diagrama_Secuencia_Gestion_de_Actividades.png)
 
 ## GESTIÓN DE ENTRENADORES:
 
-![Diagrama de secuencia - Gestión de Entrenadores](media/images/11_image.png)
+![Diagrama de secuencia - Gestión de Entrenadores](media/images/11_Diagrama_Secuencia_Gestion_de_Entrenadores.png)
 
 ## DASHBOARD Y REPORTES:
 
-![Diagrama de secuencia - Dashboard y Reportes](media/images/12_image.png)
+![Diagrama de secuencia - Dashboard y Reportes](media/images/12_Diagrama_Secuencia_Dashboard_y_Reportes.png)
 
 ## AUTENTICACIÓN Y PERMISOS:
 
-![Diagrama de secuencia - Autenticación y Permisos](media/images/13_image.png)
+![Diagrama de secuencia - Autenticación y Permisos](media/images/13_Diagrama_Secuencia_Autenticacion_y_Permisos.png)
 
 # 17. Diagrama de actividades:
 
-![Diagrama de actividades](media/images/14_image.png)
+![Diagrama de actividades](media/images/14_Diagrama_Actividades_Resumen.png)
 
 ## Registrar cliente
 
-![Diagrama de actividad - Registrar cliente](media/images/15_image.png)
+![Diagrama de actividad - Registrar cliente](media/images/15_Diagrama_Actividad_Registrar_Cliente.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -113,7 +113,7 @@
 
 ## Asignar membresía
 
-![Diagrama de actividad - Asignar membresía](media/images/16_image.png)
+![Diagrama de actividad - Asignar membresía](media/images/16_Diagrama_Actividad_Asignar_Membresia.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -121,7 +121,7 @@
 
 ## Renovar membresía
 
-![Diagrama de actividad - Renovar membresía](media/images/17_image.png)
+![Diagrama de actividad - Renovar membresía](media/images/17_Diagrama_Actividad_Renovar_Membresia.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -129,7 +129,7 @@
 
 ## Programar actividad y asignar entrenador
 
-![Diagrama de actividad - Programar actividad y asignar entrenador](media/images/18_image.png)
+![Diagrama de actividad - Programar actividad y asignar entrenador](media/images/18_Diagrama_Actividad_Programar_Actividad.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -138,7 +138,7 @@
 
 ## Inscribirse en una actividad
 
-![Diagrama de actividad - Inscribirse en una actividad](media/images/19_image.png)
+![Diagrama de actividad - Inscribirse en una actividad](media/images/19_Diagrama_Actividad_Inscribirse_en_Actividad.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -146,7 +146,7 @@
 
 ## Cancelar inscripción
 
-![Diagrama de actividad - Cancelar inscripción](media/images/20_image.png)
+![Diagrama de actividad - Cancelar inscripción](media/images/20_Diagrama_Actividad_Cancelar_Inscripcion.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -154,7 +154,7 @@
 
 ## Registrar entrenador
 
-![Diagrama de actividad - Registrar entrenador](media/images/21_image.png)
+![Diagrama de actividad - Registrar entrenador](media/images/21_Diagrama_Actividad_Registrar_Entrenador.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -162,7 +162,7 @@
 
 ## Iniciar sesión
 
-![Diagrama de actividad - Iniciar sesión](media/images/22_image.png)
+![Diagrama de actividad - Iniciar sesión](media/images/22_Diagrama_Actividad_Iniciar_Sesion.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -170,7 +170,7 @@
 
 ## Recuperar contraseña
 
-![Diagrama de actividad - Recuperar contraseña](media/images/23_image.png)
+![Diagrama de actividad - Recuperar contraseña](media/images/23_Diagrama_Actividad_Recuperar_Contrasena.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
