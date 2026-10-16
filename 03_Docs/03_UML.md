@@ -11,7 +11,7 @@
 | RF-05 |  | Cambiar el estado de un cliente (activo/inactivo), con confirmación previa. Un cliente inactivo no puede iniciar sesión. |
 | RF-06 |  | Consultar la membresía propia: tipo, actividades incluidas con sus límites, beneficios, estado y fecha de vencimiento. |
 
-![Diagrama de casos de uso - Gestión de Membresías](media/images/02_image.png)
+![Diagrama de casos de uso - Gestión de Membresías](media/images/02_Diagrama_Modulo_Gestion_de_Membresias.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -23,7 +23,7 @@
 | RF-29 |  | Gestionar el catálogo de beneficios del gimnasio: registrar, editar, activar y desactivar beneficios. |
 | RF-30 |  | Configurar las actividades que incluye cada tipo de membresía, con su límite de inscripciones y el período del límite (o sin límite), y los beneficios informativos que incluye. |
 
-![Diagrama de casos de uso - Gestión de Actividades](media/images/03_image.png)
+![Diagrama de casos de uso - Gestión de Actividades](media/images/03_Diagrama_Modulo_Gestion_de_Clases.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -39,7 +39,7 @@
 | RF-32 |  | Gestionar los espacios del gimnasio: registrar y editar espacios con nombre y capacidad. |
 | RF-33 |  | Cancelar una actividad programada, cancelando automáticamente sus inscripciones activas. |
 
-![Diagrama de casos de uso - Gestión de Entrenadores](media/images/04_image.png)
+![Diagrama de casos de uso - Gestión de Entrenadores](media/images/04_Diagrama_Modulo_Gestion_de_Entrenadores.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -50,14 +50,14 @@
 | RF-34 |  | Definir el horario fijo de cada entrenador (día, hora de inicio y hora de fin). |
 | RF-35 |  | Cambiar el estado de un entrenador (activo/inactivo). Para desactivarlo, sus actividades programadas deben haberse reasignado previamente. |
 
-![Diagrama de casos de uso - Panel de Control](media/images/05_image.png)
+![Diagrama de casos de uso - Panel de Control](media/images/05_Diagrama_Modulo_Panel_de_Control.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
 | RF-24 | Módulo 5: Panel de Control | Mostrar un panel con: clientes activos, membresías activas/vencidas, membresías próximas a vencer (según los días de aviso configurados) y actividades programadas. |
 | RF-36 |  | Configurar los días de aviso con los que una membresía se considera próxima a vencer. |
 
-![Diagrama de casos de uso - Autenticación y Permisos](media/images/06_image.png)
+![Diagrama de casos de uso - Autenticación y Permisos](media/images/06_Diagrama_Modulo_Autenticacion_y_Permisos.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
