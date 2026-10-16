@@ -1,6 +1,6 @@
 # 14. Diagrama de casos de uso:
 
-![Diagrama de casos de uso - Gestión de Clientes](media/images/01_Diagrama_Modulo_Gestion_de_Clientes.png)
+![Diagrama de casos de uso - Gestión de Clientes](media/images/01_Diagrama_Modulo_Gestion_de_Clientes_V1.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -11,7 +11,7 @@
 | RF-05 |  | Cambiar el estado de un cliente (activo/inactivo), con confirmación previa. Un cliente inactivo no puede iniciar sesión. |
 | RF-06 |  | Consultar la membresía propia: tipo, actividades incluidas con sus límites, beneficios, estado y fecha de vencimiento. |
 
-![Diagrama de casos de uso - Gestión de Membresías](media/images/02_Diagrama_Modulo_Gestion_de_Membresias.png)
+![Diagrama de casos de uso - Gestión de Membresías](media/images/02_Diagrama_Modulo_Gestion_de_Membresias_V2.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
