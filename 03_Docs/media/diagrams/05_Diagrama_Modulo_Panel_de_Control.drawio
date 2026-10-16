@@ -1,0 +1,28 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="05" name="Diagrama de Casos de Uso - Módulo 5: Panel de Control (Dashboard)">
+    <mxGraphModel dx="1178" dy="648" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="boundary" parent="1" style="swimlane;whiteSpace=wrap;html=1;startSize=32;horizontal=1;fontStyle=1;fontSize=15;fillColor=#ffffff;strokeColor=#475569;strokeWidth=1.5;collapsible=0;swimlaneLine=0;fontColor=#0f172a;align=center;" value="Módulo 5: Panel de Control" vertex="1">
+          <mxGeometry height="268" width="660" x="330" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uc1" parent="boundary" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f1f5f9;strokeColor=#64748b;strokeWidth=1.5;fontSize=13;fontColor=#0f172a;" value="Visualizar panel&#xa;de control (Dashboard)" vertex="1">
+          <mxGeometry height="54" width="270" x="30" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc2" parent="boundary" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.5;fontSize=13;strokeColor=#64748B;" value="Configurar días de aviso&#xa;de vencimiento" vertex="1">
+          <mxGeometry height="54" width="270" x="30" y="154" as="geometry" />
+        </mxCell>
+        <mxCell id="actor_administrador" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=13;fontColor=#0f172a;strokeColor=#475569;fillColor=#ffffff;strokeWidth=1.5;" value="Administrador" vertex="1">
+          <mxGeometry height="80" width="40" x="110" y="159" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" edge="1" parent="1" source="actor_administrador" style="endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#475569;strokeWidth=1.2;" target="uc1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" edge="1" parent="1" source="actor_administrador" style="endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#475569;strokeWidth=1.2;" target="uc2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

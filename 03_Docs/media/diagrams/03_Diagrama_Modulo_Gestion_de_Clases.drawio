@@ -1,0 +1,130 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="03" name="Diagrama de Casos de Uso - Módulo 3: Gestión de Clases">
+    <mxGraphModel dx="2438" dy="1340" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1184" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="boundary" parent="1" style="swimlane;whiteSpace=wrap;html=1;startSize=32;horizontal=1;fontStyle=1;fontSize=15;fillColor=#ffffff;strokeColor=#475569;strokeWidth=1.5;collapsible=0;swimlaneLine=0;fontColor=#0f172a;align=center;" value="Módulo 3: Gestión de Clases" vertex="1">
+          <mxGeometry height="1024" width="660" x="330" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uc1" parent="boundary" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f1f5f9;strokeColor=#64748b;strokeWidth=1.5;fontSize=13;fontColor=#0f172a;" value="Consultar clases y&#xa;horarios propios" vertex="1">
+          <mxGeometry height="54" width="270" x="30" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="uc6" parent="boundary" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f1f5f9;strokeColor=#64748b;strokeWidth=1.5;fontSize=13;fontColor=#0f172a;" value="Inscribirse en clase" vertex="1">
+          <mxGeometry height="54" width="270" x="30" y="154" as="geometry" />
+        </mxCell>
+        <mxCell id="uc4" parent="boundary" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f1f5f9;strokeColor=#64748b;strokeWidth=1.5;fontSize=13;fontColor=#0f172a;" value="Cancelar inscripción" vertex="1">
+          <mxGeometry height="54" width="270" x="30" y="238" as="geometry" />
+        </mxCell>
+        <mxCell id="uc5" parent="boundary" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f1f5f9;strokeColor=#64748b;strokeWidth=1.5;fontSize=13;fontColor=#0f172a;" value="Consultar clases&#xa;inscritas" vertex="1">
+          <mxGeometry height="54" width="270" x="30" y="322" as="geometry" />
+        </mxCell>
+        <mxCell id="uc3" parent="boundary" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f1f5f9;strokeColor=#64748b;strokeWidth=1.5;fontSize=13;fontColor=#0f172a;" value="Consultar clases&#xa;disponibles" vertex="1">
+          <mxGeometry height="54" width="270" x="30" y="406" as="geometry" />
+        </mxCell>
+        <mxCell id="uc2" parent="boundary" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f1f5f9;strokeColor=#64748b;strokeWidth=1.5;fontSize=13;fontColor=#0f172a;" value="Consultar clientes&#xa;inscritos" vertex="1">
+          <mxGeometry height="54" width="270" x="30" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="uc12" parent="boundary" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f1f5f9;strokeColor=#64748b;strokeWidth=1.5;fontSize=13;fontColor=#0f172a;" value="Crear clase" vertex="1">
+          <mxGeometry height="54" width="270" x="30" y="574" as="geometry" />
+        </mxCell>
+        <mxCell id="uc13" parent="boundary" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f1f5f9;strokeColor=#64748b;strokeWidth=1.5;fontSize=13;fontColor=#0f172a;" value="Asignar entrenador&#xa;a clase" vertex="1">
+          <mxGeometry height="54" width="270" x="30" y="658" as="geometry" />
+        </mxCell>
+        <mxCell id="uc14" parent="boundary" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.5;fontSize=13;strokeColor=#64748B;" value="Cancelar clase&#xa;programada" vertex="1">
+          <mxGeometry height="54" width="270" x="30" y="742" as="geometry" />
+        </mxCell>
+        <mxCell id="uc15" parent="boundary" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.5;fontSize=13;strokeColor=#64748B;" value="Gestionar actividades" vertex="1">
+          <mxGeometry height="54" width="270" x="30" y="826" as="geometry" />
+        </mxCell>
+        <mxCell id="uc16" parent="boundary" style="ellipse;whiteSpace=wrap;html=1;strokeWidth=1.5;fontSize=13;strokeColor=#64748B;" value="Gestionar espacios" vertex="1">
+          <mxGeometry height="54" width="270" x="30" y="910" as="geometry" />
+        </mxCell>
+        <mxCell id="uc10" parent="boundary" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f1f5f9;strokeColor=#64748b;strokeWidth=1.5;fontSize=13;fontColor=#0f172a;" value="Validar cupo&#xa;disponible" vertex="1">
+          <mxGeometry height="54" width="240" x="390" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="uc11" parent="boundary" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f1f5f9;strokeColor=#64748b;strokeWidth=1.5;fontSize=13;fontColor=#0f172a;" value="Validar membresía&#xa;activa" vertex="1">
+          <mxGeometry height="54" width="240" x="390" y="179" as="geometry" />
+        </mxCell>
+        <mxCell id="uc9" parent="boundary" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f1f5f9;strokeColor=#64748b;strokeWidth=1.5;fontSize=13;fontColor=#0f172a;" value="Liberar cupo" vertex="1">
+          <mxGeometry height="54" width="240" x="390" y="238" as="geometry" />
+        </mxCell>
+        <mxCell id="uc7" parent="boundary" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f1f5f9;strokeColor=#64748b;strokeWidth=1.5;fontSize=13;fontColor=#0f172a;" value="Validar conflicto de&#xa;horario y espacio" vertex="1">
+          <mxGeometry height="54" width="240" x="390" y="574" as="geometry" />
+        </mxCell>
+        <mxCell id="uc8" parent="boundary" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f1f5f9;strokeColor=#64748b;strokeWidth=1.5;fontSize=13;fontColor=#0f172a;" value="Validar disponibilidad&#xa;del entrenador" vertex="1">
+          <mxGeometry height="54" width="240" x="390" y="658" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_include13" edge="1" parent="boundary" source="uc6" style="endArrow=open;endSize=8;dashed=1;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#ffffff;fontSize=12;fontColor=#0f172a;strokeColor=#475569;strokeWidth=1.2;" target="uc10" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_include14" edge="1" parent="boundary" source="uc6" style="endArrow=open;endSize=8;dashed=1;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#ffffff;fontSize=12;fontColor=#0f172a;strokeColor=#475569;strokeWidth=1.2;" target="uc11" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_include15" edge="1" parent="boundary" source="uc4" style="endArrow=open;endSize=8;dashed=1;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#ffffff;fontSize=12;fontColor=#0f172a;strokeColor=#475569;strokeWidth=1.2;" target="uc9" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_include16" edge="1" parent="boundary" source="uc12" style="endArrow=open;endSize=8;dashed=1;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#ffffff;fontSize=12;fontColor=#0f172a;strokeColor=#475569;strokeWidth=1.2;" target="uc7" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_include17" edge="1" parent="boundary" source="uc13" style="endArrow=open;endSize=8;dashed=1;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=#ffffff;fontSize=12;fontColor=#0f172a;strokeColor=#475569;strokeWidth=1.2;" target="uc8" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="actor_entrenador" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=13;fontColor=#0f172a;strokeColor=#475569;fillColor=#ffffff;strokeWidth=1.5;" value="Entrenador" vertex="1">
+          <mxGeometry height="80" width="40" x="110" y="117" as="geometry" />
+        </mxCell>
+        <mxCell id="actor_cliente" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=13;fontColor=#0f172a;strokeColor=#475569;fillColor=#ffffff;strokeWidth=1.5;" value="Cliente" vertex="1">
+          <mxGeometry height="80" width="40" x="110" y="327" as="geometry" />
+        </mxCell>
+        <mxCell id="actor_recepcionista" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=13;fontColor=#0f172a;strokeColor=#475569;fillColor=#ffffff;strokeWidth=1.5;" value="Recepcionista" vertex="1">
+          <mxGeometry height="80" width="40" x="110" y="495" as="geometry" />
+        </mxCell>
+        <mxCell id="actor_administrador" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=13;fontColor=#0f172a;strokeColor=#475569;fillColor=#ffffff;strokeWidth=1.5;" value="Administrador" vertex="1">
+          <mxGeometry height="80" width="40" x="110" y="789" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" edge="1" parent="1" source="actor_entrenador" style="endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#475569;strokeWidth=1.2;" target="uc1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" edge="1" parent="1" source="actor_cliente" style="endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#475569;strokeWidth=1.2;" target="uc6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3" edge="1" parent="1" source="actor_cliente" style="endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#475569;strokeWidth=1.2;" target="uc4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4" edge="1" parent="1" source="actor_cliente" style="endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#475569;strokeWidth=1.2;" target="uc5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge5" edge="1" parent="1" source="actor_cliente" style="endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#475569;strokeWidth=1.2;" target="uc3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge6" edge="1" parent="1" source="actor_recepcionista" style="endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#475569;strokeWidth=1.2;" target="uc3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge7" edge="1" parent="1" source="actor_recepcionista" style="endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#475569;strokeWidth=1.2;" target="uc2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge8" edge="1" parent="1" source="actor_administrador" style="endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#475569;strokeWidth=1.2;" target="uc12" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge9" edge="1" parent="1" source="actor_administrador" style="endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#475569;strokeWidth=1.2;" target="uc13" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge10" edge="1" parent="1" source="actor_administrador" style="endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#475569;strokeWidth=1.2;" target="uc14" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge11" edge="1" parent="1" source="actor_administrador" style="endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#475569;strokeWidth=1.2;" target="uc15" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge12" edge="1" parent="1" source="actor_administrador" style="endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#475569;strokeWidth=1.2;" target="uc16" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_gen" edge="1" parent="1" style="endArrow=block;endFill=0;endSize=12;html=1;rounded=0;strokeColor=#475569;strokeWidth=1.2;" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="129.5" y="783" as="sourcePoint" />
+            <mxPoint x="130" y="604" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
