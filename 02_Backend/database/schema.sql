@@ -223,11 +223,8 @@ CREATE TABLE membresia (
     id_tipo_membresia BIGINT NOT NULL,
     fecha_inicio DATE NOT NULL,
     fecha_vencimiento DATE NOT NULL,
-    estado ENUM('Registrada', 'Reemplazada') NOT NULL DEFAULT 'Registrada',
-    es_actual TINYINT
-        GENERATED ALWAYS AS (IF(estado = 'Reemplazada', NULL, 1)) STORED,
+    estado ENUM('Activa', 'ProximaAVencer', 'Vencida', 'Reemplazada') NOT NULL DEFAULT 'Activa',
     CONSTRAINT pk_membresia PRIMARY KEY (id_membresia),
-    CONSTRAINT uq_membresia_una_actual UNIQUE (id_cliente, es_actual),
     CONSTRAINT chk_membresia_fechas CHECK (fecha_vencimiento > fecha_inicio),
     CONSTRAINT fk_membresia_cliente
         FOREIGN KEY (id_cliente) REFERENCES cliente (id_usuario)
@@ -282,11 +279,7 @@ CREATE TABLE inscripcion (
     id_programacion BIGINT NOT NULL,
     fecha_inscripcion DATE NOT NULL,
     estado ENUM('Activa', 'Cancelada') NOT NULL DEFAULT 'Activa',
-    es_activa TINYINT
-        GENERATED ALWAYS AS (IF(estado = 'Activa', 1, NULL)) STORED,
     CONSTRAINT pk_inscripcion PRIMARY KEY (id_inscripcion),
-    CONSTRAINT uq_inscripcion_una_activa
-        UNIQUE (id_cliente, id_programacion, es_activa),
     CONSTRAINT fk_inscripcion_cliente
         FOREIGN KEY (id_cliente) REFERENCES cliente (id_usuario)
         ON DELETE RESTRICT ON UPDATE CASCADE,
@@ -299,3 +292,62 @@ CREATE TABLE inscripcion (
 ) ENGINE = InnoDB
   CHARACTER SET = utf8mb4
   COLLATE = utf8mb4_0900_ai_ci;
+
+-- ============================================================
+-- Triggers de unicidad de membresias e inscripciones activas
+-- ============================================================
+
+DELIMITER $$
+
+CREATE TRIGGER trg_membresia_bi
+BEFORE INSERT ON membresia
+FOR EACH ROW
+BEGIN
+    DECLARE v_cliente BIGINT;
+    DECLARE v_vigentes INT;
+
+    IF NEW.estado <> 'Reemplazada' THEN
+        SELECT id_usuario INTO v_cliente
+        FROM cliente
+        WHERE id_usuario = NEW.id_cliente
+        FOR UPDATE;
+
+        SELECT COUNT(*) INTO v_vigentes
+        FROM membresia
+        WHERE id_cliente = NEW.id_cliente
+          AND estado <> 'Reemplazada';
+
+        IF v_vigentes > 0 THEN
+            SIGNAL SQLSTATE '45000'
+                SET MESSAGE_TEXT = 'El cliente ya tiene una membresia sin reemplazar (RN-38)';
+        END IF;
+    END IF;
+END$$
+
+CREATE TRIGGER trg_inscripcion_bi
+BEFORE INSERT ON inscripcion
+FOR EACH ROW
+BEGIN
+    DECLARE v_cliente BIGINT;
+    DECLARE v_activas INT;
+
+    IF NEW.estado = 'Activa' THEN
+        SELECT id_usuario INTO v_cliente
+        FROM cliente
+        WHERE id_usuario = NEW.id_cliente
+        FOR UPDATE;
+
+        SELECT COUNT(*) INTO v_activas
+        FROM inscripcion
+        WHERE id_cliente = NEW.id_cliente
+          AND id_programacion = NEW.id_programacion
+          AND estado = 'Activa';
+
+        IF v_activas > 0 THEN
+            SIGNAL SQLSTATE '45000'
+                SET MESSAGE_TEXT = 'El cliente ya tiene una inscripcion activa en esta programacion (RN-42)';
+        END IF;
+    END IF;
+END$$
+
+DELIMITER ;
