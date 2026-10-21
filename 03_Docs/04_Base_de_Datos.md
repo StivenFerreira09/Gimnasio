@@ -277,11 +277,13 @@ Ningún atributo no clave depende de otro atributo no clave. Los puntos donde la
 | Atributo | ¿Se puede derivar? | Decisión | Motivo |
 | --- | --- | --- | --- |
 | `membresia.fecha_vencimiento` | De `fecha_inicio` y la duración del plan (RN-09), pero solo en el momento del registro | **Se almacena** | Es una fotografía histórica: si el plan cambia, las membresías ya emitidas conservan su vencimiento. |
-| Estado de la membresía: Activa, Próxima a vencer o Vencida | Sí, de `fecha_vencimiento`, la fecha actual y `configuracion.dias_aviso_vencimiento` (RN-10, RN-28, RN-49) | **Se almacena** en `membresia.estado` | RF-10 y RN-10 exigen clasificar las membresías y consultarlas por estado; guardarlo deja `estado` como única fuente de verdad para listados, panel y avisos. Depende del día y de otra tabla, no de otra columna de `membresia`. Como cambia con el tiempo, lo recalcula el servicio (sección 30.3). |
-| Estado Reemplazada | No: depende de que se haya registrado otra membresía (RN-38) | **Se almacena** en el mismo `membresia.estado` | Dominio completo: `Activa`, `ProximaAVencer`, `Vencida` y `Reemplazada`. |
+| Estado de la membresía: Activa o Vencida | Sí, de `fecha_vencimiento` y la fecha actual (RN-10, RN-28) | **Se almacena** en `membresia.estado` | RF-10 y RN-10 exigen clasificar las membresías. `estado` es la única fuente de verdad; no existen columnas auxiliares `es_actual` ni `es_activa`. |
+| Estado «Próxima a vencer» | Sí: se calcula con `fecha_vencimiento` y `configuracion.dias_aviso_vencimiento` (RN-10, RN-49) | **No se almacena** | Es una clasificación derivada (sección 18.2). Se obtiene en consulta o en la capa de servicio, no como valor del ENUM. |
+| Estado Reemplazada | No: depende de que se haya registrado otra membresía (RN-38) | **Se almacena** en el mismo `membresia.estado` | Dominio completo almacenado: `Activa`, `Vencida`, `Cancelada` y `Reemplazada`. |
+| Estado Cancelada | No: es una acción explícita del negocio (cancelar una membresía vigente) | **Se almacena** en el mismo `membresia.estado` | Permite distinguir una membresía cancelada de una vencida o reemplazada; no se reclasifica automáticamente por fecha. |
 | Cupo disponible | Sí: `capacidad_maxima` menos las inscripciones Activa (RN-45) | **No se almacena** | Cambiaría con cada alta o cancelación; el sobrecupo se evita con bloqueo (sección 30.1). |
 
-**Una sola columna de estado.** `membresia.estado` es la única fuente de verdad del estado de una membresía: no existen columnas auxiliares ni banderas que lo dupliquen. El dominio no incluye `Cancelada` porque RF-10 y RN-10 solo hablan de membresías activas, vencidas y próximas a vencer; la cancelación existe en `inscripcion` y `programacion` (RN-43). La unicidad de la membresía no reemplazada y de la inscripción activa se valida con triggers (sección 29.3).
+**Una sola columna de estado.** `membresia.estado` es la única fuente de verdad del estado de una membresía: **no existen columnas auxiliares ni banderas (`es_actual`, `es_activa`) que lo dupliquen**. El dominio almacenado es `Activa`, `Vencida`, `Cancelada` y `Reemplazada`. La clasificación «Próxima a vencer» se calcula en consulta. La unicidad de la membresía vigente se valida con trigger BEFORE INSERT (sección 29.3) o en la capa de servicio.
 
 ### 24.4. Verificación tabla por tabla
 
@@ -541,7 +543,7 @@ Restricciones: FK `fk_tmb_tipo_membresia` ON DELETE CASCADE ON UPDATE CASCADE ·
 | id_tipo_membresia | BIGINT | NOT NULL | FK → tipo_membresia.id_tipo_membresia | Plan contratado (RES-07) |
 | fecha_inicio | DATE | NOT NULL | — | En una renovación es la fecha actual (RF-11) |
 | fecha_vencimiento | DATE | NOT NULL | — | fecha_inicio + duración según su unidad (RN-09); posterior a fecha_inicio |
-| estado | ENUM('Activa','ProximaAVencer','Vencida','Reemplazada') DEFAULT 'Activa' | NOT NULL | — | Estados de negocio (RF-10, RN-10, RN-38); Activa, ProximaAVencer y Vencida los actualiza el servicio (sección 30.3) |
+| estado | ENUM('Activa','Vencida','Cancelada','Reemplazada') DEFAULT 'Activa' | NOT NULL | — | Estados de negocio (RF-10, RN-10, RN-38). Activa y Vencida los actualiza el servicio por fecha (sección 30.3). Cancelada y Reemplazada son estados finales. «Próxima a vencer» es clasificación derivada, no se almacena. |
 
 Restricciones: CHECK `chk_membresia_fechas`: `fecha_vencimiento > fecha_inicio` · INDEX `idx_membresia_estado_vencimiento` (estado, fecha_vencimiento) · FK `fk_membresia_cliente` ON DELETE RESTRICT ON UPDATE CASCADE · FK `fk_membresia_tipo_membresia` ON DELETE RESTRICT ON UPDATE CASCADE
 
@@ -662,12 +664,12 @@ CREATE TRIGGER trg_membresia_bi BEFORE INSERT ON membresia FOR EACH ROW
 BEGIN
   DECLARE v_cliente BIGINT;
   DECLARE v_vigentes INT;
-  IF NEW.estado <> 'Reemplazada' THEN
+  IF NEW.estado NOT IN ('Reemplazada', 'Cancelada') THEN
     -- Se bloquea la fila del cliente (FOR UPDATE): dos altas simultáneas del mismo cliente se atienden una tras otra.
     SELECT id_usuario INTO v_cliente FROM cliente WHERE id_usuario = NEW.id_cliente FOR UPDATE;
-    SELECT COUNT(*) INTO v_vigentes FROM membresia WHERE id_cliente = NEW.id_cliente AND estado <> 'Reemplazada';
+    SELECT COUNT(*) INTO v_vigentes FROM membresia WHERE id_cliente = NEW.id_cliente AND estado NOT IN ('Reemplazada', 'Cancelada');
     IF v_vigentes > 0 THEN
-      SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'El cliente ya tiene una membresia sin reemplazar (RN-38)';
+      SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'El cliente ya tiene una membresia vigente (no reemplazada ni cancelada) (RN-38)';
     END IF;
   END IF;
 END$$
@@ -752,7 +754,7 @@ PK, FK, UNIQUE y CHECK cubren la integridad estructural y las reglas que se eval
 ```sql
 START TRANSACTION;
 UPDATE membresia SET estado = 'Reemplazada'
- WHERE id_cliente = :cliente AND estado <> 'Reemplazada';
+ WHERE id_cliente = :cliente AND estado NOT IN ('Reemplazada', 'Cancelada');
 INSERT INTO membresia (id_cliente, id_tipo_membresia, fecha_inicio, fecha_vencimiento)
 VALUES (:cliente, :tipo, CURDATE(), :fecha_vencimiento);
 COMMIT;
@@ -784,10 +786,13 @@ Las consultas de esta sección leen el estado almacenado de las membresías y de
 SELECT m.id_membresia, m.id_cliente, m.estado, m.fecha_vencimiento
   FROM membresia m;
 
--- 2. Membresías próximas a vencer (RN-10, RN-28)
+-- 2. Membresías próximas a vencer (RN-10, RN-28) — clasificación derivada
 SELECT m.*
   FROM membresia m
- WHERE m.estado = 'ProximaAVencer';
+  JOIN configuracion c ON c.id_configuracion = 1
+ WHERE m.estado = 'Activa'
+   AND m.fecha_vencimiento >= CURDATE()
+   AND m.fecha_vencimiento <= DATE_ADD(CURDATE(), INTERVAL c.dias_aviso_vencimiento DAY);
 
 -- 3. Cupo disponible de cada programación (RN-45)
 SELECT p.id_programacion,
@@ -814,7 +819,7 @@ SELECT COUNT(*) FROM inscripcion i JOIN programacion p USING (id_programacion)
 
 -- 4c. periodo_limite = 'Vigencia' (entre inicio y vencimiento de la membresía)
 SELECT COUNT(*) FROM inscripcion i JOIN programacion p USING (id_programacion)
-  JOIN membresia m ON m.id_cliente = i.id_cliente AND m.estado <> 'Reemplazada'
+  JOIN membresia m ON m.id_cliente = i.id_cliente AND m.estado NOT IN ('Reemplazada', 'Cancelada')
  WHERE i.id_cliente = :cliente AND p.id_actividad = :actividad AND i.estado = 'Activa'
    AND i.fecha_inscripcion BETWEEN m.fecha_inicio AND m.fecha_vencimiento;
 ```
@@ -840,18 +845,28 @@ Las consultas 2 y 3 pueden publicarse como vistas (`v_membresia_por_vencer`, `v_
 
 ### 30.3. Actualización de los estados de las membresías
 
-Como `estado` se almacena, alguien debe mantenerlo al día. Esta sentencia reclasifica las membresías no reemplazadas según la fecha de hoy y los días de aviso de `configuracion` (RN-10, RN-28); nunca toca las `Reemplazada`:
+Como `estado` se almacena, alguien debe mantenerlo al día. Esta sentencia reclasifica las membresías **no finales** según la fecha de hoy (RN-10, RN-28); nunca toca las `Reemplazada` ni las `Cancelada`. La clasificación «Próxima a vencer» **no se escribe en el ENUM**: se obtiene en consulta a partir de `fecha_vencimiento` y `configuracion.dias_aviso_vencimiento`.
 
 ```sql
-UPDATE membresia m JOIN configuracion c
-   SET m.estado = CASE
-         WHEN m.fecha_vencimiento < CURDATE() THEN 'Vencida'
-         WHEN m.fecha_vencimiento <= DATE_ADD(CURDATE(), INTERVAL c.dias_aviso_vencimiento DAY) THEN 'ProximaAVencer'
+UPDATE membresia
+   SET estado = CASE
+         WHEN fecha_vencimiento < CURDATE() THEN 'Vencida'
          ELSE 'Activa' END
- WHERE m.estado <> 'Reemplazada';
+ WHERE estado NOT IN ('Reemplazada', 'Cancelada');
 ```
 
-**Cuándo ejecutarla:** una vez al día poco después de medianoche (zona `America/Bogota`), por un proceso programado del servicio o un EVENT de MySQL; al guardar un nuevo valor de días de aviso (RF-36), porque cambia qué membresías están por vencer; y, si se quiere el dato exacto, antes de las consultas de RF-10 y del panel. Entre dos ejecuciones `estado` puede quedar desactualizado hasta un día; por eso la fecha de vencimiento (`fecha_vencimiento`) sigue siendo el dato que manda si hay una discrepancia. El índice `idx_membresia_estado_vencimiento` (sección 29.4) sirve a los listados por estado y a esta actualización.
+**Cuándo ejecutarla:** una vez al día poco después de medianoche (zona `America/Bogota`), por un proceso programado del servicio o un EVENT de MySQL; y, si se quiere el dato exacto, antes de las consultas de RF-10 y del panel. Entre dos ejecuciones `estado` puede quedar desactualizado hasta un día; por eso la fecha de vencimiento (`fecha_vencimiento`) sigue siendo el dato que manda si hay una discrepancia. El índice `idx_membresia_estado_vencimiento` (sección 29.4) sirve a los listados por estado y a esta actualización.
+
+**Consulta de «próximas a vencer»** (clasificación derivada, no almacenada):
+
+```sql
+SELECT m.*
+  FROM membresia m
+  JOIN configuracion c ON c.id_configuracion = 1
+ WHERE m.estado = 'Activa'
+   AND m.fecha_vencimiento >= CURDATE()
+   AND m.fecha_vencimiento <= DATE_ADD(CURDATE(), INTERVAL c.dias_aviso_vencimiento DAY);
+```
 
 ---
 
@@ -939,8 +954,9 @@ SELECT id_rol, 'admin', '<hash_generado_por_el_backend>', 'Administrador inicial
 | Tema | Decisión | Motivo |
 | --- | --- | --- |
 | Credenciales de acceso | `nombre_usuario` y `contrasena` admiten NULL, y el CHECK `chk_usuario_credenciales` exige que vayan juntos o que no exista ninguno. | La Fase 4 (sección 19.1) los marca obligatorios, pero el cliente se registra primero (RF-01) y sus credenciales se crean después (RF-38). Con NOT NULL habría que inventar una contraseña falsa. |
-| Estado de la membresía | `estado` guarda el catálogo completo: `Activa`, `ProximaAVencer`, `Vencida` y `Reemplazada`. Los tres primeros los actualiza el servicio por fecha (sección 30.3). | RF-10 y RN-10 exigen clasificar las membresías; un solo campo de estado evita columnas que lo dupliquen. La Fase 4 (sección 19.8) no enumera los valores. |
-| Estado Cancelada en membresía | No se incluye. | RF-10 y RN-10 solo mencionan activas, vencidas y próximas a vencer; la cancelación aplica a `inscripcion` y `programacion` (RN-43). Si la Persona 1 define cancelar membresías, se agrega al ENUM. |
+| Estado de la membresía | `estado` guarda el catálogo de negocio: `Activa`, `Vencida`, `Cancelada` y `Reemplazada`. Activa/Vencida se actualizan por fecha (sección 30.3); Cancelada y Reemplazada son estados finales. «Próxima a vencer» es clasificación derivada (no se almacena). | RF-10 y RN-10. Un solo campo de estado; se eliminan las columnas artificiales `es_actual` / `es_activa` que generaban duplicidad y confusión. |
+| Estado Cancelada en membresía | Se incluye en el ENUM. | Exigido por observaciones de Fase 2 / instructor. Distingue cancelación explícita de vencimiento. La actualización diaria no la modifica. |
+| Columnas es_actual / es_activa | **Eliminadas.** | Provocaban duplicidad funcional y mutilaban el ENUM de negocio. La unicidad de membresía vigente se controla con trigger BEFORE INSERT o transacción de servicio. |
 | Plan sin estado | `tipo_membresia` no tiene columna `estado`. | La Fase 4 no la define (sección 19.6) y RN-55 solo habla de estado para actividades y beneficios. Un plan con membresías emitidas no se puede borrar (FK RESTRICT), así que el historial queda protegido. Si más adelante hace falta retirar planes, agregar `estado` es un cambio de una columna que no rompe nada. |
 | Una membresía y una inscripción activas | Se validan con los triggers `trg_membresia_bi` y `trg_inscripcion_bi` (BEFORE INSERT) y con la transacción del servicio (sección 29.3). | MySQL no tiene índices únicos parciales; se descartaron las columnas auxiliares porque duplicaban `estado`. |
 | Cupo | No hay restricción declarativa: se controla con bloqueo de la programación (patrón B, sección 30.1). | Un CHECK no puede contar filas de otra tabla; la prueba de concurrencia confirmó el sobrecupo cuando no hay bloqueo. |
@@ -953,5 +969,4 @@ SELECT id_rol, 'admin', '<hash_generado_por_el_backend>', 'Administrador inicial
 ### 32.1. Criterio de salida del modelo lógico relacional
 
 El modelo lógico queda compuesto por **17 tablas en 3FN**, con nomenclatura `snake_case`, motor `InnoDB` y `utf8mb4`. El diagrama relacional (sección 27) incluye todas las PK y FK y está listo para convertirse en código DDL. Para que la Persona 3 no tenga que deducir nada, el documento define además los tipos, la nulidad y los valores por defecto (sección 28), la matriz de claves, restricciones e índices (sección 29), las reglas que se resuelven fuera del esquema (sección 30) y los datos semilla (sección 31).
-
 
