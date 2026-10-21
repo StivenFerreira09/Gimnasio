@@ -372,9 +372,9 @@ Lo que sí se prohíbe es tener dos inscripciones **activas** del mismo cliente 
 ---
 
 ## 27. Diagrama del modelo lógico relacional
-![Modelo entidad-relación](media/images/25_Diagrama_modelo_logico_tablas.png)
+![Modelo entidad-relación](media/images/25_modelo_logico_gimnasio.png)
 
-diagrama editable: [09_Diagrama_modelo_logico.drawio](media/diagrams/09_Diagrama_modelo_logico.drawio)
+diagrama editable: [09_Diagrama_modelo_logico.drawio](media/diagrams/09_modelo_logico_gimnasio.drawio)
 
 **Notación:** cada recuadro es una tabla; su nombre aparece en negrita y, debajo, la entidad o relación de la Fase 4 de la que proviene. En cada columna, **PK** = clave primaria (en negrita) · **FK** = clave foránea · **UQ** = única · **?** = admite NULL. Las notas amarillas bajo `membresia` e `inscripcion` indican los valores de estado y la regla de unicidad que valida un trigger (sección 29.3). Colores: azul = seguridad y usuarios · ocre = catálogos · verde = relaciones y operación. Extremos de las líneas: `┤├` = exactamente uno (lado padre) · `○<` = cero o varios (lado hijo); en las especializaciones, el extremo del subtipo se dibuja `○┤` = cero o uno, porque la especialización es parcial y disjunta (sección 25). Todas las FK son NOT NULL, así que cada fila hija pertenece siempre a un padre. `configuracion` no tiene relaciones: es una tabla de un solo registro.
 
