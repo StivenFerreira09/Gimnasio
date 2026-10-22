@@ -970,3 +970,352 @@ SELECT id_rol, 'admin', '<hash_generado_por_el_backend>', 'Administrador inicial
 
 El modelo lógico queda compuesto por **17 tablas en 3FN**, con nomenclatura `snake_case`, motor `InnoDB` y `utf8mb4`. El diagrama relacional (sección 27) incluye todas las PK y FK y está listo para convertirse en código DDL. Para que la Persona 3 no tenga que deducir nada, el documento define además los tipos, la nulidad y los valores por defecto (sección 28), la matriz de claves, restricciones e índices (sección 29), las reglas que se resuelven fuera del esquema (sección 30) y los datos semilla (sección 31).
 
+### 32.2 🏋️ Sistema de Gestión de Gimnasio - Base de Datos/Documentacion/Prueba
+
+## 📖 Descripción
+
+Sistema de gestión integral para gimnasios, diseñado para administrar clientes, membresías, entrenadores, actividades, programaciones e inscripciones. La base de datos está normalizada hasta el nivel 3, con restricciones de integridad robustas (CHECK, UNIQUE, FOREIGN KEY) que garantizan la consistencia de los datos y el cumplimiento de las reglas de negocio.
+
+**Tecnologías:** MySQL 8.0.16+ | Docker | InnoDB | UTF-8mb4
+
+---
+
+## 🏗️ Arquitectura de la Base de Datos
+
+### Tablas del sistema (17 en total)
+
+| # | Tabla | Nivel | Descripción |
+|---|-------|-------|-------------|
+| 1 | `rol` | 1 | Roles del sistema (Admin, Recepcionista, Entrenador, Cliente) |
+| 2 | `permiso` | 1 | Permisos disponibles |
+| 3 | `tipo_membresia` | 1 | Tipos de membresía con precios y duración |
+| 4 | `beneficio` | 1 | Beneficios asociados a membresías |
+| 5 | `actividad` | 1 | Actividades deportivas (Spinning, Yoga, etc.) |
+| 6 | `espacio` | 1 | Espacios físicos del gimnasio |
+| 7 | `configuracion` | 1 | Configuración global (singleton) |
+| 8 | `rol_permiso` | 2 | Relación N:M entre roles y permisos |
+| 9 | `usuario` | 2 | Usuarios del sistema (con credenciales opcionales) |
+| 10 | `tipo_membresia_actividad` | 2 | Actividades incluidas por tipo de membresía |
+| 11 | `tipo_membresia_beneficio` | 2 | Beneficios incluidos por tipo de membresía |
+| 12 | `cliente` | 3 | Subtipo de usuario (Cliente) |
+| 13 | `entrenador` | 3 | Subtipo de usuario (Entrenador) |
+| 14 | `horario_entrenador` | 4 | Horarios semanales de entrenadores |
+| 15 | `membresia` | 4 | Membresías activas de clientes |
+| 16 | `programacion` | 4 | Clases programadas |
+| 17 | `inscripcion` | 5 | Inscripciones de clientes a clases |
+
+---
+
+## 🚀 Instalación y Despliegue
+
+### Requisitos previos
+
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) instalado
+- Puerto **3309** disponible en el host (los puertos 3306, 3307 y 3308 pueden estar ocupados)
+- Cliente MySQL opcional (MySQL Workbench, DBeaver, o CLI)
+
+### Paso 1: Crear el contenedor Docker
+
+```bash
+docker run -d --name mysql-gimnasio -e MYSQL_ROOT_PASSWORD=Dc_Marvel -e MYSQL_DATABASE=gimnasio -p 3309:3306 -v mysql-gimnasio-data:/var/lib/mysql mysql:8.0
+```
+
+### Paso 2: Esperar a que MySQL inicie (~15 segundos)
+
+```bash
+timeout /t 15
+```
+
+### Paso 3: Ejecutar el script SQL
+
+```bash
+type gimnasio.sql | docker exec -i mysql-gimnasio mysql -uroot -pDc_Marvel gimnasio
+```
+
+### Paso 4: Verificar instalación
+
+```bash
+docker exec -it mysql-gimnasio mysql -uroot -pDc_Marvel gimnasio -e "SHOW TABLES;"
+```
+
+Deberías ver **17 tablas** creadas correctamente.
+
+---
+
+## 🔌 Información de Conexión
+
+| Parámetro | Valor |
+|-----------|-------|
+| **Host** | `localhost` o `127.0.0.1` |
+| **Puerto** | `3309` |
+| **Usuario** | `root` |
+| **Contraseña** | `Dc_Marvel` |
+| **Base de datos** | `gimnasio` |
+| **Charset** | `utf8mb4` |
+| **Collation** | `utf8mb4_0900_ai_ci` |
+
+### Conexión desde MySQL CLI
+
+```bash
+mysql -h 127.0.0.1 -P 3309 -uroot -pDc_Marvel gimnasio
+```
+
+### Conexión desde MySQL Workbench / DBeaver
+
+- Hostname: `127.0.0.1`
+- Port: `3309`
+- Username: `root`
+- Password: `Dc_Marvel`
+- Default Schema: `gimnasio`
+
+---
+
+## 📊 Datos de Prueba Incluidos
+
+El sistema incluye datos realistas de un gimnasio colombiano para pruebas inmediatas:
+
+### Usuarios (10 registros)
+- **1 Administrador:** María Fernanda López
+- **2 Recepcionistas:** Carlos Andrés Ramírez, Laura Sofía Martínez
+- **3 Entrenadores:** Juan David Herrera, Ana Lucía Gómez, Diego Alejandro Torres
+- **4 Clientes:** Roberto Carlos Mendoza, Patricia Isabel Vargas, Fernando José Castillo, Valentina Ríos Jiménez
+
+### Catálogos
+- **4 Roles** con 5 permisos asociados (8 relaciones)
+- **5 Tipos de membresía:** Diaria, Semanal, Mensual, Trimestral, Anual
+- **6 Beneficios:** Toalla, Casillero, Agua, Invitado, Evaluación física, Acceso VIP
+- **6 Actividades:** Spinning, Yoga, Crossfit, Zumba, Pilates, Boxeo
+- **5 Espacios:** Sala Principal, Sala de Yoga, Zona de Crossfit, Piscina Olímpica, Ring de Boxeo
+
+### Operaciones
+- **4 Membresías** activas (una por cliente)
+- **9 Horarios** de entrenadores distribuidos en la semana
+- **8 Programaciones** de clases
+- **10 Inscripciones** de clientes a clases
+
+---
+
+## 🛡️ Restricciones de Integridad Implementadas
+
+### CHECK Constraints
+
+| Restricción | Tabla | Regla de negocio |
+|-------------|-------|------------------|
+| `chk_tipo_membresia_precio` | `tipo_membresia` | Precio >= 0 |
+| `chk_tipo_membresia_duracion` | `tipo_membresia` | Duración > 0 |
+| `chk_actividad_capacidad` | `actividad` | Capacidad máxima > 0 |
+| `chk_espacio_capacidad` | `espacio` | Capacidad > 0 |
+| `chk_configuracion_unica` | `configuracion` | Solo existe un registro con id=1 |
+| `chk_configuracion_dias` | `configuracion` | Días de aviso >= 1 |
+| `chk_usuario_credenciales` | `usuario` | nombre_usuario y contrasena deben existir juntos o ambos ser NULL |
+| `chk_horario_horas` | `horario_entrenador` | hora_fin > hora_inicio |
+| `chk_membresia_fechas` | `membresia` | fecha_vencimiento > fecha_inicio |
+| `chk_tma_limite_periodo` | `tipo_membresia_actividad` | limite y periodo_limite deben ir juntos o ambos NULL |
+| `chk_tma_limite_positivo` | `tipo_membresia_actividad` | limite > 0 cuando no es NULL |
+| `chk_programacion_horas` | `programacion` | hora_fin > hora_inicio |
+
+### UNIQUE Constraints
+
+| Restricción | Tabla | Regla de negocio |
+|-------------|-------|------------------|
+| `uq_rol_nombre` | `rol` | No puede haber roles con el mismo nombre |
+| `uq_permiso_nombre` | `permiso` | No puede haber permisos con el mismo nombre |
+| `uq_tipo_membresia_nombre` | `tipo_membresia` | No puede haber tipos de membresía duplicados |
+| `uq_beneficio_nombre` | `beneficio` | No puede haber beneficios duplicados |
+| `uq_usuario_nombre_usuario` | `usuario` | Nombre de usuario único |
+| `uq_usuario_documento` | `usuario` | Documento de identidad único |
+
+### FOREIGN KEY Constraints
+
+| Restricción | Tabla hija | Tabla padre | Comportamiento DELETE |
+|-------------|------------|-------------|----------------------|
+| `fk_usuario_rol` | `usuario` | `rol` | RESTRICT |
+| `fk_cliente_usuario` | `cliente` | `usuario` | CASCADE |
+| `fk_entrenador_usuario` | `entrenador` | `usuario` | CASCADE |
+| `fk_membresia_cliente` | `membresia` | `cliente` | RESTRICT |
+| `fk_membresia_tipo_membresia` | `membresia` | `tipo_membresia` | RESTRICT |
+| `fk_horario_entrenador_entrenador` | `horario_entrenador` | `entrenador` | CASCADE |
+| `fk_programacion_actividad` | `programacion` | `actividad` | RESTRICT |
+| `fk_programacion_espacio` | `programacion` | `espacio` | RESTRICT |
+| `fk_programacion_entrenador` | `programacion` | `entrenador` | RESTRICT |
+| `fk_inscripcion_cliente` | `inscripcion` | `cliente` | RESTRICT |
+| `fk_inscripcion_programacion` | `inscripcion` | `programacion` | RESTRICT |
+
+---
+
+## 🧪 Pruebas de Validación (QA)
+
+### Pruebas que DEBEN FALLAR (integridad protegida)
+
+| # | Prueba | Restricción validada |
+|---|--------|---------------------|
+| 1 | Insertar membresía con precio negativo | `chk_tipo_membresia_precio` |
+| 2 | Insertar membresía con duración 0 | `chk_tipo_membresia_duracion` |
+| 3 | Insertar rol 'Administrador' duplicado | `uq_rol_nombre` |
+| 4 | Insertar usuario con nombre_usuario pero sin contraseña | `chk_usuario_credenciales` |
+| 5 | Insertar horario con hora_fin < hora_inicio | `chk_horario_horas` |
+| 6 | Insertar membresía con fechas invertidas | `chk_membresia_fechas` |
+| 7 | Insertar límite sin periodo en tipo_membresia_actividad | `chk_tma_limite_periodo` |
+| 8 | Insertar usuario con rol inexistente (id=999) | `fk_usuario_rol` |
+| 9 | Insertar configuración con id≠1 | `chk_configuracion_unica` |
+| 10 | Insertar usuario con documento duplicado | `uq_usuario_documento` |
+| 11 | Insertar actividad con capacidad 0 | `chk_actividad_capacidad` |
+| 12 | Insertar espacio con capacidad negativa | `chk_espacio_capacidad` |
+
+### Comandos de prueba rápida
+
+```sql
+-- Prueba 1: Precio negativo
+INSERT INTO tipo_membresia (nombre, precio, duracion, unidad_duracion) VALUES ('Gratis', -50000.00, 1, 'Meses');
+
+-- Prueba 3: Rol duplicado
+INSERT INTO rol (nombre) VALUES ('Administrador');
+
+-- Prueba 8: FK inválida
+INSERT INTO usuario (id_rol, nombre, documento, telefono) VALUES (999, 'Fantasma', '8888888888', '3008888888');
+```
+
+Todas deben retornar `ERROR`. Si alguna retorna `Query OK`, hay un problema de integridad.
+
+---
+
+## 🐛 Historial de Problemas y Soluciones
+
+### Problema 1: Puerto 3306 ocupado
+**Síntoma:** El contenedor no podía iniciar porque los puertos 3306, 3307 y 3308 estaban en uso.
+**Solución:** Mapear el puerto interno 3306 al puerto 3309 del host: `-p 3309:3306`.
+
+### Problema 2: Archivo SQL no encontrado en CMD
+**Síntoma:** `El sistema no puede encontrar el archivo especificado` al ejecutar `docker exec ... < gimnasio.sql`.
+**Causa:** El operador `<` no funciona correctamente en CMD de Windows.
+**Solución:** Usar `type gimnasio.sql | docker exec -i ...` en lugar de redirección con `<`.
+
+### Problema 3: Contraseña no actualizada al recrear contenedor
+**Síntoma:** `ERROR 1045 (28000): Access denied for user 'root'@'localhost'` después de cambiar la contraseña de `4Fantasticos_` a `Dc_Marvel`.
+**Causa:** El volumen `mysql-gimnasio-data` conservaba los datos de la instancia anterior. MySQL solo aplica `MYSQL_ROOT_PASSWORD` cuando el volumen está vacío.
+**Solución:**
+```bash
+docker stop mysql-gimnasio
+docker rm mysql-gimnasio
+docker volume rm mysql-gimnasio-data
+```
+Luego recrear el contenedor.
+
+### Problema 4: Columna generada `es_actual` y `es_activa` no relevantes
+**Síntoma:** Las columnas calculadas `es_actual` y `es_activa` no aportaban valor al modelo de negocio, ya que cada compra de membresía es independiente y el tipo ya define la duración.
+**Solución:** Eliminar las columnas y sus restricciones UNIQUE asociadas:
+```sql
+ALTER TABLE membresia DROP INDEX uq_membresia_una_actual, DROP COLUMN es_actual;
+ALTER TABLE inscripcion DROP INDEX uq_inscripcion_una_activa, DROP COLUMN es_activa;
+```
+**Nota importante:** Antes de eliminar el índice UNIQUE, fue necesario crear un índice simple en `id_cliente` porque la Foreign Key lo requería:
+```sql
+ALTER TABLE membresia ADD INDEX idx_membresia_cliente (id_cliente);
+```
+
+### Problema 5: Error de Foreign Key al insertar inscripciones
+**Síntoma:** `ERROR 1452: Cannot add or update a child row: a foreign key constraint fails` al insertar inscripciones con `id_cliente = 7, 8, 9, 10`.
+**Causa:** Los IDs de los clientes no coincidían con los IDs reales generados por AUTO_INCREMENT.
+**Solución:** Verificar los IDs reales con:
+```sql
+SELECT c.id_usuario AS id_cliente, u.nombre FROM cliente c JOIN usuario u ON c.id_usuario = u.id_usuario;
+```
+Y usar los IDs correctos en los INSERT.
+
+### Problema 6: Tabla `cliente` vacía a pesar de tener usuarios con rol=4
+**Síntoma:** 10 usuarios existentes pero 0 clientes registrados en la tabla `cliente`.
+**Causa:** Los INSERT de la Fase 2.6 no se ejecutaron correctamente.
+**Solución:** Insertar automáticamente todos los usuarios con rol Cliente:
+```sql
+INSERT INTO cliente (id_usuario) SELECT id_usuario FROM usuario WHERE id_rol = 4;
+INSERT INTO entrenador (id_usuario) SELECT id_usuario FROM usuario WHERE id_rol = 3;
+```
+
+---
+
+## 🔄 Comandos Útiles de Administración
+
+### Ver logs del contenedor
+```bash
+docker logs -f mysql-gimnasio
+```
+
+### Detener el contenedor
+```bash
+docker stop mysql-gimnasio
+```
+
+### Iniciar el contenedor detenido
+```bash
+docker start mysql-gimnasio
+```
+
+### Eliminar contenedor y volumen (reset completo)
+```bash
+docker stop mysql-gimnasio
+docker rm mysql-gimnasio
+docker volume rm mysql-gimnasio-data
+```
+
+### Verificar estado del contenedor
+```bash
+docker ps
+```
+
+### Entrar a la consola MySQL
+```bash
+docker exec -it mysql-gimnasio mysql -uroot -pDc_Marvel gimnasio
+```
+
+---
+
+## 📈 Consultas de Verificación Rápida
+
+### Conteo de registros por tabla
+```sql
+SELECT 'ROLES' AS seccion, COUNT(*) AS total FROM rol
+UNION ALL SELECT 'PERMISOS', COUNT(*) FROM permiso
+UNION ALL SELECT 'TIPOS_MEMBRESIA', COUNT(*) FROM tipo_membresia
+UNION ALL SELECT 'BENEFICIOS', COUNT(*) FROM beneficio
+UNION ALL SELECT 'ACTIVIDADES', COUNT(*) FROM actividad
+UNION ALL SELECT 'ESPACIOS', COUNT(*) FROM espacio
+UNION ALL SELECT 'USUARIOS', COUNT(*) FROM usuario
+UNION ALL SELECT 'CLIENTES', COUNT(*) FROM cliente
+UNION ALL SELECT 'ENTRENADORES', COUNT(*) FROM entrenador
+UNION ALL SELECT 'MEMBRESIAS', COUNT(*) FROM membresia
+UNION ALL SELECT 'HORARIOS', COUNT(*) FROM horario_entrenador
+UNION ALL SELECT 'PROGRAMACIONES', COUNT(*) FROM programacion
+UNION ALL SELECT 'INSCRIPCIONES', COUNT(*) FROM inscripcion;
+```
+
+### Clientes con sus membresías y actividades
+```sql
+SELECT u.nombre AS Cliente, tm.nombre AS Membresia, 
+       m.fecha_vencimiento AS Vence, a.nombre_actividad AS Actividad, 
+       p.dia_semana AS Dia, p.hora_inicio AS Hora, ue.nombre AS Entrenador 
+FROM inscripcion i 
+JOIN cliente c ON i.id_cliente = c.id_usuario 
+JOIN usuario u ON c.id_usuario = u.id_usuario 
+JOIN membresia m ON m.id_cliente = c.id_usuario 
+JOIN tipo_membresia tm ON m.id_tipo_membresia = tm.id_tipo_membresia 
+JOIN programacion p ON i.id_programacion = p.id_programacion 
+JOIN actividad a ON p.id_actividad = a.id_actividad 
+JOIN entrenador e ON p.id_entrenador = e.id_usuario 
+JOIN usuario ue ON e.id_usuario = ue.id_usuario 
+ORDER BY u.nombre, p.dia_semana;
+```
+
+---
+
+## ✅ Criterio de Salida (Handoff)
+
+- [x] Base de datos creada y funcional en MySQL 8.0
+- [x] 17 tablas normalizadas con restricciones de integridad
+- [x] Datos de prueba coherentes insertados (usuarios, membresías, clases, inscripciones)
+- [x] 12 pruebas de restricciones validadas (todas fallan correctamente)
+- [x] Documentación completa de instalación, conexión y troubleshooting
+- [x] Contenedor Docker listo para despliegue
+- [x] Script SQL versionado en GitHub
+
+---
+
