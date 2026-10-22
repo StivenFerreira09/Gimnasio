@@ -223,11 +223,9 @@ CREATE TABLE membresia (
     id_tipo_membresia BIGINT NOT NULL,
     fecha_inicio DATE NOT NULL,
     fecha_vencimiento DATE NOT NULL,
-    estado ENUM('Registrada', 'Reemplazada') NOT NULL DEFAULT 'Registrada',
-    es_actual TINYINT
-        GENERATED ALWAYS AS (IF(estado = 'Reemplazada', NULL, 1)) STORED,
+    estado ENUM('Activa', 'Vencida', 'Cancelada', 'Reemplazada')
+        NOT NULL DEFAULT 'Activa',
     CONSTRAINT pk_membresia PRIMARY KEY (id_membresia),
-    CONSTRAINT uq_membresia_una_actual UNIQUE (id_cliente, es_actual),
     CONSTRAINT chk_membresia_fechas CHECK (fecha_vencimiento > fecha_inicio),
     CONSTRAINT fk_membresia_cliente
         FOREIGN KEY (id_cliente) REFERENCES cliente (id_usuario)
@@ -240,6 +238,42 @@ CREATE TABLE membresia (
 ) ENGINE = InnoDB
   CHARACTER SET = utf8mb4
   COLLATE = utf8mb4_0900_ai_ci;
+
+-- ============================================================
+-- Triggers de unicidad condicional
+-- ============================================================
+
+DELIMITER $$
+
+CREATE TRIGGER trg_membresia_bi
+BEFORE INSERT ON membresia
+FOR EACH ROW
+BEGIN
+    DECLARE v_cliente BIGINT;
+    DECLARE v_vigentes INT;
+
+    IF NEW.estado NOT IN ('Reemplazada', 'Cancelada') THEN
+        SELECT id_usuario
+          INTO v_cliente
+          FROM cliente
+         WHERE id_usuario = NEW.id_cliente
+           FOR UPDATE;
+
+        SELECT COUNT(*)
+          INTO v_vigentes
+          FROM membresia
+         WHERE id_cliente = NEW.id_cliente
+           AND estado NOT IN ('Reemplazada', 'Cancelada');
+
+        IF v_vigentes > 0 THEN
+            SIGNAL SQLSTATE '45000'
+                SET MESSAGE_TEXT =
+                    'El cliente ya tiene una membresia vigente';
+        END IF;
+    END IF;
+END$$
+
+DELIMITER ;
 
 CREATE TABLE programacion (
     id_programacion BIGINT AUTO_INCREMENT,
