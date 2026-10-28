@@ -1,6 +1,6 @@
 # 14. Diagrama de casos de uso:
 
-![Diagrama de casos de uso - Gestión de Clientes](media/images/01_Diagrama_Modulo_Gestion_de_Clientes_V1.png)
+![Diagrama de casos de uso - Gestión de Clientes](/03_Docs/media/images/01_Diagrama_Modulo_Gestion_de_Clientes_V1.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -11,7 +11,7 @@
 | RF-05 |  | Cambiar el estado de un cliente (activo/inactivo), con confirmación previa. Un cliente inactivo no puede iniciar sesión. |
 | RF-06 |  | Consultar la membresía propia: tipo, actividades incluidas con sus límites, beneficios, estado y fecha de vencimiento. |
 
-![Diagrama de casos de uso - Gestión de Membresías](media/images/02_Diagrama_Modulo_Gestion_de_Membresias_V2.png)
+![Diagrama de casos de uso - Gestión de Membresías](/03_Docs/media/images/02_Diagrama_Modulo_Gestion_de_Membresias_V2.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -23,7 +23,7 @@
 | RF-29 |  | Gestionar el catálogo de beneficios del gimnasio: registrar, editar, activar y desactivar beneficios. |
 | RF-30 |  | Configurar las actividades que incluye cada tipo de membresía, con su límite de inscripciones y el período del límite (o sin límite), y los beneficios informativos que incluye. |
 
-![Diagrama de casos de uso - Gestión de Actividades](media/images/03_Diagrama_Modulo_Gestion_de_Clases.png)
+![Diagrama de casos de uso - Gestión de Actividades](/03_Docs/media/images/03_Diagrama_Modulo_Gestion_de_Clases.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -39,7 +39,7 @@
 | RF-32 |  | Gestionar los espacios del gimnasio: registrar y editar espacios con nombre y capacidad. |
 | RF-33 |  | Cancelar una actividad programada, cancelando automáticamente sus inscripciones activas. |
 
-![Diagrama de casos de uso - Gestión de Entrenadores](media/images/04_Diagrama_Modulo_Gestion_de_Entrenadores.png)
+![Diagrama de casos de uso - Gestión de Entrenadores](/03_Docs/media/images/04_Diagrama_Modulo_Gestion_de_Entrenadores.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -50,14 +50,14 @@
 | RF-34 |  | Definir el horario fijo de cada entrenador (día, hora de inicio y hora de fin). |
 | RF-35 |  | Cambiar el estado de un entrenador (activo/inactivo). Para desactivarlo, sus actividades programadas deben haberse reasignado previamente. |
 
-![Diagrama de casos de uso - Panel de Control](media/images/05_Diagrama_Modulo_Panel_de_Control.png)
+![Diagrama de casos de uso - Panel de Control](/03_Docs/media/images/05_Diagrama_Modulo_Panel_de_Control.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
 | RF-24 | Módulo 5: Panel de Control | Mostrar un panel con: clientes activos, membresías activas/vencidas, membresías próximas a vencer (según los días de aviso configurados) y actividades programadas. |
 | RF-36 |  | Configurar los días de aviso con los que una membresía se considera próxima a vencer. |
 
-![Diagrama de casos de uso - Autenticación y Permisos](media/images/06_Diagrama_Modulo_Autenticacion_y_Permisos.png)
+![Diagrama de casos de uso - Autenticación y Permisos](/03_Docs/media/images/06_Diagrama_Modulo_Autenticacion_y_Permisos.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -71,41 +71,41 @@
 
 # 15. Diagrama de clases:
 
-![Diagrama de clases](media/images/07_diagrama_de_clases_mvc.drawio.png)
+![Diagrama de clases](/03_Docs/media/images/07_diagrama_de_clases_mvc.drawio.png)
 
 # 16. Diagrama de secuencia:
 
 ## GESTIÓN DE CLIENTES:
 
-![Diagrama de secuencia - Gestión de Clientes](media/images/08_Diagrama_Secuencia_Gestion_de_Clientes.png)
+![Diagrama de secuencia - Gestión de Clientes](/03_Docs/media/images/08_Diagrama_Secuencia_Gestion_de_Clientes.png)
 
 ## GESTIÓN DE MEMBRESÍAS:
 
-![Diagrama de secuencia - Gestión de Membresías](media/images/09_Diagrama_Secuencia_Gestion_de_Membresias.png)
+![Diagrama de secuencia - Gestión de Membresías](/03_Docs/media/images/09_Diagrama_Secuencia_Gestion_de_Membresias.png)
 
 ## GESTIÓN DE ACTIVIDADES:
 
-![Diagrama de secuencia - Gestión de Actividades](media/images/10_Diagrama_Secuencia_Gestion_de_Actividades.png)
+![Diagrama de secuencia - Gestión de Actividades](/03_Docs/media/images/10_Diagrama_Secuencia_Gestion_de_Actividades.png)
 
 ## GESTIÓN DE ENTRENADORES:
 
-![Diagrama de secuencia - Gestión de Entrenadores](media/images/11_Diagrama_Secuencia_Gestion_de_Entrenadores.png)
+![Diagrama de secuencia - Gestión de Entrenadores](/03_Docs/media/images/11_Diagrama_Secuencia_Gestion_de_Entrenadores.png)
 
 ## DASHBOARD Y REPORTES:
 
-![Diagrama de secuencia - Dashboard y Reportes](media/images/12_Diagrama_Secuencia_Dashboard_y_Reportes.png)
+![Diagrama de secuencia - Dashboard y Reportes](/03_Docs/media/images/12_Diagrama_Secuencia_Dashboard_y_Reportes.png)
 
 ## AUTENTICACIÓN Y PERMISOS:
 
-![Diagrama de secuencia - Autenticación y Permisos](media/images/13_Diagrama_Secuencia_Autenticacion_y_Permisos.png)
+![Diagrama de secuencia - Autenticación y Permisos](/03_Docs/media/images/13_Diagrama_Secuencia_Autenticacion_y_Permisos.png)
 
 # 17. Diagrama de actividades:
 
-![Diagrama de actividades](media/images/14_Diagrama_Actividades_Resumen.png)
+![Diagrama de actividades](/03_Docs/media/images/14_Diagrama_Actividades_Resumen.png)
 
 ## Registrar cliente
 
-![Diagrama de actividad - Registrar cliente](media/images/15_Diagrama_Actividad_Registrar_Cliente.png)
+![Diagrama de actividad - Registrar cliente](/03_Docs/media/images/15_Diagrama_Actividad_Registrar_Cliente.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -113,7 +113,7 @@
 
 ## Asignar membresía
 
-![Diagrama de actividad - Asignar membresía](media/images/16_Diagrama_Actividad_Asignar_Membresia.png)
+![Diagrama de actividad - Asignar membresía](/03_Docs/media/images/16_Diagrama_Actividad_Asignar_Membresia.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -121,7 +121,7 @@
 
 ## Renovar membresía
 
-![Diagrama de actividad - Renovar membresía](media/images/17_Diagrama_Actividad_Renovar_Membresia.png)
+![Diagrama de actividad - Renovar membresía](/03_Docs/media/images/17_Diagrama_Actividad_Renovar_Membresia.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -129,7 +129,7 @@
 
 ## Programar actividad y asignar entrenador
 
-![Diagrama de actividad - Programar actividad y asignar entrenador](media/images/18_Diagrama_Actividad_Programar_Actividad.png)
+![Diagrama de actividad - Programar actividad y asignar entrenador](/03_Docs/media/images/18_Diagrama_Actividad_Programar_Actividad.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -138,7 +138,7 @@
 
 ## Inscribirse en una actividad
 
-![Diagrama de actividad - Inscribirse en una actividad](media/images/19_Diagrama_Actividad_Inscribirse_en_Actividad.png)
+![Diagrama de actividad - Inscribirse en una actividad](/03_Docs/media/images/19_Diagrama_Actividad_Inscribirse_en_Actividad.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -146,7 +146,7 @@
 
 ## Cancelar inscripción
 
-![Diagrama de actividad - Cancelar inscripción](media/images/20_Diagrama_Actividad_Cancelar_Inscripcion.png)
+![Diagrama de actividad - Cancelar inscripción](/03_Docs/media/images/20_Diagrama_Actividad_Cancelar_Inscripcion.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -154,7 +154,7 @@
 
 ## Registrar entrenador
 
-![Diagrama de actividad - Registrar entrenador](media/images/21_Diagrama_Actividad_Registrar_Entrenador.png)
+![Diagrama de actividad - Registrar entrenador](/03_Docs/media/images/21_Diagrama_Actividad_Registrar_Entrenador.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -162,7 +162,7 @@
 
 ## Iniciar sesión
 
-![Diagrama de actividad - Iniciar sesión](media/images/22_Diagrama_Actividad_Iniciar_Sesion.png)
+![Diagrama de actividad - Iniciar sesión](/03_Docs/media/images/22_Diagrama_Actividad_Iniciar_Sesion.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
@@ -170,7 +170,7 @@
 
 ## Recuperar contraseña
 
-![Diagrama de actividad - Recuperar contraseña](media/images/23_Diagrama_Actividad_Recuperar_Contrasena.png)
+![Diagrama de actividad - Recuperar contraseña](/03_Docs/media/images/23_Diagrama_Actividad_Recuperar_Contrasena.png)
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
