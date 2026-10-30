@@ -19,8 +19,6 @@ La interfaz web está orientada al uso desde computadores y debe facilitar la co
 | Mensajes | Avisos de éxito, error, validación y confirmación. |
 | Control de acceso | Las funcionalidades visibles y disponibles dependen de los permisos del usuario autenticado. |
 
-La distribución visual específica debe corresponder al prototipo web desarrollado en Figma.
-
 ## 3. Grupos de pantallas
 
 ### Grupo A. Acceso y recuperación de contraseña
@@ -209,7 +207,6 @@ Estas pantallas permiten al entrenador consultar sus actividades asignadas y sus
 |---|---|---|---|
 | I1 | Mis actividades | Presenta las actividades programadas que tiene asignadas el entrenador autenticado. | Entrenador |
 | I2 | Mi horario | Permite consultar los días y horarios de sus actividades programadas. | Entrenador |
-| I3 | Detalle de actividad asignada | Presenta la información de una actividad que tiene asignada. | Entrenador |
 
 **Consideraciones funcionales:**
 
