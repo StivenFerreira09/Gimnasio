@@ -1,4 +1,4 @@
-**# 1. Descripción del problema**
+# 1. Descripción del problema
 
 Actualmente, la gestión de un gimnasio puede realizarse de manera manual o utilizando diferentes herramientas para controlar clientes, membresías, actividades y entrenadores. Esto puede generar problemas como:
 
@@ -9,15 +9,15 @@ Actualmente, la gestión de un gimnasio puede realizarse de manera manual o util
 - Falta de información centralizada.
 - Mayor cantidad de trabajo manual para el personal administrativo.
 
-**## 1.1. Problema central**
+## 1.1. Problema central
 
 El gimnasio necesita un sistema centralizado que permita gestionar de manera eficiente clientes, membresías, actividades y entrenadores, reduciendo el trabajo manual y facilitando el acceso a la información.
 
-**# 2. Objetivo del sistema**
+# 2. Objetivo del sistema
 
 Desarrollar un Sistema de Gestión de Gimnasio que permita administrar de manera centralizada la información de los clientes, membresías, actividades y entrenadores, facilitando las actividades administrativas y mejorando la organización del gimnasio.
 
-**## 2.1. Objetivos específicos**
+## 2.1. Objetivos específicos
 
 - Registrar y administrar clientes.
 - Permitir que el administrador parametrice los tipos de membresía, las actividades que incluyen y sus beneficios, según el modelo de negocio del gimnasio.
@@ -27,7 +27,7 @@ Desarrollar un Sistema de Gestión de Gimnasio que permita administrar de manera
 - Generar reportes sobre la información del gimnasio.
 - Controlar el acceso a las funcionalidades según el rol y los permisos asignados.
 
-**# 3. Usuarios del sistema**
+# 3. Usuarios del sistema
 
 El sistema tendrá principalmente cuatro tipos de usuarios:
 
@@ -38,9 +38,9 @@ El sistema tendrá principalmente cuatro tipos de usuarios:
 | **Entrenador** | Es el usuario encargado de dirigir las actividades programadas que le sean asignadas.<br><br>Podrá:<br>• Iniciar sesión.<br>• Consultar las actividades que tiene asignadas.<br>• Consultar sus horarios.<br>• Consultar la información de las actividades correspondientes. |
 | **Cliente** | Es el usuario que utiliza los servicios del gimnasio y que tendrá acceso al sistema mediante una cuenta personal.<br><br>Podrá:<br>• Iniciar sesión.<br>• Consultar su información personal.<br>• Consultar su membresía, las actividades y beneficios que incluye y sus límites.<br>• Consultar el estado y vencimiento de su membresía.<br>• Consultar las actividades programadas disponibles.<br>• Inscribirse en actividades incluidas en su membresía.<br>• Cancelar sus inscripciones.<br>• Consultar sus actividades inscritas. |
 
-**# 4. Épicas**
+# 4. Épicas
 
-**## 4.1. Gestión de clientes**
+## 4.1. Gestión de clientes
 
 El sistema permitirá administrar la información de los clientes del gimnasio, facilitando su registro, consulta y actualización.
 
@@ -53,7 +53,7 @@ El sistema permitirá:
 - Desactivar clientes cuando ya no hagan parte del gimnasio, bloqueando su acceso al sistema.
 - Consultar la información de la membresía asociada a cada cliente.
 
-**## 4.2. Gestión de membresías**
+## 4.2. Gestión de membresías
 
 El sistema permitirá que el administrador parametrice las membresías ofrecidas por el gimnasio según su modelo de negocio, y controlar su asignación, vigencia y renovación.
 
@@ -71,7 +71,7 @@ El sistema permitirá:
 - Renovar membresías.
 - Consultar las fechas de vencimiento.
 
-**## 4.3. Gestión de actividades**
+## 4.3. Gestión de actividades
 
 El sistema permitirá administrar las actividades ofrecidas por el gimnasio, programar cuándo, dónde y con qué entrenador se realizan, y controlar la inscripción de los clientes.
 
@@ -87,7 +87,7 @@ El sistema permitirá:
 - Cancelar inscripciones.
 - Consultar a los clientes inscritos.
 
-**## 4.4. Gestión de entrenadores**
+## 4.4. Gestión de entrenadores
 
 El sistema permitirá administrar la información de los entrenadores, sus horarios y su asignación a las actividades programadas del gimnasio.
 
@@ -101,7 +101,7 @@ El sistema permitirá:
 - Cambiar el estado de un entrenador, reasignando previamente sus actividades programadas.
 - Consultar horarios de los entrenadores.
 
-**## 4.5. Dashboard y reportes**
+## 4.5. Dashboard y reportes
 
 El sistema proporcionará al administrador un panel con información resumida sobre la operación del gimnasio.
 
@@ -113,7 +113,7 @@ El administrador podrá consultar:
 - Membresías próximas para vencer, según los días de aviso que él mismo configure.
 - Actividades programadas.
 
-**## 4.6. Autenticación y permisos**
+## 4.6. Autenticación y permisos
 
 El sistema permitirá controlar el acceso de los usuarios y administrar los permisos de acuerdo con el rol asignado.
 
@@ -133,15 +133,15 @@ Los roles contemplados serán:
 - Entrenador.
 - Cliente.
 
-**## 4.7. User Story Map**
+## 4.7. User Story Map
 
 ![User Story Map](user-story-map.png)
 
-**# 5. Metodología de Priorización, Estimación y Criterios de Aceptación**
+# 5. Metodología de Priorización, Estimación y Criterios de Aceptación
 
 Con base en la retroalimentación recibida, la priorización de las historias de usuario se realizó mediante dos técnicas reconocidas, las cuales se aplican de forma complementaria.
 
-**## 5.1. MoSCoW - Definiciones**
+## 5.1. MoSCoW - Definiciones
 
 | **Categoría** | **Significado** |
 | --- | --- |
@@ -150,7 +150,7 @@ Con base en la retroalimentación recibida, la priorización de las historias de
 | **C — Could have** | Deseable. Bajo impacto si se pospone. |
 | **W — Won't have (por ahora)** | Queda fuera del alcance de esta versión del proyecto. |
 
-**## 5.2. Valor vs. Esfuerzo - Definiciones**
+## 5.2. Valor vs. Esfuerzo - Definiciones
 
 Cada historia se evalúa en dos ejes (Alto / Medio / Bajo) y se ubica en uno de los cuatro cuadrantes de la matriz:
 
@@ -172,15 +172,15 @@ Cuando el valor o el esfuerzo es **Medio**, el cuadrante se asigna con esta regl
 
 MoSCoW define qué entra en el proyecto; Valor vs. Esfuerzo define el orden de construcción dentro de lo que ya fue aceptado.
 
-**## 5.3. Formato de criterios de aceptación**
+## 5.3. Formato de criterios de aceptación
 
 Los criterios de aceptación se expresan mediante escenarios que utilizan la estructura GIVEN (Dado que), WHEN (Cuando) y THEN (Entonces), con el propósito de describir las condiciones necesarias para validar cada historia de usuario.
 
-**# 6. Historias de usuario**
+# 6. Historias de usuario
 
-**## 6.1. Gestión de clientes**
+## 6.1. Gestión de clientes
 
-**### 6.1.1. HU-01 Registrar cliente**
+### 6.1.1. HU-01 Registrar cliente
 
 Como recepcionista o administrador, quiero registrar un cliente con sus datos personales y credenciales de acceso en un único flujo, para que pueda utilizar los servicios del gimnasio y acceder al sistema.
 
@@ -199,7 +199,7 @@ Como recepcionista o administrador, quiero registrar un cliente con sus datos pe
 | --- | --- | --- | --- | --- |
 | M | Alto | Medio | Proyecto mayor | 5 |
 
-**### 6.1.2. HU-02 Consultar clientes**
+### 6.1.2. HU-02 Consultar clientes
 
 Como administrador o recepcionista, quiero consultar los clientes registrados, para acceder a su información y gestionar su atención.
 
@@ -218,7 +218,7 @@ Como administrador o recepcionista, quiero consultar los clientes registrados, p
 | --- | --- | --- | --- | --- |
 | M | Alto | Bajo | Quick win | 2 |
 
-**### 6.1.3. HU-03 Buscar clientes**
+### 6.1.3. HU-03 Buscar clientes
 
 Como administrador o recepcionista, quiero buscar clientes por sus datos, para encontrar rápidamente un registro específico.
 
@@ -237,7 +237,7 @@ Como administrador o recepcionista, quiero buscar clientes por sus datos, para e
 | --- | --- | --- | --- | --- |
 | M | Medio | Bajo | Quick win | 2 |
 
-**### 6.1.4. HU-04 Editar cliente**
+### 6.1.4. HU-04 Editar cliente
 
 Como administrador o recepcionista, quiero editar la información de un cliente, para mantener sus datos actualizados.
 
@@ -256,7 +256,7 @@ Como administrador o recepcionista, quiero editar la información de un cliente,
 | --- | --- | --- | --- | --- |
 | M | Medio | Medio | Proyecto mayor | 5 |
 
-**### 6.1.5. HU-05 Desactivar cliente**
+### 6.1.5. HU-05 Desactivar cliente
 
 Como administrador, quiero desactivar un cliente, para impedir que continúe utilizando el sistema cuando ya no haga parte del gimnasio.
 
@@ -275,9 +275,9 @@ Como administrador, quiero desactivar un cliente, para impedir que continúe uti
 | --- | --- | --- | --- | --- |
 | S | Medio | Bajo | Quick win | 2 |
 
-**## 6.2. Gestión de membresías**
+## 6.2. Gestión de membresías
 
-**### 6.2.1. HU-06 Crear tipos de membresía**
+### 6.2.1. HU-06 Crear tipos de membresía
 
 Como administrador, quiero crear tipos de membresía, para ofrecer diferentes planes de servicio a los clientes.
 
@@ -296,7 +296,7 @@ Como administrador, quiero crear tipos de membresía, para ofrecer diferentes pl
 | --- | --- | --- | --- | --- |
 | M | Alto | Medio | Proyecto mayor | 5 |
 
-**### 6.2.2. HU-07 Gestionar beneficios**
+### 6.2.2. HU-07 Gestionar beneficios**
 
 Como administrador, quiero gestionar el catálogo de beneficios, para definir los beneficios informativos que puede incluir cada tipo de membresía.
 
@@ -315,7 +315,7 @@ Como administrador, quiero gestionar el catálogo de beneficios, para definir lo
 | --- | --- | --- | --- | --- |
 | S | Medio | Bajo | Quick win | 2 |
 
-**### 6.2.3. HU-08 Configurar actividades y beneficios de membresía**
+### 6.2.3. HU-08 Configurar actividades y beneficios de membresía
 
 Como administrador, quiero definir las actividades, sus límites de inscripción y los beneficios incluidos en cada tipo de membresía, para configurar los servicios ofrecidos por cada plan.
 
@@ -334,7 +334,7 @@ Como administrador, quiero definir las actividades, sus límites de inscripción
 | --- | --- | --- | --- | --- |
 | M | Alto | Alto | Proyecto mayor | 8 |
 
-**### 6.2.4. HU-09 Asignar membresía**
+### 6.2.4. HU-09 Asignar membresía
 
 Como administrador o recepcionista, quiero asignar una membresía a un cliente, para habilitar los servicios incluidos en el plan seleccionado.
 
@@ -354,7 +354,7 @@ Como administrador o recepcionista, quiero asignar una membresía a un cliente, 
 | --- | --- | --- | --- | --- |
 | M | Alto | Medio | Proyecto mayor | 5 |
 
-**### 6.2.5. HU-10 Consultar membresías**
+### 6.2.5. HU-10 Consultar membresías
 
 Como administrador o recepcionista, quiero consultar las membresías de los clientes, para conocer su estado y vigencia.
 
@@ -373,7 +373,7 @@ Como administrador o recepcionista, quiero consultar las membresías de los clie
 | --- | --- | --- | --- | --- |
 | M | Alto | Bajo | Quick win | 2 |
 
-**### 6.2.6. HU-11 Renovar membresía**
+### 6.2.6. HU-11 Renovar membresía
 
 Como administrador o recepcionista, quiero renovar una membresía, para mantener disponible el servicio para el cliente.
 
@@ -392,9 +392,9 @@ Como administrador o recepcionista, quiero renovar una membresía, para mantener
 | --- | --- | --- | --- | --- |
 | M | Alto | Medio | Proyecto mayor | 5 |
 
-**## 6.3. Gestión de actividades**
+## 6.3. Gestión de actividades
 
-**### 6.3.1. HU-12 Gestionar catálogo de actividades**
+### 6.3.1. HU-12 Gestionar catálogo de actividades
 
 Como administrador, quiero gestionar el catálogo de actividades, para definir las actividades que ofrece el gimnasio y su capacidad máxima.
 
@@ -413,7 +413,7 @@ Como administrador, quiero gestionar el catálogo de actividades, para definir l
 | --- | --- | --- | --- | --- |
 | M | Alto | Medio | Proyecto mayor | 5 |
 
-**### 6.3.2. HU-13 Gestionar espacios**
+### 6.3.2. HU-13 Gestionar espacios
 
 Como administrador, quiero gestionar los espacios del gimnasio, para identificar los lugares disponibles para realizar actividades.
 
@@ -432,7 +432,7 @@ Como administrador, quiero gestionar los espacios del gimnasio, para identificar
 | --- | --- | --- | --- | --- |
 | S | Medio | Bajo | Quick win | 2 |
 
-**### 6.3.3. HU-14 Programar actividades**
+### 6.3.3. HU-14 Programar actividades
 
 Como administrador, quiero programar actividades indicando día, horario, espacio y entrenador, para organizar las sesiones que ofrece el gimnasio.
 
@@ -451,7 +451,7 @@ Como administrador, quiero programar actividades indicando día, horario, espaci
 | --- | --- | --- | --- | --- |
 | M | Alto | Alto | Proyecto mayor | 8 |
 
-**### 6.3.4. HU-15 Cambiar entrenador de actividad programada**
+### 6.3.4. HU-15 Cambiar entrenador de actividad programada
 
 Como administrador, quiero cambiar el entrenador asignado a una actividad programada, para mantener la continuidad de las sesiones cuando sea necesario.
 
@@ -470,7 +470,7 @@ Como administrador, quiero cambiar el entrenador asignado a una actividad progra
 | --- | --- | --- | --- | --- |
 | S | Medio | Medio | Proyecto mayor | 5 |
 
-**### 6.3.5. HU-16 Cancelar actividad programada**
+### 6.3.5. HU-16 Cancelar actividad programada
 
 Como administrador, quiero cancelar una actividad programada, para informar que la sesión no se realizará.
 
@@ -489,7 +489,7 @@ Como administrador, quiero cancelar una actividad programada, para informar que 
 | --- | --- | --- | --- | --- |
 | S | Medio | Medio | Proyecto mayor | 5 |
 
-**### 6.3.6. HU-17 Consultar actividades disponibles**
+### 6.3.6. HU-17 Consultar actividades disponibles
 
 Como cliente, quiero consultar las actividades programadas disponibles, para conocer las sesiones a las que puedo inscribirme según mi membresía.
 
@@ -508,7 +508,7 @@ Como cliente, quiero consultar las actividades programadas disponibles, para con
 | --- | --- | --- | --- | --- |
 | M | Alto | Medio | Proyecto mayor | 5 |
 
-**### 6.3.7. HU-18 Registrar entrenador**
+### 6.3.7. HU-18 Registrar entrenador
 
 Como administrador o recepcionista, quiero registrar un entrenador con sus datos personales y credenciales de acceso en un único flujo, para que pueda consultar las actividades y horarios que tiene asignados.
 
@@ -527,7 +527,7 @@ Como administrador o recepcionista, quiero registrar un entrenador con sus datos
 | --- | --- | --- | --- | --- |
 | M | Alto | Medio | Proyecto mayor | 5 |
 
-**### 6.3.8. HU-19 Inscribir cliente en actividad**
+### 6.3.8. HU-19 Inscribir cliente en actividad
 
 Como cliente, quiero inscribirme en una actividad incluida en mi membresía, para participar en las sesiones disponibles.
 
@@ -546,7 +546,7 @@ Como cliente, quiero inscribirme en una actividad incluida en mi membresía, par
 | --- | --- | --- | --- | --- |
 | M | Alto | Alto | Proyecto mayor | 8 |
 
-**### 6.3.9. HU-20 Cancelar inscripción**
+### 6.3.9. HU-20 Cancelar inscripción
 
 Como cliente, quiero cancelar una inscripción, para liberar mi cupo cuando no pueda asistir a una actividad.
 
@@ -565,7 +565,7 @@ Como cliente, quiero cancelar una inscripción, para liberar mi cupo cuando no p
 | --- | --- | --- | --- | --- |
 | S | Medio | Bajo | Quick win | 2 |
 
-**### 6.3.10. HU-21 Consultar clientes inscritos**
+### 6.3.10. HU-21 Consultar clientes inscritos
 
 Como administrador, recepcionista o entrenador asignado, quiero consultar los clientes inscritos en una actividad, para conocer la participación de cada sesión.
 
@@ -584,9 +584,9 @@ Como administrador, recepcionista o entrenador asignado, quiero consultar los cl
 | --- | --- | --- | --- | --- |
 | S | Medio | Bajo | Quick win | 2 |
 
-**## 6.4. Gestión de entrenadores**
+## 6.4. Gestión de entrenadores
 
-**### 6.4.1. HU-22 Consultar entrenadores**
+### 6.4.1. HU-22 Consultar entrenadores
 
 Como administrador o recepcionista, quiero consultar los entrenadores registrados, para conocer su información y disponibilidad.
 
@@ -605,7 +605,7 @@ Como administrador o recepcionista, quiero consultar los entrenadores registrado
 | --- | --- | --- | --- | --- |
 | M | Alto | Bajo | Quick win | 2 |
 
-**### 6.4.2. HU-23 Administrar horarios de entrenadores**
+### 6.4.2. HU-23 Administrar horarios de entrenadores
 
 Como administrador o recepcionista, quiero definir y consultar el horario fijo de los entrenadores, para organizar su disponibilidad.
 
@@ -624,9 +624,9 @@ Como administrador o recepcionista, quiero definir y consultar el horario fijo d
 | --- | --- | --- | --- | --- |
 | S | Medio | Medio | Proyecto mayor | 5 |
 
-**## 6.5. Dashboard y reportes**
+## 6.5. Dashboard y reportes
 
-**### 6.5.1. HU-28 Consultar dashboard**
+### 6.5.1. HU-28 Consultar dashboard
 
 Como administrador, quiero consultar un panel con indicadores generales del gimnasio, para conocer el estado de la operación.
 
@@ -645,7 +645,7 @@ Como administrador, quiero consultar un panel con indicadores generales del gimn
 | --- | --- | --- | --- | --- |
 | S | Alto | Medio | Proyecto mayor | 5 |
 
-**### 6.5.2. HU-29 Configurar días de aviso de vencimiento**
+### 6.5.2. HU-29 Configurar días de aviso de vencimiento
 
 Como administrador, quiero configurar los días de anticipación para los avisos de vencimiento de membresías, para recibir información oportuna.
 
@@ -666,9 +666,9 @@ Como administrador, quiero configurar los días de anticipación para los avisos
 | --- | --- | --- | --- | --- |
 | S | Medio | Bajo | Quick win | 2 |
 
-**## 6.6. Autenticación y permisos**
+## 6.6. Autenticación y permisos
 
-**### 6.6.1. HU-24 Iniciar sesión**
+### 6.6.1. HU-24 Iniciar sesión
 
 Como usuario del sistema, quiero iniciar sesión con mis credenciales, para acceder a las funcionalidades correspondientes a mi rol.
 
@@ -687,7 +687,7 @@ Como usuario del sistema, quiero iniciar sesión con mis credenciales, para acce
 | --- | --- | --- | --- | --- |
 | M | Alto | Alto | Proyecto mayor | 8 |
 
-**### 6.6.2. HU-25 Cerrar sesión**
+### 6.6.2. HU-25 Cerrar sesión
 
 Como usuario del sistema, quiero cerrar sesión, para proteger mi cuenta cuando termine de utilizar el sistema.
 
@@ -706,7 +706,7 @@ Como usuario del sistema, quiero cerrar sesión, para proteger mi cuenta cuando 
 | --- | --- | --- | --- | --- |
 | M | Alto | Bajo | Quick win | 2 |
 
-**### 6.6.3. HU-26 Recuperar contraseña**
+### 6.6.3. HU-26 Recuperar contraseña
 
 Como usuario del sistema, quiero recuperar mi contraseña, para poder volver a acceder a mi cuenta cuando la haya olvidado.
 
@@ -727,7 +727,7 @@ Como usuario del sistema, quiero recuperar mi contraseña, para poder volver a a
 | --- | --- | --- | --- | --- |
 | C | Medio | Medio | Relleno | 5 |
 
-**### 6.6.4. HU-27 Administrar roles y permisos**
+### 6.6.4. HU-27 Administrar roles y permisos
 
 Como administrador, quiero asignar roles a los usuarios y configurar los permisos de cada rol, para controlar el acceso a las funcionalidades del sistema.
 
@@ -746,7 +746,7 @@ Como administrador, quiero asignar roles a los usuarios y configurar los permiso
 | --- | --- | --- | --- | --- |
 | M | Alto | Alto | Proyecto mayor | 8 |
 
-**### 6.6.5. HU-37 Registrar usuarios administrativos**
+### 6.6.5. HU-37 Registrar usuarios administrativos
 
 Como administrador, quiero registrar administradores y recepcionistas con sus datos y credenciales, para gestionar el equipo de trabajo que opera el sistema.
 
@@ -765,7 +765,7 @@ Como administrador, quiero registrar administradores y recepcionistas con sus da
 | --- | --- | --- | --- | --- |
 | M | Alto | Medio | Proyecto mayor | 5 |
 
-**# 7. Alcance del MVP**
+# 7. Alcance del MVP
 
 | **Épica** | **Funcionalidades incluidas en el MVP** |
 | --- | --- |
