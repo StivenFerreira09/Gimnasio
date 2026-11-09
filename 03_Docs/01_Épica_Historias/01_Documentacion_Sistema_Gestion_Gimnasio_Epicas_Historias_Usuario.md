@@ -1,4 +1,4 @@
-# 1. Descripción del problema
+**# 1. Descripción del problema**
 
 Actualmente, la gestión de un gimnasio puede realizarse de manera manual o utilizando diferentes herramientas para controlar clientes, membresías, actividades y entrenadores. Esto puede generar problemas como:
 
@@ -9,15 +9,15 @@ Actualmente, la gestión de un gimnasio puede realizarse de manera manual o util
 - Falta de información centralizada.
 - Mayor cantidad de trabajo manual para el personal administrativo.
 
-## 1.1. Problema central
+**## 1.1. Problema central**
 
 El gimnasio necesita un sistema centralizado que permita gestionar de manera eficiente clientes, membresías, actividades y entrenadores, reduciendo el trabajo manual y facilitando el acceso a la información.
 
-# 2. Objetivo del sistema
+**# 2. Objetivo del sistema**
 
 Desarrollar un Sistema de Gestión de Gimnasio que permita administrar de manera centralizada la información de los clientes, membresías, actividades y entrenadores, facilitando las actividades administrativas y mejorando la organización del gimnasio.
 
-## 2.1. Objetivos específicos
+**## 2.1. Objetivos específicos**
 
 - Registrar y administrar clientes.
 - Permitir que el administrador parametrice los tipos de membresía, las actividades que incluyen y sus beneficios, según el modelo de negocio del gimnasio.
@@ -27,20 +27,20 @@ Desarrollar un Sistema de Gestión de Gimnasio que permita administrar de manera
 - Generar reportes sobre la información del gimnasio.
 - Controlar el acceso a las funcionalidades según el rol y los permisos asignados.
 
-# 3. Usuarios del sistema
+**# 3. Usuarios del sistema**
 
 El sistema tendrá principalmente cuatro tipos de usuarios:
 
 | **Usuario** | **Función** |
 | --- | --- |
-| **Administrador** | Es el usuario encargado de administrar y supervisar la información general del gimnasio y de parametrizar el sistema según su modelo de negocio.<br><br>Podrá:<br>• Administrar clientes.<br>• Parametrizar tipos de membresía, sus actividades incluidas y sus beneficios.<br>• Administrar membresías.<br>• Gestionar actividades, espacios y la programación de actividades.<br>• Gestionar entrenadores y sus horarios.<br>• Consultar el dashboard y configurar los días de aviso de vencimiento.<br>• Crear cuentas de usuario.<br>• Administrar roles y configurar los permisos de cada rol. |
-| **Recepcionista** | Es el usuario encargado de realizar las actividades operativas del gimnasio mediante el sistema.<br><br>Podrá, según los permisos de su rol:<br>• Registrar y consultar clientes.<br>• Gestionar información de membresías.<br>• Consultar actividades programadas y sus inscritos.<br>• Registrar y consultar entrenadores.<br>• Definir el horario fijo de los entrenadores.<br>• Crear las credenciales de acceso de clientes y entrenadores. |
+| **Administrador** | Es el usuario encargado de administrar y supervisar la información general del gimnasio y de parametrizar el sistema según su modelo de negocio. Tiene todas las capacidades operativas del Recepcionista y, además, las funciones exclusivas de administración.<br><br>Podrá:<br>• Registrar y consultar clientes; editar y desactivar clientes.<br>• Parametrizar tipos de membresía, sus actividades incluidas y sus beneficios.<br>• Administrar membresías: consultar, asignar y renovar.<br>• Gestionar actividades, espacios y la programación de actividades.<br>• Gestionar entrenadores, editar y cambiar su estado, y administrar sus horarios.<br>• Consultar el dashboard y configurar los días de aviso de vencimiento.<br>• Registrar usuarios de los cuatro roles con sus datos y credenciales en un único flujo; la primera cuenta Administrador se crea mediante configuración inicial controlada.<br>• Administrar roles y configurar los permisos de cada rol. |
+| **Recepcionista** | Es el usuario encargado de realizar las actividades operativas y de atención del gimnasio mediante el sistema.<br><br>Podrá:<br>• Registrar, consultar y editar clientes.<br>• Consultar el catálogo, asignar y renovar membresías.<br>• Consultar actividades programadas, sus inscritos y entrenadores.<br>• Registrar y consultar entrenadores.<br>• Definir el horario fijo de los entrenadores.<br>• Registrar clientes y entrenadores con sus datos y credenciales en un único flujo.<br>No podrá acceder a las funciones exclusivas de administración. |
 | **Entrenador** | Es el usuario encargado de dirigir las actividades programadas que le sean asignadas.<br><br>Podrá:<br>• Iniciar sesión.<br>• Consultar las actividades que tiene asignadas.<br>• Consultar sus horarios.<br>• Consultar la información de las actividades correspondientes. |
 | **Cliente** | Es el usuario que utiliza los servicios del gimnasio y que tendrá acceso al sistema mediante una cuenta personal.<br><br>Podrá:<br>• Iniciar sesión.<br>• Consultar su información personal.<br>• Consultar su membresía, las actividades y beneficios que incluye y sus límites.<br>• Consultar el estado y vencimiento de su membresía.<br>• Consultar las actividades programadas disponibles.<br>• Inscribirse en actividades incluidas en su membresía.<br>• Cancelar sus inscripciones.<br>• Consultar sus actividades inscritas. |
 
-# 4. Épicas
+**# 4. Épicas**
 
-## 4.1. Gestión de clientes
+**## 4.1. Gestión de clientes**
 
 El sistema permitirá administrar la información de los clientes del gimnasio, facilitando su registro, consulta y actualización.
 
@@ -53,7 +53,7 @@ El sistema permitirá:
 - Desactivar clientes cuando ya no hagan parte del gimnasio, bloqueando su acceso al sistema.
 - Consultar la información de la membresía asociada a cada cliente.
 
-## 4.2. Gestión de membresías
+**## 4.2. Gestión de membresías**
 
 El sistema permitirá que el administrador parametrice las membresías ofrecidas por el gimnasio según su modelo de negocio, y controlar su asignación, vigencia y renovación.
 
@@ -71,7 +71,7 @@ El sistema permitirá:
 - Renovar membresías.
 - Consultar las fechas de vencimiento.
 
-## 4.3. Gestión de actividades
+**## 4.3. Gestión de actividades**
 
 El sistema permitirá administrar las actividades ofrecidas por el gimnasio, programar cuándo, dónde y con qué entrenador se realizan, y controlar la inscripción de los clientes.
 
@@ -87,7 +87,7 @@ El sistema permitirá:
 - Cancelar inscripciones.
 - Consultar a los clientes inscritos.
 
-## 4.4. Gestión de entrenadores
+**## 4.4. Gestión de entrenadores**
 
 El sistema permitirá administrar la información de los entrenadores, sus horarios y su asignación a las actividades programadas del gimnasio.
 
@@ -101,7 +101,7 @@ El sistema permitirá:
 - Cambiar el estado de un entrenador, reasignando previamente sus actividades programadas.
 - Consultar horarios de los entrenadores.
 
-## 4.5. Dashboard y reportes
+**## 4.5. Dashboard y reportes**
 
 El sistema proporcionará al administrador un panel con información resumida sobre la operación del gimnasio.
 
@@ -113,7 +113,7 @@ El administrador podrá consultar:
 - Membresías próximas para vencer, según los días de aviso que él mismo configure.
 - Actividades programadas.
 
-## 4.6. Autenticación y permisos
+**## 4.6. Autenticación y permisos**
 
 El sistema permitirá controlar el acceso de los usuarios y administrar los permisos de acuerdo con el rol asignado.
 
@@ -121,7 +121,7 @@ El sistema contará con:
 
 - Inicio de sesión.
 - Cierre de sesión.
-- Recuperación de contraseña mediante el teléfono o correo registrado.
+- Recuperación de contraseña exclusivamente mediante el correo electrónico registrado.
 - Creación de cuentas de usuario.
 - Administración de roles.
 - Configuración de permisos por rol.
@@ -133,15 +133,15 @@ Los roles contemplados serán:
 - Entrenador.
 - Cliente.
 
-## 4.7. User Story Map
+**## 4.7. User Story Map**
 
 ![User Story Map](user-story-map.png)
 
-# 5. Metodología de Priorización, Estimación y Criterios de Aceptación
+**# 5. Metodología de Priorización, Estimación y Criterios de Aceptación**
 
 Con base en la retroalimentación recibida, la priorización de las historias de usuario se realizó mediante dos técnicas reconocidas, las cuales se aplican de forma complementaria.
 
-## 5.1. MoSCoW - Definiciones
+**## 5.1. MoSCoW - Definiciones**
 
 | **Categoría** | **Significado** |
 | --- | --- |
@@ -150,7 +150,7 @@ Con base en la retroalimentación recibida, la priorización de las historias de
 | **C — Could have** | Deseable. Bajo impacto si se pospone. |
 | **W — Won't have (por ahora)** | Queda fuera del alcance de esta versión del proyecto. |
 
-## 5.2. Valor vs. Esfuerzo - Definiciones
+**## 5.2. Valor vs. Esfuerzo - Definiciones**
 
 Cada historia se evalúa en dos ejes (Alto / Medio / Bajo) y se ubica en uno de los cuatro cuadrantes de la matriz:
 
@@ -172,47 +172,26 @@ Cuando el valor o el esfuerzo es **Medio**, el cuadrante se asigna con esta regl
 
 MoSCoW define qué entra en el proyecto; Valor vs. Esfuerzo define el orden de construcción dentro de lo que ya fue aceptado.
 
-## 5.3. Formato de criterios de aceptación (Given / When / Then)
+**## 5.3. Formato de criterios de aceptación**
 
-Los criterios de aceptación se estructuran en formato **Given / When / Then** organizados en tablas por historia con escenarios principal y alternativo tomando en cuenta el más relevante:
+Los criterios de aceptación se expresan mediante escenarios que utilizan la estructura GIVEN (Dado que), WHEN (Cuando) y THEN (Entonces), con el propósito de describir las condiciones necesarias para validar cada historia de usuario.
 
-| **Elemento** | **Significado** | **Contenido que reemplaza** |
-| --- | --- | --- |
-| **GIVEN (Dado que)** | Describe el contexto o estado inicial antes de que ocurra la acción. | Precondiciones que antes estaban implícitas en las viñetas. |
-| **WHEN (Cuando)** | Describe la acción o evento que dispara el comportamiento a validar. | La acción principal descrita en cada viñeta (ej. "el sistema debe permitir..."). |
-| **THEN (Entonces)** | Describe el resultado esperado del sistema. | El resultado o validación que antes era una viñeta separada (ej. "debe mostrar confirmación"). |
+**# 6. Historias de usuario**
 
-| **Fila de la tabla** | **Qué representa** |
-| --- | --- |
-| **Principal (éxito)** | El flujo normal de la historia con sus validaciones originales (campos obligatorios, guardado correcto y mensaje de confirmación). |
-| **Alternativo (más relevante)** | Cubre la excepción o regla de negocio más crítica de la historia (como datos duplicados, falta de cupo o credenciales erróneas), manteniendo la condición de los criterios originales. |
+**## 6.1. Gestión de clientes**
 
-## 5.4. Estimación en puntos de historia
+**### 6.1.1. HU-01 Registrar cliente**
 
-Para estimar el esfuerzo de construcción de cada historia, se asignaron puntos usando una escala Fibonacci simplificada (2, 3, 5, 8) vinculada a la matriz Valor vs. Esfuerzo:
+Como recepcionista o administrador, quiero registrar un cliente con sus datos personales y credenciales de acceso en un único flujo, para que pueda utilizar los servicios del gimnasio y acceder al sistema.
 
-| **Esfuerzo (Valor vs. Esfuerzo)** | **Puntos de historia** | **Interpretación** |
-| --- | --- | --- |
-| **Bajo** | 2 – 3 | Consultas o formularios simples con poca lógica de negocio. |
-| **Medio** | 5 | Incluye reglas de negocio (fechas, validaciones cruzadas) o integración modular. |
-| **Alto** | 8 | Historias con múltiples módulos, agregaciones de datos o control de acceso transversal. |
-
-# 6. Historias de usuario
-
-## 6.1. Gestión de clientes
-
-### 6.1.1. HU-01 Registrar cliente
-
-Como administrador o recepcionista, quiero registrar un nuevo cliente, para almacenar su información y poder gestionarla desde el sistema.
-
-**Dependencias:** Ninguna (sin dependencias funcionales directas).
+**Dependencias:** Ninguna.
 
 **Criterios de aceptación:**
 
 | **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
 | --- | --- | --- | --- |
-| **Principal (éxito)** | un administrador o recepcionista autenticado se encuentra en el módulo de clientes | ingresa nombre, documento y teléfono (obligatorios) y, opcionalmente, correo, y confirma el registro | el sistema guarda la información correctamente y muestra un mensaje de confirmación |
-| **Alternativo (más relevante)** | ya existe un usuario registrado con el mismo número de documento | el usuario intenta registrar un nuevo cliente con ese mismo documento | el sistema rechaza el registro y muestra un mensaje indicando que el documento ya existe |
+| **Principal (éxito)** | un administrador o recepcionista autorizado está en el formulario de registro | ingresa nombre, documento, correo electrónico obligatorio y único, teléfono opcional, contraseña y confirmación de contraseña | el sistema registra la ficha del cliente y sus credenciales conjuntamente, y permite que inicie sesión con su correo electrónico y contraseña |
+| **Alternativo (más relevante)** | el documento o correo ya está registrado, el correo está vacío o tiene un formato inválido, o las contraseñas no coinciden | intenta guardar el registro | el sistema no guarda la información y muestra el mensaje de validación correspondiente |
 
 **Prioridad:**
 
@@ -220,18 +199,18 @@ Como administrador o recepcionista, quiero registrar un nuevo cliente, para alma
 | --- | --- | --- | --- | --- |
 | M | Alto | Medio | Proyecto mayor | 5 |
 
-### 6.1.2. HU-02 Consultar clientes
+**### 6.1.2. HU-02 Consultar clientes**
 
-Como administrador o recepcionista, quiero consultar los clientes registrados, para acceder fácilmente a su información.
+Como administrador o recepcionista, quiero consultar los clientes registrados, para acceder a su información y gestionar su atención.
 
-**Dependencias:** HU-01 (Requiere que existan clientes registrados).
+**Dependencias:** HU-01.
 
 **Criterios de aceptación:**
 
 | **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
 | --- | --- | --- | --- |
-| **Principal (éxito)** | existen clientes registrados en el sistema | un usuario autorizado accede al listado de clientes | el sistema muestra todos los clientes registrados con su información básica |
-| **Alternativo (más relevante)** | no existen clientes registrados en el sistema | el usuario accede al listado de clientes | el sistema muestra un mensaje indicando que no hay clientes registrados |
+| **Principal (éxito)** | existen clientes registrados | el usuario autorizado ingresa al módulo de clientes | el sistema muestra el listado de clientes |
+| **Alternativo (más relevante)** | no existen clientes registrados | el usuario ingresa al módulo de clientes | el sistema muestra un mensaje indicando que no hay clientes registrados |
 
 **Prioridad:**
 
@@ -239,195 +218,56 @@ Como administrador o recepcionista, quiero consultar los clientes registrados, p
 | --- | --- | --- | --- | --- |
 | M | Alto | Bajo | Quick win | 2 |
 
-### 6.1.3. HU-03 Buscar cliente
+**### 6.1.3. HU-03 Buscar clientes**
 
-Como administrador o recepcionista, quiero buscar un cliente por sus datos identificativos, para encontrar rápidamente su información.
+Como administrador o recepcionista, quiero buscar clientes por sus datos, para encontrar rápidamente un registro específico.
 
-**Dependencias:** HU-01 (Requiere que existan clientes registrados).
+**Dependencias:** HU-01, HU-02.
 
 **Criterios de aceptación:**
 
 | **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
 | --- | --- | --- | --- |
-| **Principal (éxito)** | existen clientes registrados | el usuario ingresa un criterio de búsqueda (nombre o documento) | el sistema muestra los clientes que coinciden con el criterio ingresado |
-| **Alternativo (más relevante)** | el usuario realiza una búsqueda | ningún cliente coincide con el criterio ingresado | el sistema informa que no se encontraron resultados |
+| **Principal (éxito)** | existen clientes registrados | el usuario ingresa un criterio de búsqueda válido | el sistema muestra los clientes que coinciden con el criterio |
+| **Alternativo (más relevante)** | existen clientes registrados | el usuario ingresa un criterio que no coincide con ningún registro | el sistema informa que no se encontraron resultados |
 
 **Prioridad:**
 
 | **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
 | --- | --- | --- | --- | --- |
-| S | Medio | Bajo | Quick win | 2 |
+| M | Medio | Bajo | Quick win | 2 |
 
-### 6.1.4. HU-04 Editar información del cliente
+**### 6.1.4. HU-04 Editar cliente**
 
 Como administrador o recepcionista, quiero editar la información de un cliente, para mantener sus datos actualizados.
 
-**Dependencias:** HU-01 (Requiere que el cliente ya esté registrado).
+**Dependencias:** HU-01, HU-02.
 
 **Criterios de aceptación:**
 
 | **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
 | --- | --- | --- | --- |
-| **Principal (éxito)** | un cliente existe en el sistema | el usuario autorizado modifica sus datos y guarda los cambios | el sistema actualiza la información y muestra una confirmación |
-| **Alternativo (más relevante)** | el usuario intenta editar un cliente | el cliente ya no existe o fue desactivado previamente | el sistema informa que la edición no puede realizarse |
+| **Principal (éxito)** | existe un cliente registrado | el usuario autorizado modifica sus datos y guarda los cambios | el sistema actualiza la información del cliente |
+| **Alternativo (más relevante)** | el correo electrónico ingresado ya pertenece a otro usuario o el documento está duplicado | el usuario intenta guardar los cambios | el sistema rechaza la actualización y muestra el error correspondiente |
 
 **Prioridad:**
 
 | **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
 | --- | --- | --- | --- | --- |
-| S | Medio | Bajo | Quick win | 3 |
+| M | Medio | Medio | Proyecto mayor | 5 |
 
-### 6.1.5. HU-05 Desactivar cliente
+**### 6.1.5. HU-05 Desactivar cliente**
 
-Como administrador, quiero desactivar un cliente, para evitar que continúe apareciendo como cliente activo cuando ya no utiliza los servicios del gimnasio.
+Como administrador, quiero desactivar un cliente, para impedir que continúe utilizando el sistema cuando ya no haga parte del gimnasio.
 
-**Dependencias:** HU-01 (Requiere que el cliente exista y esté activo).
-
-**Criterios de aceptación:**
-
-| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
-| --- | --- | --- | --- |
-| **Principal (éxito)** | un cliente se encuentra activo | el administrador confirma la desactivación | el sistema cambia el estado del cliente a inactivo, deja de mostrarlo como cliente activo y bloquea su acceso al sistema |
-| **Alternativo (más relevante)** | un cliente activo tiene una membresía vigente | el administrador intenta desactivarlo | el sistema muestra una advertencia sobre la membresía vigente y permite al administrador cancelar la operación o confirmar la desactivación |
-
-**Nota:** El administrador también puede reactivar a un cliente inactivo; al hacerlo, el cliente recupera su acceso al sistema (RF-05).
-
-**Prioridad:**
-
-| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
-| --- | --- | --- | --- | --- |
-| C | Medio | Bajo | Quick win | 2 |
-
-### 6.1.6. HU-06 Consultar membresía del cliente
-
-Como cliente, quiero consultar la información de mi membresía, para conocer el tipo de membresía que tengo, lo que incluye y su estado.
-
-**Dependencias:** Ninguna dependencia funcional directa. El cliente debe estar autenticado para consultar su información.
+**Dependencias:** HU-01, HU-02.
 
 **Criterios de aceptación:**
 
 | **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
 | --- | --- | --- | --- |
-| **Principal (éxito)** | un cliente tiene una membresía asignada | consulta su membresía | el sistema muestra el tipo de membresía, las actividades incluidas con sus límites, los beneficios, su estado y la fecha de vencimiento |
-| **Alternativo (más relevante)** | un cliente no tiene ninguna membresía asignada | consulta su membresía | el sistema muestra un mensaje indicando que no cuenta con una membresía activa |
-
-**Prioridad:**
-
-| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
-| --- | --- | --- | --- | --- |
-| M | Alto | Bajo | Quick win | 3 |
-
-## 6.2. Gestión de membresías
-
-### 6.2.1. HU-07 Crear tipo de membresía
-
-Como administrador, quiero crear diferentes tipos de membresía, para ofrecer distintas opciones a los clientes según el modelo de negocio del gimnasio.
-
-**Dependencias:** Ninguna (sin dependencias funcionales directas).
-
-**Criterios de aceptación:**
-
-| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
-| --- | --- | --- | --- |
-| **Principal (éxito)** | un administrador está en el módulo de membresías | registra nombre, precio, duración y unidad de duración (días o meses) válidos | el sistema guarda el tipo de membresía correctamente |
-| **Alternativo (más relevante)** | ya existe una membresía registrada con el mismo nombre | el administrador intenta crear otra membresía con ese nombre | el sistema rechaza la creación e informa del duplicado |
-
-**Prioridad:**
-
-| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
-| --- | --- | --- | --- | --- |
-| M | Alto | Medio | Proyecto mayor | 5 |
-
-### 6.2.2. HU-08 Consultar membresías
-
-Como administrador o recepcionista, quiero consultar las membresías disponibles, para conocer las opciones ofrecidas por el gimnasio.
-
-**Dependencias:** HU-07 (Requiere que existan tipos de membresía creados).
-
-**Criterios de aceptación:**
-
-| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
-| --- | --- | --- | --- |
-| **Principal (éxito)** | existen membresías registradas | un usuario autorizado accede al catálogo | el sistema muestra las membresías con su precio, duración, actividades incluidas con sus límites y beneficios; un tipo de membresía sin actividades o beneficios configurados se muestra igualmente, indicándolo |
-| **Alternativo (más relevante)** | no existen membresías creadas en el sistema | el usuario accede al catálogo | el sistema muestra un mensaje indicando que no hay membresías disponibles |
-
-**Prioridad:**
-
-| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
-| --- | --- | --- | --- | --- |
-| M | Alto | Bajo | Quick win | 3 |
-
-### 6.2.3. HU-09 Asignar membresía a cliente
-
-Como administrador o recepcionista, quiero asignar una membresía a un cliente, para registrar el servicio contratado.
-
-**Dependencias:** HU-01, HU-07 (Requiere que el cliente esté registrado y que existan tipos de membresía).
-
-**Criterios de aceptación:**
-
-| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
-| --- | --- | --- | --- |
-| **Principal (éxito)** | un cliente y una membresía existen en el sistema | el usuario autorizado selecciona ambos y confirma la asignación | el sistema registra la fecha de inicio y calcula automáticamente la fecha de vencimiento según la duración y su unidad |
-| **Alternativo (más relevante)** | un cliente ya tiene una membresía activa | el usuario intenta asignarle una nueva membresía | el sistema advierte del conflicto y, si el usuario confirma, registra la nueva membresía y deja la anterior en estado reemplazada |
-
-**Prioridad:**
-
-| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
-| --- | --- | --- | --- | --- |
-| M | Alto | Medio | Proyecto mayor | 5 |
-
-### 6.2.4. HU-10 Consultar estado de membresías
-
-Como administrador o recepcionista, quiero consultar las membresías activas, vencidas y próximas a vencer, para realizar un seguimiento de su estado.
-
-**Dependencias:** HU-09, HU-35 (Requiere que existan membresías asignadas a clientes y los días de aviso configurados).
-
-**Criterios de aceptación:**
-
-| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
-| --- | --- | --- | --- |
-| **Principal (éxito)** | existen membresías asignadas | el usuario autorizado consulta el estado de membresías | el sistema clasifica y muestra las membresías activas, vencidas y próximas a vencer (según los días de aviso configurados) con sus fechas |
-| **Alternativo (más relevante)** | no existen membresías vencidas en el sistema | el usuario autorizado consulta esa categoría | el sistema muestra que no hay registros en ese estado |
-
-**Prioridad:**
-
-| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
-| --- | --- | --- | --- | --- |
-| M | Alto | Medio | Proyecto mayor | 5 |
-
-### 6.2.5. HU-11 Renovar membresía
-
-Como administrador o recepcionista, quiero renovar la membresía de un cliente, para mantener vigente su acceso a los servicios del gimnasio.
-
-**Dependencias:** HU-09 (Requiere que el cliente cuente con una membresía previamente asignada).
-
-**Criterios de aceptación:**
-
-| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
-| --- | --- | --- | --- |
-| **Principal (éxito)** | un cliente tiene una membresía asociada | el usuario autorizado inicia y confirma la renovación | el sistema registra una nueva membresía con vigencia desde la fecha actual, deja la anterior en estado reemplazada y muestra una confirmación |
-| **Alternativo (más relevante)** | un cliente no tiene ninguna membresía asignada | el usuario intenta renovarla | el sistema informa que no existe una membresía para renovar |
-
-**Prioridad:**
-
-| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
-| --- | --- | --- | --- | --- |
-| S | Medio | Medio | Relleno | 5 |
-
-### 6.2.6. HU-28 Gestionar beneficios
-
-Como administrador, quiero gestionar el catálogo de beneficios del gimnasio, para ofrecer servicios adicionales según mi modelo de negocio.
-
-**Nota:** Incluida en el MVP con prioridad Should have (S).
-
-**Dependencias:** Ninguna (sin dependencias funcionales directas).
-
-**Criterios de aceptación:**
-
-| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
-| --- | --- | --- | --- |
-| **Principal (éxito)** | un administrador está en el módulo de membresías | registra o edita un beneficio con nombre y descripción válidos, o cambia su estado (activo/inactivo) | el sistema guarda el beneficio; solo los beneficios activos quedan disponibles para asociarlos a los tipos de membresía |
-| **Alternativo (más relevante)** | ya existe un beneficio con el mismo nombre | el administrador intenta registrarlo | el sistema rechaza el registro e informa del duplicado |
+| **Principal (éxito)** | existe un cliente activo | el administrador confirma su desactivación | el sistema cambia su estado y bloquea su acceso |
+| **Alternativo (más relevante)** | el administrador selecciona cancelar la operación | confirma que no desea continuar | el sistema conserva el estado anterior del cliente |
 
 **Prioridad:**
 
@@ -435,18 +275,20 @@ Como administrador, quiero gestionar el catálogo de beneficios del gimnasio, pa
 | --- | --- | --- | --- | --- |
 | S | Medio | Bajo | Quick win | 2 |
 
-### 6.2.7. HU-29 Configurar actividades y beneficios de un tipo de membresía
+**## 6.2. Gestión de membresías**
 
-Como administrador, quiero definir qué actividades y beneficios incluye cada tipo de membresía, para que el sistema aplique la lógica de mi negocio a cada cliente según su plan.
+**### 6.2.1. HU-06 Crear tipos de membresía**
 
-**Dependencias:** HU-07, HU-30 (Requiere tipos de membresía y actividades registrados). HU-28 solo es necesaria para asociar beneficios.
+Como administrador, quiero crear tipos de membresía, para ofrecer diferentes planes de servicio a los clientes.
+
+**Dependencias:** Ninguna.
 
 **Criterios de aceptación:**
 
 | **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
 | --- | --- | --- | --- |
-| **Principal (éxito)** | existen un tipo de membresía y actividades registradas (los beneficios son opcionales) | el administrador asocia actividades (con su límite de inscripciones y el período del límite, o sin límite) y, opcionalmente, beneficios al tipo de membresía | el sistema guarda la configuración y la aplica a los clientes que tienen ese tipo de membresía |
-| **Alternativo (más relevante)** | el administrador define un límite para una actividad | no indica el período del límite | el sistema no guarda la configuración e indica que el período es obligatorio cuando existe un límite |
+| **Principal (éxito)** | el administrador está en el módulo de membresías | ingresa nombre, precio, duración y unidad de duración | el sistema registra el tipo de membresía |
+| **Alternativo (más relevante)** | los datos obligatorios están incompletos o no son válidos | el administrador intenta guardar | el sistema muestra los errores y no registra la membresía |
 
 **Prioridad:**
 
@@ -454,81 +296,37 @@ Como administrador, quiero definir qué actividades y beneficios incluye cada ti
 | --- | --- | --- | --- | --- |
 | M | Alto | Medio | Proyecto mayor | 5 |
 
-## 6.3. Gestión de actividades
+**### 6.2.2. HU-07 Gestionar beneficios**
 
-### 6.3.1. HU-12 Programar actividad
+Como administrador, quiero gestionar el catálogo de beneficios, para definir los beneficios informativos que puede incluir cada tipo de membresía.
 
-Como administrador, quiero programar una actividad, para organizar cuándo, dónde y con qué entrenador se realiza.
-
-**Dependencias:** HU-18, HU-30, HU-31, HU-33 (Requiere entrenadores con horario fijo, actividades y espacios registrados).
+**Dependencias:** HU-06.
 
 **Criterios de aceptación:**
 
 | **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
 | --- | --- | --- | --- |
-| **Principal (éxito)** | un administrador está en el módulo de actividades | selecciona la actividad, el día, la hora de inicio y fin, el espacio y el entrenador | el sistema valida que la hora de fin sea posterior a la de inicio y que el entrenador esté activo, no tenga otra actividad en un horario superpuesto y la programación esté dentro de su horario fijo, y guarda la programación |
-| **Alternativo (más relevante)** | ya existe una programación en el mismo espacio, el mismo día y con horario superpuesto | el administrador intenta guardar la nueva programación | el sistema advierte del cruce de horarios y no guarda la programación |
+| **Principal (éxito)** | el administrador está en el catálogo de beneficios | registra o edita un beneficio | el sistema guarda la información del beneficio |
+| **Alternativo (más relevante)** | el beneficio tiene información obligatoria incompleta | intenta guardarlo | el sistema muestra el error correspondiente |
 
 **Prioridad:**
 
 | **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
 | --- | --- | --- | --- | --- |
-| M | Alto | Medio | Proyecto mayor | 5 |
+| S | Medio | Bajo | Quick win | 2 |
 
-### 6.3.2. HU-13 Cambiar el entrenador de una actividad programada
+**### 6.2.3. HU-08 Configurar actividades y beneficios de membresía**
 
-Como administrador, quiero asignar o cambiar el entrenador de una actividad programada, para organizar quién estará encargado de dirigirla.
+Como administrador, quiero definir las actividades, sus límites de inscripción y los beneficios incluidos en cada tipo de membresía, para configurar los servicios ofrecidos por cada plan.
 
-**Dependencias:** HU-12, HU-18, HU-33 (Requiere que la programación exista y que el entrenador esté registrado con su horario fijo).
-
-**Criterios de aceptación:**
-
-| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
-| --- | --- | --- | --- |
-| **Principal (éxito)** | una actividad programada y un entrenador activo existen en el sistema | el administrador selecciona el entrenador y confirma la asignación | el sistema registra la asignación correctamente |
-| **Alternativo (más relevante)** | el entrenador tiene otra actividad programada en el mismo horario o el horario está fuera de su horario fijo | el administrador intenta asignarlo | el sistema advierte del conflicto de horario y no realiza la asignación |
-
-**Nota:** Solo pueden asignarse entrenadores activos; si el entrenador seleccionado está inactivo, el sistema rechaza la asignación (RN-15).
-
-**Prioridad:**
-
-| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
-| --- | --- | --- | --- | --- |
-| M | Alto | Bajo | Quick win | 3 |
-
-### 6.3.3. HU-14 Consultar actividades programadas disponibles
-
-Como cliente, quiero consultar las actividades programadas disponibles, para conocer las actividades a las que me puedo inscribir.
-
-El administrador y el recepcionista también pueden consultar este listado (RF-14), sin la validación de membresía.
-
-**Dependencias:** HU-12 (Requiere que existan actividades programadas).
+**Dependencias:** HU-06, HU-07.
 
 **Criterios de aceptación:**
 
 | **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
 | --- | --- | --- | --- |
-| **Principal (éxito)** | existen actividades programadas no canceladas | el cliente consulta las actividades disponibles | el sistema muestra la actividad, el día, el horario, el espacio, el cupo disponible y el entrenador asignado; indica si la actividad está incluida en su membresía (si no lo está, informa que no puede inscribirse con su plan actual) y, si tiene límite, cuántas inscripciones le quedan |
-| **Alternativo (más relevante)** | no existen actividades programadas con cupo disponible | el cliente consulta el listado | el sistema indica que no hay actividades disponibles en ese momento |
-
-**Prioridad:**
-
-| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
-| --- | --- | --- | --- | --- |
-| M | Alto | Bajo | Quick win | 3 |
-
-### 6.3.4. HU-15 Inscribirse en una actividad
-
-Como cliente, quiero inscribirme en una actividad programada, para participar en las actividades incluidas en mi membresía.
-
-**Dependencias:** HU-14, HU-09, HU-29 (Requiere consultar actividades disponibles, contar con una membresía activa y que su tipo de membresía tenga actividades configuradas).
-
-**Criterios de aceptación:**
-
-| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
-| --- | --- | --- | --- |
-| **Principal (éxito)** | la actividad programada tiene cupo disponible, el cliente cuenta con una membresía activa que incluye esa actividad, no ha alcanzado su límite (si existe) y no tiene una inscripción activa en esa programación | el cliente se inscribe en la actividad | el sistema registra la inscripción, informa el éxito de la operación y, cuando la actividad tiene límite, muestra cuántas inscripciones le quedan en el período |
-| **Alternativo (más relevante)** | el cliente alcanzó el límite de inscripciones de esa actividad definido en su membresía | el cliente intenta inscribirse | el sistema rechaza la inscripción e informa su límite según su plan |
+| **Principal (éxito)** | existe un tipo de membresía | el administrador selecciona actividades, límites, períodos y beneficios | el sistema guarda la configuración del plan |
+| **Alternativo (más relevante)** | la configuración contiene datos inválidos | intenta guardar | el sistema muestra los errores correspondientes y conserva la configuración anterior |
 
 **Prioridad:**
 
@@ -536,271 +334,19 @@ Como cliente, quiero inscribirme en una actividad programada, para participar en
 | --- | --- | --- | --- | --- |
 | M | Alto | Alto | Proyecto mayor | 8 |
 
-### 6.3.5. HU-16 Cancelar inscripción
+**### 6.2.4. HU-09 Asignar membresía**
 
-Como cliente, quiero cancelar mi inscripción en una actividad, para liberar el cupo cuando no pueda participar.
+Como administrador o recepcionista, quiero asignar una membresía a un cliente, para habilitar los servicios incluidos en el plan seleccionado.
 
-**Dependencias:** HU-15, HU-38 (Requiere que el cliente tenga una inscripción previa y pueda consultar sus inscripciones).
-
-**Criterios de aceptación:**
-
-| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
-| --- | --- | --- | --- |
-| **Principal (éxito)** | el cliente tiene una inscripción activa | confirma la cancelación | el sistema cancela la inscripción, libera el cupo correspondiente y deja de contarla para el límite de su plan |
-| **Alternativo (más relevante)** | el cliente no tiene una inscripción activa en la actividad | intenta cancelar la inscripción | el sistema informa que no existe una inscripción activa para cancelar |
-
-**Prioridad:**
-
-| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
-| --- | --- | --- | --- | --- |
-| S | Medio | Bajo | Quick win | 3 |
-
-### 6.3.6. HU-17 Consultar clientes inscritos
-
-Como administrador o recepcionista, quiero consultar a los clientes inscritos en una actividad programada, para conocer la cantidad de participantes.
-
-**Dependencias:** HU-15 (Requiere que existan inscripciones registradas).
+**Dependencias:** HU-01, HU-06, HU-08.
 
 **Criterios de aceptación:**
 
 | **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
 | --- | --- | --- | --- |
-| **Principal (éxito)** | una actividad programada tiene clientes inscritos | el usuario autorizado la consulta | el sistema muestra la lista de inscritos y la cantidad total |
-| **Alternativo (más relevante)** | una actividad programada no tiene inscripciones registradas | el usuario la consulta | el sistema indica que no hay clientes inscritos en esa actividad |
-
-**Prioridad:**
-
-| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
-| --- | --- | --- | --- | --- |
-| S | Medio | Bajo | Quick win | 2 |
-
-### 6.3.7. HU-30 Gestionar actividades
-
-Como administrador, quiero gestionar el catálogo de actividades del gimnasio, para definir qué actividades se ofrecen y su capacidad máxima.
-
-**Dependencias:** Ninguna (sin dependencias funcionales directas).
-
-**Criterios de aceptación:**
-
-| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
-| --- | --- | --- | --- |
-| **Principal (éxito)** | un administrador está en el módulo de actividades | registra o edita una actividad con nombre, descripción y capacidad máxima válidos, o cambia su estado (activo/inactivo) | el sistema guarda la actividad; solo las actividades activas quedan disponibles para programarlas y asociarlas a los tipos de membresía |
-| **Alternativo (más relevante)** | el administrador está registrando una actividad | deja campos obligatorios vacíos o ingresa una capacidad máxima no válida | el sistema muestra un error y no guarda la actividad |
-
-**Prioridad:**
-
-| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
-| --- | --- | --- | --- | --- |
-| M | Alto | Bajo | Quick win | 3 |
-
-### 6.3.8. HU-31 Gestionar espacios
-
-Como administrador, quiero gestionar los espacios del gimnasio, para programar las actividades en el lugar adecuado y evitar cruces.
-
-**Dependencias:** Ninguna (sin dependencias funcionales directas).
-
-**Criterios de aceptación:**
-
-| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
-| --- | --- | --- | --- |
-| **Principal (éxito)** | un administrador está en el módulo de actividades | registra o edita un espacio con nombre y capacidad válidos | el sistema guarda el espacio y lo deja disponible para programar actividades |
-| **Alternativo (más relevante)** | el administrador está registrando un espacio | deja campos obligatorios vacíos | el sistema muestra un error y no guarda el espacio |
-
-**Prioridad:**
-
-| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
-| --- | --- | --- | --- | --- |
-| M | Alto | Bajo | Quick win | 2 |
-
-### 6.3.9. HU-32 Cancelar actividad programada
-
-Como administrador, quiero cancelar una actividad programada, para que no reciba más inscripciones cuando no pueda realizarse.
-
-**Dependencias:** HU-12 (Requiere que la actividad esté programada).
-
-**Criterios de aceptación:**
-
-| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
-| --- | --- | --- | --- |
-| **Principal (éxito)** | una actividad programada tiene clientes inscritos | el administrador confirma su cancelación | el sistema cambia su estado a cancelada y cancela todas sus inscripciones activas |
-| **Alternativo (más relevante)** | la actividad programada ya está cancelada | el administrador intenta cancelarla de nuevo | el sistema informa que la actividad ya se encuentra cancelada |
-
-**Prioridad:**
-
-| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
-| --- | --- | --- | --- | --- |
-| C | Medio | Medio | Relleno | 5 |
-
-### 6.3.10. HU-38 Consultar mis inscripciones
-
-Como cliente, quiero consultar las actividades programadas en las que estoy inscrito, para organizar mi asistencia y poder cancelar una inscripción si lo necesito.
-
-**Dependencias:** HU-15 (Requiere que el cliente tenga inscripciones registradas).
-
-**Criterios de aceptación:**
-
-| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
-| --- | --- | --- | --- |
-| **Principal (éxito)** | un cliente autenticado tiene inscripciones registradas | consulta sus inscripciones | el sistema muestra las actividades programadas en las que está inscrito con el día, el horario, el espacio y el estado de cada inscripción |
-| **Alternativo (más relevante)** | un cliente autenticado no tiene inscripciones activas | consulta sus inscripciones | el sistema indica que no tiene inscripciones activas |
-
-**Prioridad:**
-
-| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
-| --- | --- | --- | --- | --- |
-| S | Medio | Bajo | Quick win | 2 |
-
-## 6.4. Gestión de entrenadores
-
-### 6.4.1. HU-18 Registrar entrenador
-
-Como administrador o recepcionista, quiero registrar entrenadores, para mantener organizada la información del personal encargado de las actividades.
-
-**Dependencias:** Ninguna (sin dependencias funcionales directas).
-
-**Criterios de aceptación:**
-
-| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
-| --- | --- | --- | --- |
-| **Principal (éxito)** | un administrador o recepcionista está registrando un entrenador | ingresa nombre, documento y teléfono (obligatorios) y, opcionalmente, correo | el sistema guarda el registro correctamente |
-| **Alternativo (más relevante)** | ya existe un usuario registrado con el mismo número de documento | el usuario intenta registrar el entrenador con ese documento | el sistema rechaza el registro e informa que el documento ya existe |
-
-**Prioridad:**
-
-| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
-| --- | --- | --- | --- | --- |
-| M | Alto | Bajo | Quick win | 3 |
-
-### 6.4.2. HU-19 Editar información del entrenador
-
-Como administrador, quiero editar la información de un entrenador, para mantener sus datos actualizados.
-
-**Dependencias:** HU-18 (Requiere que el entrenador ya esté registrado)
-
-**Criterios de aceptación:**
-
-| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
-| --- | --- | --- | --- |
-| **Principal (éxito)** | un entrenador existe en el sistema | el administrador modifica su información y guarda | el sistema actualiza los datos correctamente |
-| **Alternativo (más relevante)** | el administrador está editando un entrenador | ingresa datos con formato inválido | el sistema muestra un error y no guarda los cambios |
-
-**Prioridad:**
-
-| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
-| --- | --- | --- | --- | --- |
-| C | Bajo | Bajo | Relleno | 2 |
-
-### 6.4.3. HU-20 Consultar entrenadores
-
-Como administrador o recepcionista, quiero consultar a los entrenadores registrados, para conocer la información del personal disponible.
-
-**Dependencias:** HU-18 (Requiere que existan entrenadores registrados).
-
-**Criterios de aceptación:**
-
-| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
-| --- | --- | --- | --- |
-| **Principal (éxito)** | existen entrenadores registrados | el usuario autorizado consulta el listado | el sistema muestra los entrenadores con su información |
-| **Alternativo (más relevante)** | no existen entrenadores en el sistema | el usuario accede al listado | el sistema indica que no hay entrenadores registrados |
-
-**Prioridad:**
-
-| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
-| --- | --- | --- | --- | --- |
-| M | Alto | Bajo | Quick win | 2 |
-
-### 6.4.4. HU-21 Consultar horarios del entrenador
-
-Como entrenador, quiero consultar mis horarios, para conocer las actividades programadas que tengo asignadas.
-
-**Dependencias:** HU-12 (Requiere que existan actividades programadas asignadas al entrenador).
-
-**Criterios de aceptación:**
-
-| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
-| --- | --- | --- | --- |
-| **Principal (éxito)** | el entrenador tiene actividades programadas asignadas | consulta sus horarios | el sistema muestra las actividades, los días, los horarios y los espacios correspondientes |
-| **Alternativo (más relevante)** | el entrenador no tiene actividades programadas asignadas | consulta sus horarios | el sistema indica que no tiene actividades asignadas actualmente |
-
-**Prioridad:**
-
-| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
-| --- | --- | --- | --- | --- |
-| S | Medio | Bajo | Quick win | 2 |
-
-### 6.4.5. HU-33 Definir horario fijo del entrenador
-
-Como administrador o recepcionista, quiero definir el horario fijo de cada entrenador, para asignarle actividades únicamente dentro de su horario.
-
-**Dependencias:** HU-18 (Requiere que el entrenador esté registrado).
-
-**Criterios de aceptación:**
-
-| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
-| --- | --- | --- | --- |
-| **Principal (éxito)** | un entrenador está registrado en el sistema | el usuario autorizado registra los días y las horas de inicio y fin de su horario | el sistema guarda el horario fijo del entrenador |
-| **Alternativo (más relevante)** | el usuario está registrando un horario | ingresa una hora de fin anterior o igual a la hora de inicio | el sistema muestra un error y no guarda el horario |
-
-**Prioridad:**
-
-| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
-| --- | --- | --- | --- | --- |
-| M | Alto | Bajo | Quick win | 3 |
-
-### 6.4.6. HU-34 Cambiar estado del entrenador
-
-Como administrador, quiero cambiar el estado de un entrenador, para retirarlo de la operación sin dejar actividades programadas sin entrenador.
-
-**Dependencias:** HU-18, HU-13 (Requiere que el entrenador esté registrado y que sus actividades programadas puedan reasignarse).
-
-**Criterios de aceptación:**
-
-| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
-| --- | --- | --- | --- |
-| **Principal (éxito)** | un entrenador activo no tiene actividades programadas asignadas | el administrador confirma su desactivación | el sistema cambia su estado a inactivo y bloquea su acceso al sistema |
-| **Alternativo (más relevante)** | el entrenador tiene actividades programadas asignadas | el administrador intenta desactivarlo | el sistema informa que primero debe reasignar sus actividades programadas a otro entrenador |
-
-**Nota:** El administrador también puede reactivar a un entrenador inactivo; al hacerlo, recupera su acceso al sistema. La reactivación no le asigna actividades: cualquier programación posterior debe cumplir las validaciones de horario fijo y de cruces (RN-16, RN-24).
-
-**Prioridad:**
-
-| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
-| --- | --- | --- | --- | --- |
-| C | Medio | Medio | Relleno | 5 |
-
-## 6.5. Dashboard y reportes
-
-### 6.5.1. HU-22 Consultar dashboard
-
-Como administrador, quiero consultar un dashboard con información general del gimnasio, para conocer rápidamente el estado de la operación.
-
-**Dependencias:** HU-01, HU-09, HU-10, HU-12 (Requiere datos de clientes, membresías y actividades programadas para consolidar la información).
-
-**Criterios de aceptación:**
-
-| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
-| --- | --- | --- | --- |
-| **Principal (éxito)** | existe información registrada de clientes, membresías y actividades programadas | el administrador accede al dashboard | el sistema muestra el resumen de clientes activos, membresías activas/vencidas/próximas a vencer y actividades programadas |
-| **Alternativo (más relevante)** | el sistema aún no tiene información suficiente en alguna categoría | el administrador consulta el dashboard | el sistema muestra el valor en cero o un mensaje de ausencia de datos para esa categoría, sin generar error |
-
-**Prioridad:**
-
-| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
-| --- | --- | --- | --- | --- |
-| M | Alto | Alto | Proyecto mayor | 8 |
-
-### 6.5.2. HU-23 Consultar membresías próximas a vencer
-
-Como administrador o recepcionista, quiero consultar las membresías próximas a vencer, para realizar un seguimiento de los clientes que deben renovar.
-
-**Dependencias:** HU-09, HU-10, HU-35 (Requiere membresías asignadas, su clasificación por estado y los días de aviso configurados).
-
-**Criterios de aceptación:**
-
-| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
-| --- | --- | --- | --- |
-| **Principal (éxito)** | existen membresías que vencen dentro de los días de aviso configurados | el usuario autorizado las consulta | el sistema muestra el cliente asociado y la fecha de vencimiento |
-| **Alternativo (más relevante)** | ninguna membresía está próxima a vencer | el usuario autorizado realiza la consulta | el sistema indica que no hay membresías en ese estado |
+| **Principal (éxito)** | existe un cliente y un tipo de membresía disponible | el usuario autorizado selecciona el cliente y el tipo de membresía | el sistema asigna la membresía y registra su período de vigencia |
+| **Membresía activa existente** | el cliente ya tiene una membresía activa | el usuario intenta asignar una nueva membresía y confirma la operación | el sistema informa que la nueva membresía comienza hoy y que la anterior deja de estar vigente desde hoy; conserva la anterior en el historial con estado Reemplazada |
+| **Alternativo (más relevante)** | el cliente o el tipo de membresía no existe o no está disponible | el usuario intenta realizar la asignación | el sistema informa el problema y no realiza la operación |
 
 **Prioridad:**
 
@@ -808,18 +354,309 @@ Como administrador o recepcionista, quiero consultar las membresías próximas a
 | --- | --- | --- | --- | --- |
 | M | Alto | Medio | Proyecto mayor | 5 |
 
-### 6.5.3. HU-35 Configurar días de aviso de vencimiento
+**### 6.2.5. HU-10 Consultar membresías**
 
-Como administrador, quiero configurar con cuántos días de anticipación una membresía se considera próxima a vencer, para ajustar el seguimiento a la lógica de mi negocio.
+Como administrador o recepcionista, quiero consultar las membresías de los clientes, para conocer su estado y vigencia.
 
-**Dependencias:** Ninguna (sin dependencias funcionales directas).
+**Dependencias:** HU-09.
 
 **Criterios de aceptación:**
 
 | **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
 | --- | --- | --- | --- |
-| **Principal (éxito)** | un administrador está en la configuración del sistema | ingresa un número de días de aviso válido y guarda | el sistema guarda el valor y lo aplica a la clasificación de membresías próximas a vencer en todo el gimnasio |
-| **Alternativo (más relevante)** | el administrador está configurando los días de aviso | ingresa un valor vacío, no numérico o menor que 1 | el sistema muestra un error y conserva el valor anterior |
+| **Principal (éxito)** | existen membresías asignadas | el usuario autorizado ingresa al módulo | el sistema muestra las membresías y sus estados |
+| **Alternativo (más relevante)** | no existen membresías asignadas | el usuario ingresa al módulo | el sistema informa que no hay membresías registradas |
+
+**Prioridad:**
+
+| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
+| --- | --- | --- | --- | --- |
+| M | Alto | Bajo | Quick win | 2 |
+
+**### 6.2.6. HU-11 Renovar membresía**
+
+Como administrador o recepcionista, quiero renovar una membresía, para mantener disponible el servicio para el cliente.
+
+**Dependencias:** HU-09, HU-10.
+
+**Criterios de aceptación:**
+
+| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
+| --- | --- | --- | --- |
+| **Principal (éxito)** | existe una membresía de un cliente que puede renovarse | el usuario autorizado selecciona la renovación y confirma la operación | el sistema informa las consecuencias, registra la nueva membresía con inicio desde hoy y deja de dar vigencia a la anterior desde hoy, conservándola en el historial con estado Reemplazada |
+| **Alternativo (más relevante)** | el usuario decide no continuar con la renovación | cancela la confirmación | el sistema conserva la membresía y su estado anterior |
+
+**Prioridad:**
+
+| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
+| --- | --- | --- | --- | --- |
+| M | Alto | Medio | Proyecto mayor | 5 |
+
+**## 6.3. Gestión de actividades**
+
+**### 6.3.1. HU-12 Gestionar catálogo de actividades**
+
+Como administrador, quiero gestionar el catálogo de actividades, para definir las actividades que ofrece el gimnasio y su capacidad máxima.
+
+**Dependencias:** Ninguna.
+
+**Criterios de aceptación:**
+
+| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
+| --- | --- | --- | --- |
+| **Principal (éxito)** | el administrador está en el módulo de actividades | registra o edita una actividad con su capacidad máxima | el sistema guarda la información |
+| **Alternativo (más relevante)** | la información obligatoria está incompleta o es inválida | intenta guardar | el sistema muestra los errores correspondientes |
+
+**Prioridad:**
+
+| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
+| --- | --- | --- | --- | --- |
+| M | Alto | Medio | Proyecto mayor | 5 |
+
+**### 6.3.2. HU-13 Gestionar espacios**
+
+Como administrador, quiero gestionar los espacios del gimnasio, para identificar los lugares disponibles para realizar actividades.
+
+**Dependencias:** Ninguna.
+
+**Criterios de aceptación:**
+
+| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
+| --- | --- | --- | --- |
+| **Principal (éxito)** | el administrador está en el módulo de espacios | registra o edita un espacio | el sistema guarda la información |
+| **Alternativo (más relevante)** | el espacio tiene información incompleta | intenta guardar | el sistema muestra los errores correspondientes |
+
+**Prioridad:**
+
+| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
+| --- | --- | --- | --- | --- |
+| S | Medio | Bajo | Quick win | 2 |
+
+**### 6.3.3. HU-14 Programar actividades**
+
+Como administrador, quiero programar actividades indicando día, horario, espacio y entrenador, para organizar las sesiones que ofrece el gimnasio.
+
+**Dependencias:** HU-12, HU-13, HU-18.
+
+**Criterios de aceptación:**
+
+| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
+| --- | --- | --- | --- |
+| **Principal (éxito)** | existe una actividad, un espacio y un entrenador disponibles | el administrador define día y horario y confirma la programación | el sistema registra la actividad programada |
+| **Alternativo (más relevante)** | el espacio o el entrenador ya tiene una programación incompatible | intenta guardar la programación | el sistema informa el conflicto y no registra la programación |
+
+**Prioridad:**
+
+| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
+| --- | --- | --- | --- | --- |
+| M | Alto | Alto | Proyecto mayor | 8 |
+
+**### 6.3.4. HU-15 Cambiar entrenador de actividad programada**
+
+Como administrador, quiero cambiar el entrenador asignado a una actividad programada, para mantener la continuidad de las sesiones cuando sea necesario.
+
+**Dependencias:** HU-14, HU-18.
+
+**Criterios de aceptación:**
+
+| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
+| --- | --- | --- | --- |
+| **Principal (éxito)** | existe una actividad programada | el administrador selecciona otro entrenador disponible y confirma el cambio | el sistema actualiza la asignación |
+| **Alternativo (más relevante)** | el entrenador seleccionado tiene un horario incompatible | intenta confirmar el cambio | el sistema informa el conflicto y conserva el entrenador anterior |
+
+**Prioridad:**
+
+| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
+| --- | --- | --- | --- | --- |
+| S | Medio | Medio | Proyecto mayor | 5 |
+
+**### 6.3.5. HU-16 Cancelar actividad programada**
+
+Como administrador, quiero cancelar una actividad programada, para informar que la sesión no se realizará.
+
+**Dependencias:** HU-14.
+
+**Criterios de aceptación:**
+
+| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
+| --- | --- | --- | --- |
+| **Principal (éxito)** | existe una actividad programada | el administrador confirma su cancelación | el sistema cambia el estado de la programación y cancela las inscripciones activas asociadas |
+| **Alternativo (más relevante)** | el administrador decide no cancelar | cancela la confirmación | el sistema conserva la programación |
+
+**Prioridad:**
+
+| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
+| --- | --- | --- | --- | --- |
+| S | Medio | Medio | Proyecto mayor | 5 |
+
+**### 6.3.6. HU-17 Consultar actividades disponibles**
+
+Como cliente, quiero consultar las actividades programadas disponibles, para conocer las sesiones a las que puedo inscribirme según mi membresía.
+
+**Dependencias:** HU-08, HU-14.
+
+**Criterios de aceptación:**
+
+| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
+| --- | --- | --- | --- |
+| **Principal (éxito)** | existen actividades programadas | el cliente consulta las actividades disponibles | el sistema muestra las actividades compatibles con su membresía y con cupos disponibles |
+| **Alternativo (más relevante)** | no hay actividades compatibles o disponibles | el cliente consulta las actividades | el sistema informa que no existen actividades disponibles |
+
+**Prioridad:**
+
+| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
+| --- | --- | --- | --- | --- |
+| M | Alto | Medio | Proyecto mayor | 5 |
+
+**### 6.3.7. HU-18 Registrar entrenador**
+
+Como administrador o recepcionista, quiero registrar un entrenador con sus datos personales y credenciales de acceso en un único flujo, para que pueda consultar las actividades y horarios que tiene asignados.
+
+**Dependencias:** Ninguna.
+
+**Criterios de aceptación:**
+
+| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
+| --- | --- | --- | --- |
+| **Principal (éxito)** | un administrador o recepcionista autorizado está en el formulario de registro | ingresa nombre, documento, correo electrónico obligatorio y único, teléfono opcional, contraseña y confirmación de contraseña, además de los datos específicos del entrenador | el sistema registra los datos personales, la información del entrenador y sus credenciales conjuntamente |
+| **Alternativo (más relevante)** | el documento o correo ya está registrado, el correo está vacío o tiene un formato inválido, o las contraseñas no coinciden | intenta guardar el registro | el sistema no guarda la información y muestra el error correspondiente |
+
+**Prioridad:**
+
+| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
+| --- | --- | --- | --- | --- |
+| M | Alto | Medio | Proyecto mayor | 5 |
+
+**### 6.3.8. HU-19 Inscribir cliente en actividad**
+
+Como cliente, quiero inscribirme en una actividad incluida en mi membresía, para participar en las sesiones disponibles.
+
+**Dependencias:** HU-08, HU-14, HU-17.
+
+**Criterios de aceptación:**
+
+| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
+| --- | --- | --- | --- |
+| **Principal (éxito)** | el cliente tiene una membresía vigente que incluye la actividad y existe un cupo disponible | selecciona la sesión y confirma la inscripción | el sistema registra la inscripción |
+| **Alternativo (más relevante)** | la actividad no está incluida en la membresía, el límite fue alcanzado o no hay cupos | intenta inscribirse | el sistema rechaza la inscripción e informa la razón |
+
+**Prioridad:**
+
+| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
+| --- | --- | --- | --- | --- |
+| M | Alto | Alto | Proyecto mayor | 8 |
+
+**### 6.3.9. HU-20 Cancelar inscripción**
+
+Como cliente, quiero cancelar una inscripción, para liberar mi cupo cuando no pueda asistir a una actividad.
+
+**Dependencias:** HU-19.
+
+**Criterios de aceptación:**
+
+| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
+| --- | --- | --- | --- |
+| **Principal (éxito)** | el cliente tiene una inscripción activa | selecciona cancelar y confirma la operación | el sistema cambia el estado de la inscripción y libera el cupo |
+| **Alternativo (más relevante)** | la inscripción ya está cancelada o no pertenece al cliente | intenta cancelarla | el sistema informa que no puede realizar la operación |
+
+**Prioridad:**
+
+| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
+| --- | --- | --- | --- | --- |
+| S | Medio | Bajo | Quick win | 2 |
+
+**### 6.3.10. HU-21 Consultar clientes inscritos**
+
+Como administrador, recepcionista o entrenador asignado, quiero consultar los clientes inscritos en una actividad, para conocer la participación de cada sesión.
+
+**Dependencias:** HU-19.
+
+**Criterios de aceptación:**
+
+| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
+| --- | --- | --- | --- |
+| **Principal (éxito)** | existen clientes inscritos en una actividad | el usuario autorizado consulta la lista de inscritos | el sistema muestra los clientes inscritos, respetando los permisos del rol |
+| **Alternativo (más relevante)** | no hay clientes inscritos | el usuario consulta la lista | el sistema informa que no hay inscripciones registradas |
+
+**Prioridad:**
+
+| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
+| --- | --- | --- | --- | --- |
+| S | Medio | Bajo | Quick win | 2 |
+
+**## 6.4. Gestión de entrenadores**
+
+**### 6.4.1. HU-22 Consultar entrenadores**
+
+Como administrador o recepcionista, quiero consultar los entrenadores registrados, para conocer su información y disponibilidad.
+
+**Dependencias:** HU-18.
+
+**Criterios de aceptación:**
+
+| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
+| --- | --- | --- | --- |
+| **Principal (éxito)** | existen entrenadores registrados | el usuario autorizado ingresa al módulo | el sistema muestra el listado de entrenadores |
+| **Alternativo (más relevante)** | no existen entrenadores registrados | el usuario ingresa al módulo | el sistema informa que no hay entrenadores registrados |
+
+**Prioridad:**
+
+| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
+| --- | --- | --- | --- | --- |
+| M | Alto | Bajo | Quick win | 2 |
+
+**### 6.4.2. HU-23 Administrar horarios de entrenadores**
+
+Como administrador o recepcionista, quiero definir y consultar el horario fijo de los entrenadores, para organizar su disponibilidad.
+
+**Dependencias:** HU-18.
+
+**Criterios de aceptación:**
+
+| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
+| --- | --- | --- | --- |
+| **Principal (éxito)** | existe un entrenador registrado | el usuario autorizado define o consulta su horario fijo | el sistema guarda o muestra el horario correspondiente |
+| **Alternativo (más relevante)** | el horario presenta información inválida o incompatible | intenta guardarlo | el sistema informa el conflicto y no guarda el horario |
+
+**Prioridad:**
+
+| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
+| --- | --- | --- | --- | --- |
+| S | Medio | Medio | Proyecto mayor | 5 |
+
+**## 6.5. Dashboard y reportes**
+
+**### 6.5.1. HU-28 Consultar dashboard**
+
+Como administrador, quiero consultar un panel con indicadores generales del gimnasio, para conocer el estado de la operación.
+
+**Dependencias:** HU-01, HU-09, HU-14.
+
+**Criterios de aceptación:**
+
+| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
+| --- | --- | --- | --- |
+| **Principal (éxito)** | existen registros en el sistema | el administrador ingresa al dashboard | el sistema muestra los indicadores de clientes, membresías y actividades |
+| **Alternativo (más relevante)** | no existen registros para uno o más indicadores | el administrador consulta el dashboard | el sistema muestra los valores correspondientes sin errores |
+
+**Prioridad:**
+
+| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
+| --- | --- | --- | --- | --- |
+| S | Alto | Medio | Proyecto mayor | 5 |
+
+**### 6.5.2. HU-29 Configurar días de aviso de vencimiento**
+
+Como administrador, quiero configurar los días de anticipación para los avisos de vencimiento de membresías, para recibir información oportuna.
+
+**Dependencias:** HU-28.
+
+**Criterios de aceptación:**
+
+| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
+| --- | --- | --- | --- |
+| **Principal (éxito)** | el administrador está en la configuración de avisos | ingresa un número válido de días de anticipación | el sistema guarda la configuración y utiliza ese valor para mostrar las membresías próximas a vencer |
+| **Alternativo (más relevante)** | el administrador ingresa un valor vacío, no numérico o menor que 1 | intenta guardar | el sistema muestra un error y conserva el valor anterior |
 
 **Nota:** El valor mínimo es 1 día; el valor cero se rechaza.
 
@@ -829,9 +666,9 @@ Como administrador, quiero configurar con cuántos días de anticipación una me
 | --- | --- | --- | --- | --- |
 | S | Medio | Bajo | Quick win | 2 |
 
-## 6.6. Autenticación y permisos
+**## 6.6. Autenticación y permisos**
 
-### 6.6.1. HU-24 Iniciar sesión
+**### 6.6.1. HU-24 Iniciar sesión**
 
 Como usuario del sistema, quiero iniciar sesión con mis credenciales, para acceder a las funcionalidades correspondientes a mi rol.
 
@@ -841,8 +678,8 @@ Como usuario del sistema, quiero iniciar sesión con mis credenciales, para acce
 
 | **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
 | --- | --- | --- | --- |
-| **Principal (éxito)** | un usuario registrado y activo cuenta con credenciales válidas | ingresa un usuario y contraseña correctos | el sistema permite el acceso y muestra únicamente las funcionalidades permitidas para su rol |
-| **Alternativo (más relevante)** | un usuario intenta iniciar sesión | ingresa un usuario o contraseña incorrectos | el sistema muestra un mensaje de error y no permite el acceso |
+| **Principal (éxito)** | un usuario registrado y activo cuenta con credenciales válidas | ingresa correo electrónico y contraseña correctos | el sistema permite el acceso y muestra únicamente las funcionalidades permitidas para su rol |
+| **Alternativo (más relevante)** | un usuario intenta iniciar sesión | ingresa un correo electrónico o contraseña incorrectos | el sistema muestra un mensaje de error y no permite el acceso |
 
 **Prioridad:**
 
@@ -850,7 +687,7 @@ Como usuario del sistema, quiero iniciar sesión con mis credenciales, para acce
 | --- | --- | --- | --- | --- |
 | M | Alto | Alto | Proyecto mayor | 8 |
 
-### 6.6.2. HU-25 Cerrar sesión
+**### 6.6.2. HU-25 Cerrar sesión**
 
 Como usuario del sistema, quiero cerrar sesión, para proteger mi cuenta cuando termine de utilizar el sistema.
 
@@ -869,7 +706,7 @@ Como usuario del sistema, quiero cerrar sesión, para proteger mi cuenta cuando 
 | --- | --- | --- | --- | --- |
 | M | Alto | Bajo | Quick win | 2 |
 
-### 6.6.3. HU-26 Recuperar contraseña
+**### 6.6.3. HU-26 Recuperar contraseña**
 
 Como usuario del sistema, quiero recuperar mi contraseña, para poder volver a acceder a mi cuenta cuando la haya olvidado.
 
@@ -879,10 +716,10 @@ Como usuario del sistema, quiero recuperar mi contraseña, para poder volver a a
 
 | **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
 | --- | --- | --- | --- |
-| **Principal (éxito)** | un usuario registrado olvidó su contraseña y solicita recuperarla | el sistema le envía un código de un solo uso a su teléfono o correo registrado y el usuario lo ingresa correctamente antes de que venza | el sistema le permite establecer una nueva contraseña |
+| **Principal (éxito)** | un usuario registrado olvidó su contraseña y solicita recuperarla | el sistema envía un código de un solo uso al correo registrado y el usuario lo ingresa correctamente antes de que venza | el sistema le permite establecer una nueva contraseña |
 | **Alternativo (más relevante)** | el usuario recibió un código de recuperación | el código vence o el usuario agota los tres intentos fallidos | el sistema invalida el código e indica que debe solicitar uno nuevo |
 
-**Nota:** El flujo es: (1) el usuario solicita recuperar su contraseña; (2) el sistema envía un código de un solo uso al teléfono o correo registrado; (3) el usuario lo ingresa antes de que venza (15 minutos), con máximo 3 intentos fallidos; (4) si el código es válido, establece una nueva contraseña; (5) si vence o se agotan los intentos, el código queda invalidado y debe solicitarse otro. Si los datos ingresados no corresponden a una cuenta registrada, el sistema informa que no fue posible verificar la identidad. El código no se almacena en la base de datos (RN-53, RES-12).
+**Nota:** El flujo es: (1) el usuario solicita recuperar su contraseña; (2) el sistema envía un código de un solo uso al correo electrónico registrado; (3) el usuario lo ingresa antes de que venza (15 minutos), con máximo 3 intentos fallidos; (4) si el código es válido, establece una nueva contraseña; (5) si vence o se agotan los intentos, el código queda invalidado y debe solicitarse otro. Si los datos ingresados no corresponden a una cuenta registrada, el sistema informa que no fue posible verificar la identidad. El código no se almacena en la base de datos (RN-53, RES-12).
 
 **Prioridad:**
 
@@ -890,7 +727,7 @@ Como usuario del sistema, quiero recuperar mi contraseña, para poder volver a a
 | --- | --- | --- | --- | --- |
 | C | Medio | Medio | Relleno | 5 |
 
-### 6.6.4. HU-27 Administrar roles y permisos
+**### 6.6.4. HU-27 Administrar roles y permisos**
 
 Como administrador, quiero asignar roles a los usuarios y configurar los permisos de cada rol, para controlar el acceso a las funcionalidades del sistema.
 
@@ -909,26 +746,7 @@ Como administrador, quiero asignar roles a los usuarios y configurar los permiso
 | --- | --- | --- | --- | --- |
 | M | Alto | Alto | Proyecto mayor | 8 |
 
-### 6.6.5. HU-36 Crear credenciales de acceso
-
-Como administrador o recepcionista, quiero crear las credenciales de acceso de clientes y entrenadores, para que puedan ingresar al sistema.
-
-**Dependencias:** HU-01, HU-18 (Requiere que el cliente o el entrenador estén registrados).
-
-**Criterios de aceptación:**
-
-| **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
-| --- | --- | --- | --- |
-| **Principal (éxito)** | un cliente o entrenador está registrado y no tiene credenciales | el usuario autorizado asigna un nombre de usuario y una contraseña | el sistema guarda las credenciales de forma segura y la persona puede iniciar sesión con su rol |
-| **Alternativo (más relevante)** | el nombre de usuario ingresado ya pertenece a otra cuenta | el usuario autorizado intenta guardar las credenciales | el sistema rechaza el registro e informa que el nombre de usuario no está disponible |
-
-**Prioridad:**
-
-| **MoSCoW** | **Valor** | **Esfuerzo** | **Cuadrante V/E** | **Puntos de historia** |
-| --- | --- | --- | --- | --- |
-| M | Alto | Medio | Proyecto mayor | 5 |
-
-### 6.6.6. HU-37 Registrar usuarios administrativos
+**### 6.6.5. HU-37 Registrar usuarios administrativos**
 
 Como administrador, quiero registrar administradores y recepcionistas con sus datos y credenciales, para gestionar el equipo de trabajo que opera el sistema.
 
@@ -938,8 +756,8 @@ Como administrador, quiero registrar administradores y recepcionistas con sus da
 
 | **Escenario** | **GIVEN (Dado que)** | **WHEN (Cuando)** | **THEN (Entonces)** |
 | --- | --- | --- | --- |
-| **Principal (éxito)** | un administrador está en el módulo de usuarios | ingresa nombre, documento, teléfono, correo opcional, rol (Administrador o Recepcionista) y credenciales | el sistema guarda el usuario y le permite iniciar sesión con los permisos de su rol |
-| **Alternativo (más relevante)** | ya existe un usuario con el mismo número de documento | el administrador intenta registrarlo | el sistema rechaza el registro e informa que el documento ya existe |
+| **Principal (éxito)** | un administrador está en el módulo de usuarios | ingresa nombre, documento, correo obligatorio y único, teléfono opcional, rol (Administrador o Recepcionista), contraseña y confirmación | el sistema guarda los datos personales y las credenciales conjuntamente y permite iniciar sesión con el correo y los permisos de su rol |
+| **Alternativo (más relevante)** | el correo está vacío, mal formado o duplicado, o la confirmación de contraseña no coincide | el administrador intenta guardar el alta | el sistema no guarda y muestra el error correspondiente; también rechaza documentos duplicados |
 
 **Prioridad:**
 
@@ -947,7 +765,7 @@ Como administrador, quiero registrar administradores y recepcionistas con sus da
 | --- | --- | --- | --- | --- |
 | M | Alto | Medio | Proyecto mayor | 5 |
 
-# 7. Alcance del MVP
+**# 7. Alcance del MVP**
 
 | **Épica** | **Funcionalidades incluidas en el MVP** |
 | --- | --- |
@@ -956,4 +774,4 @@ Como administrador, quiero registrar administradores y recepcionistas con sus da
 | **Gestión de actividades** | Gestionar actividades · Gestionar espacios · Programar actividades · Asignar entrenadores · Consultar actividades disponibles · Permitir a los clientes inscribirse según su membresía |
 | **Gestión de entrenadores** | Registrar entrenadores · Consultar entrenadores · Definir horario fijo · Asignar entrenadores a actividades programadas |
 | **Dashboard y reportes** | Consultar clientes activos · Consultar membresías activas y vencidas · Consultar actividades programadas · Consultar membresías próximas a vencer · Configurar días de aviso |
-| **Autenticación y permisos** | Iniciar sesión · Cerrar sesión · Registrar usuarios administrativos · Crear credenciales de acceso · Administrar roles y permisos · Controlar acceso según el rol del usuario |
+| **Autenticación y permisos** | Iniciar sesión · Cerrar sesión · Recuperar contraseña por correo · Registrar usuarios con datos y credenciales en un único flujo · Administrar roles y permisos · Demostración visual por perfil en web y móvil · Controlar acceso según el rol del usuario |
