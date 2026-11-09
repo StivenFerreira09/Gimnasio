@@ -4,10 +4,10 @@
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
-| RF-01 | Módulo 1: Gestión de Clientes | Registrar un nuevo cliente con nombre, documento y teléfono (obligatorios) y correo (opcional), validando los campos obligatorios y que el documento no exista, y confirmando el guardado. |
+| RF-01 | Módulo 1: Gestión de Clientes | Registrar un nuevo cliente con nombre, documento y correo electrónico (obligatorios) y teléfono (opcional), junto con sus credenciales de acceso mediante contraseña y confirmación de contraseña, en un mismo flujo. El sistema valida los campos obligatorios, que el documento y el correo no estén registrados y confirma el guardado. |
 | RF-02 |  | Consultar el listado de clientes registrados y el detalle de un cliente seleccionado. |
 | RF-03 |  | Buscar un cliente por nombre o documento, informando si no hay coincidencias. |
-| RF-04 |  | Editar los datos de un cliente existente y guardar los cambios con confirmación. |
+| RF-04 |  | Editar los datos de un cliente existente y guardar los cambios con confirmación, sin duplicar su cuenta ni modificar automáticamente su contraseña. |
 | RF-05 |  | Cambiar el estado de un cliente (activo/inactivo), con confirmación previa. Un cliente inactivo no puede iniciar sesión. |
 | RF-06 |  | Consultar la membresía propia: tipo, actividades incluidas con sus límites, beneficios, estado y fecha de vencimiento. |
 
@@ -17,9 +17,9 @@
 | --- | --- | --- |
 | RF-07 | Módulo 2: Gestión de Membresías | Crear tipos de membresía definiendo nombre, precio, duración y unidad de duración (días o meses). |
 | RF-08 |  | Consultar el catálogo de membresías registradas con su precio, duración, actividades incluidas con sus límites y beneficios. |
-| RF-09 |  | Asignar una membresía a un cliente, calculando automáticamente la fecha de vencimiento según la duración y su unidad. Si el cliente tiene una membresía activa, la nueva la reemplaza previa confirmación. |
+| RF-09 |  | Asignar una membresía a un cliente, calculando automáticamente la fecha de vencimiento según la duración y su unidad. Si el cliente tiene una membresía activa, la nueva la reemplaza previa confirmación; la anterior queda en el historial con estado Reemplazada. |
 | RF-10 |  | Consultar membresías activas, vencidas y próximas a vencer (según los días de aviso configurados), con sus fechas. |
-| RF-11 |  | Renovar la membresía de un cliente registrando una nueva membresía con vigencia desde la fecha actual; la anterior queda en estado reemplazada. Requiere confirmación. |
+| RF-11 |  | Renovar la membresía de un cliente registrando una nueva membresía con vigencia desde la fecha actual; la anterior deja de estar vigente y queda en el historial con estado Reemplazada. Requiere confirmación. |
 | RF-29 |  | Gestionar el catálogo de beneficios del gimnasio: registrar, editar, activar y desactivar beneficios. |
 | RF-30 |  | Configurar las actividades que incluye cada tipo de membresía, con su límite de inscripciones y el período del límite (o sin límite), y los beneficios informativos que incluye. |
 
@@ -43,8 +43,8 @@
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
-| RF-20 | Módulo 4: Gestión de Entrenadores | Registrar un entrenador con nombre, documento y teléfono (obligatorios) y correo (opcional), validando que el documento no exista. |
-| RF-21 |  | Editar la información de un entrenador. |
+| RF-20 | Módulo 4: Gestión de Entrenadores | Registrar un entrenador con nombre, documento y correo electrónico (obligatorios) y teléfono (opcional), junto con sus credenciales de acceso mediante contraseña y confirmación de contraseña, en un mismo flujo. El sistema valida que el documento y el correo no estén registrados. |
+| RF-21 |  | Editar la información de un entrenador, sin duplicar su cuenta ni modificar automáticamente su contraseña. |
 | RF-22 |  | Consultar a los entrenadores registrados y su detalle. |
 | RF-23 |  | Consultar qué entrenador está asignado a cada actividad programada. |
 | RF-34 |  | Definir el horario fijo de cada entrenador (día, hora de inicio y hora de fin). |
@@ -61,13 +61,13 @@
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
-| RF-25 | Módulo 6: Autenticación y Permisos | Iniciar sesión validando usuario y contraseña de un usuario activo; mostrar solo las funciones permitidas según los permisos de su rol. |
+| RF-25 | Módulo 6: Autenticación y Permisos | Iniciar sesión mediante correo electrónico y contraseña, validando que el usuario esté activo; mostrar solo las funciones permitidas según los permisos de su rol. |
 | RF-26 |  | Cerrar sesión, bloqueando el acceso a funciones protegidas sin re-autenticación. |
-| RF-27 |  | Recuperar la contraseña: el usuario solicita la recuperación, el sistema envía un código de un solo uso al teléfono o al correo registrado, y el usuario lo ingresa antes de que venza (15 minutos, máximo 3 intentos fallidos) para establecer una nueva contraseña. |
-| RF-28 |  | Restringir el acceso a las funcionalidades según 4 roles fijos: Administrador, Recepcionista, Entrenador y Cliente, de acuerdo con los permisos configurados para cada rol. |
-| RF-37 |  | Asignar roles a los usuarios y configurar los permisos de cada rol. |
-| RF-38 |  | Crear las credenciales de acceso (nombre de usuario y contraseña) de clientes y entrenadores registrados. |
-| RF-39 |  | Registrar usuarios con rol Administrador o Recepcionista, con sus datos personales y credenciales de acceso. |
+| RF-27 |  | Recuperar la contraseña exclusivamente mediante el correo electrónico registrado. El sistema envía un código de un solo uso al correo, que el usuario debe ingresar antes de que venza (15 minutos, máximo 3 intentos fallidos) para establecer una nueva contraseña. |
+| RF-28 |  | Restringir el acceso a las funcionalidades según 4 roles fijos: Administrador, Recepcionista, Entrenador y Cliente, de acuerdo con los permisos configurados para cada rol. El Administrador cuenta con todos los permisos del Recepcionista y con sus funciones administrativas exclusivas. |
+| RF-37 |  | Asignar roles a los usuarios y configurar los permisos de cada rol, manteniendo la jerarquía entre Administrador y Recepcionista. El Administrador puede realizar todas las acciones permitidas al Recepcionista, además de sus funciones exclusivas. |
+| RF-38 |  | Crear las credenciales de acceso (correo electrónico y contraseña) de clientes y entrenadores durante el mismo proceso de registro de sus datos personales. No se requiere un registro independiente de credenciales para nuevos usuarios. |
+| RF-39 |  | Registrar usuarios con rol Administrador o Recepcionista, con sus datos personales y credenciales de acceso en un mismo flujo. El Administrador puede registrar los cuatro tipos de usuario; el Recepcionista puede registrar Clientes y Entrenadores, pero no Administradores ni otros Recepcionistas. La primera cuenta Administrador se crea mediante una configuración inicial controlada. |
 
 # 15. Diagrama de clases:
 
@@ -109,7 +109,7 @@
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
-| RF-01 | Módulo 1: Gestión de Clientes | Registrar un nuevo cliente con nombre, documento y teléfono (obligatorios) y correo (opcional), validando los campos obligatorios y que el documento no exista, y confirmando el guardado. |
+| RF-01 | Módulo 1: Gestión de Clientes | Registrar un nuevo cliente con nombre, documento y correo electrónico (obligatorios) y teléfono (opcional), junto con sus credenciales de acceso mediante contraseña y confirmación de contraseña, en un mismo flujo. El sistema valida los campos obligatorios, que el documento y el correo no estén registrados y confirma el guardado. |
 
 ## Asignar membresía
 
@@ -117,7 +117,7 @@
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
-| RF-09 | Módulo 2: Gestión de Membresías | Asignar una membresía a un cliente, calculando automáticamente la fecha de vencimiento según la duración y su unidad. Si el cliente tiene una membresía activa, la nueva la reemplaza previa confirmación. |
+| RF-09 | Módulo 2: Gestión de Membresías | Asignar una membresía a un cliente, calculando automáticamente la fecha de vencimiento según la duración y su unidad. Si el cliente tiene una membresía activa, la nueva la reemplaza previa confirmación; la anterior queda en el historial con estado Reemplazada. |
 
 ## Renovar membresía
 
@@ -125,7 +125,7 @@
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
-| RF-11 | Módulo 2: Gestión de Membresías | Renovar la membresía de un cliente registrando una nueva membresía con vigencia desde la fecha actual; la anterior queda en estado reemplazada. Requiere confirmación. |
+| RF-11 | Módulo 2: Gestión de Membresías | Renovar la membresía de un cliente registrando una nueva membresía con vigencia desde la fecha actual; la anterior deja de estar vigente y queda en el historial con estado Reemplazada. Requiere confirmación. |
 
 ## Programar actividad y asignar entrenador
 
@@ -158,7 +158,7 @@
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
-| RF-20 | Módulo 4: Gestión de Entrenadores | Registrar un entrenador con nombre, documento y teléfono (obligatorios) y correo (opcional), validando que el documento no exista. |
+| RF-20 | Módulo 4: Gestión de Entrenadores | Registrar un entrenador con nombre, documento y correo electrónico (obligatorios) y teléfono (opcional), junto con sus credenciales de acceso mediante contraseña y confirmación de contraseña, en un mismo flujo. El sistema valida que el documento y el correo no estén registrados. |
 
 ## Iniciar sesión
 
@@ -166,7 +166,7 @@
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
-| RF-25 | Módulo 6: Autenticación y Permisos | Iniciar sesión validando usuario y contraseña de un usuario activo; mostrar solo las funciones permitidas según los permisos de su rol. |
+| RF-25 | Módulo 6: Autenticación y Permisos | Iniciar sesión mediante correo electrónico y contraseña, validando que el usuario esté activo; mostrar solo las funciones permitidas según los permisos de su rol. |
 
 ## Recuperar contraseña
 
@@ -174,4 +174,4 @@
 
 | **RF** | **Módulo** | **Descripción** |
 | --- | --- | --- |
-| RF-27 | Módulo 6: Autenticación y Permisos | Recuperar la contraseña: el usuario solicita la recuperación, el sistema envía un código de un solo uso al teléfono o al correo registrado, y el usuario lo ingresa antes de que venza (15 minutos, máximo 3 intentos fallidos) para establecer una nueva contraseña. |
+| RF-27 | Módulo 6: Autenticación y Permisos | Recuperar la contraseña exclusivamente mediante el correo electrónico registrado. El sistema envía un código de un solo uso al correo, que el usuario debe ingresar antes de que venza (15 minutos, máximo 3 intentos fallidos) para establecer una nueva contraseña. |
