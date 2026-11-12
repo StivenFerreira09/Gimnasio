@@ -11,7 +11,7 @@
 | Tipo | Apariencia | Uso |
 |------|------------|-----|
 | Primario | Fondo verde, texto oscuro | Ingresar, Guardar, Confirmar, Registrar |
-| Secundario | Borde gris, fondo oscuro, texto blanco | Cancelar, Volver, Entendido, Ver entrenadores |
+| Secundario | Borde gris, fondo oscuro, texto blanco | Cancelar, Volver, Entendido, Ir a Programación |
 | Destructivo | Fondo rojo, texto blanco | Desactivar, Cancelar programación, Cancelar inscripción |
 | Negro | Fondo negro, texto blanco | Acciones secundarias importantes |
 | Texto | Texto azul, sin fondo | Enlaces (¿Olvidaste tu contraseña?), Ver, Editar, Ver todos |
