@@ -160,7 +160,7 @@ Estas pantallas permiten administrar las cuentas de acceso administrativas y con
 
 | Código | Pantalla | Descripción | Roles |
 |---|---|---|---|
-| G1 | Listado de usuarios | Presenta las cuentas registradas con su rol, con acceso a Ver y Asignar rol. | Administrador |
+| G1 | Listado de usuarios | Presenta las cuentas de Administrador y Recepcionista registradas en el sistema, con acceso a Ver y Asignar rol. | Administrador |
 | G2 | Registrar usuario administrativo | Formulario para crear usuarios con rol de Administrador o Recepcionista. | Administrador |
 | G3 | Roles y permisos | Permite consultar, por pestaña de rol, los permisos agrupados por módulo (Clientes, Membresías, Actividades, etc.) y activarlos o desactivarlos. | Administrador |
 | G4 | Configuración de avisos | Permite establecer los días de anticipación para considerar una membresía "próxima a vencer". | Administrador |
@@ -253,7 +253,7 @@ Estas pantallas permiten al entrenador consultar sus actividades asignadas y su 
 
 ### 5.8. Usuarios, permisos y configuración
 
-![Usuarios](../../media/movil/capturas/07_Usuarios_y_permisos_y_configuración.png)
+![Usuarios](../../media/movil/capturas/07_Usuarios_y_permisos_y_configuracion_AR.png)
 
 ### 5.9. Vistas del cliente
 
